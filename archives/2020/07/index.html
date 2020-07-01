@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>Archives: 2020/7 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2020/07/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -152,224 +152,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的�?一篇博客文�?</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
   	<time datetime="2020-07-01T06:21:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-01</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Arduino-core-for-ESP8266-WiFi-chip"><a href="#Arduino-core-for-ESP8266-WiFi-chip" class="headerlink" title="Arduino core for ESP8266 WiFi chip"></a>Arduino core for ESP8266 WiFi chip</h1><h1 id="Quick-links"><a href="#Quick-links" class="headerlink" title="Quick links"></a>Quick links</h1><ul>
-<li><a href="https://arduino-esp8266.readthedocs.io/en/2.7.1/" target="_blank" rel="noopener">Latest release documentation</a></li>
-<li><a href="https://arduino-esp8266.readthedocs.io/en/latest/" target="_blank" rel="noopener">Current “git version” documentation</a></li>
-<li><a href="https://arduino-esp8266.readthedocs.io/en/latest/installing.html#using-git-version" target="_blank" rel="noopener">Install git version</a> (<a href="doc/installing.rst#using-git-version">sources</a>)</li>
-</ul>
-<h1 id="Arduino-on-ESP8266"><a href="#Arduino-on-ESP8266" class="headerlink" title="Arduino on ESP8266"></a>Arduino on ESP8266</h1><p>This project brings support for the ESP8266 chip to the Arduino environment. It lets you write sketches, using familiar Arduino functions and libraries, and run them directly on ESP8266, with no external microcontroller required.</p>
-<p>ESP8266 Arduino core comes with libraries to communicate over WiFi using TCP and UDP, set up HTTP, mDNS, SSDP, and DNS servers, do OTA updates, use a file system in flash memory, and work with SD cards, servos, SPI and I2C peripherals.</p>
-<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><ul>
-<li>Installing options:<ul>
-<li><a href="#installing-with-boards-manager">Using Boards Manager</a></li>
-<li><a href="#using-git-version">Using git version</a></li>
-<li><a href="#using-platformio">Using PlatformIO</a></li>
-<li><a href="#building-with-make">Building with make</a></li>
-</ul>
-</li>
-<li><a href="#documentation">Documentation</a></li>
-<li><a href="#issues-and-support">Issues and support</a></li>
-<li><a href="#contributing">Contributing</a>  </li>
-<li><a href="#license-and-credits">License and credits</a>   </li>
-</ul>
-<h3 id="Installing-with-Boards-Manager"><a href="#Installing-with-Boards-Manager" class="headerlink" title="Installing with Boards Manager"></a>Installing with Boards Manager</h3><p>Starting with 1.6.4, Arduino allows installation of third-party platform packages using Boards Manager. We have packages available for Windows, Mac OS, and Linux (32 and 64 bit).</p>
-<ul>
-<li>Install the current upstream Arduino IDE at the 1.8.9 level or later. The current version is on the <a href="https://www.arduino.cc/en/main/software" target="_blank" rel="noopener">Arduino website</a>.</li>
-<li>Start Arduino and open the Preferences window.</li>
-<li>Enter <code>https://arduino.esp8266.com/stable/package_esp8266com_index.json</code> into the <em>Additional Board Manager URLs</em> field. You can add multiple URLs, separating them with commas.</li>
-<li>Open Boards Manager from Tools &gt; Board menu and install <em>esp8266</em> platform (and don’t forget to select your ESP8266 board from Tools &gt; Board menu after installation).</li>
-</ul>
-<h4 id="Latest-release"><a href="#Latest-release" class="headerlink" title="Latest release "></a>Latest release <a href="https://github.com/esp8266/Arduino/releases/latest/" target="_blank" rel="noopener"><img src="https://img.shields.io/github/release/esp8266/Arduino.svg" alt="Latest release"></a></h4><p>Boards manager link: <code>https://arduino.esp8266.com/stable/package_esp8266com_index.json</code></p>
-<p>Documentation: <a href="https://arduino-esp8266.readthedocs.io/en/2.7.1/" target="_blank" rel="noopener">https://arduino-esp8266.readthedocs.io/en/2.7.1/</a></p>
-<h3 id="Using-git-version"><a href="#Using-git-version" class="headerlink" title="Using git version"></a>Using git version</h3><p><a href="https://travis-ci.org/esp8266/Arduino" target="_blank" rel="noopener"><img src="https://travis-ci.org/esp8266/Arduino.svg" alt="Linux build status"></a></p>
-<p>Also known as latest git or master branch.</p>
-<ul>
-<li>Install the current upstream Arduino IDE at the 1.8 level or later. The current version is on the <a href="https://www.arduino.cc/en/main/software" target="_blank" rel="noopener">Arduino website</a>.</li>
-<li>Follow the <a href="https://arduino-esp8266.readthedocs.io/en/latest/installing.html#using-git-version" target="_blank" rel="noopener">instructions in the documentation</a>.</li>
-</ul>
-<h3 id="Using-PlatformIO"><a href="#Using-PlatformIO" class="headerlink" title="Using PlatformIO"></a>Using PlatformIO</h3><p><a href="https://platformio.org?utm_source=arduino-esp8266" target="_blank" rel="noopener">PlatformIO</a> is an open source ecosystem for IoT<br>development with a cross-platform build system, a library manager, and full support<br>for Espressif (ESP8266) development. It works on the following popular host operating systems: macOS, Windows,<br>Linux 32/64, and Linux ARM (like Raspberry Pi, BeagleBone, CubieBoard).</p>
-<ul>
-<li><a href="https://docs.platformio.org/en/latest/what-is-platformio.html?utm_source=arduino-esp8266" target="_blank" rel="noopener">What is PlatformIO?</a></li>
-<li><a href="https://platformio.org/platformio-ide?utm_source=arduino-esp8266" target="_blank" rel="noopener">PlatformIO IDE</a></li>
-<li><a href="https://docs.platformio.org/en/latest/core.html?utm_source=arduino-esp8266" target="_blank" rel="noopener">PlatformIO Core</a> (command line tool)</li>
-<li><a href="https://docs.platformio.org/en/latest/platforms/espressif8266.html?utm_source=arduino-esp8266" target="_blank" rel="noopener">Advanced usage</a> -<br>custom settings, uploading to SPIFFS, Over-the-Air (OTA), staging version</li>
-<li><a href="https://docs.platformio.org/en/latest/ide.html?utm_source=arduino-esp8266" target="_blank" rel="noopener">Integration with Cloud and Standalone IDEs</a> -<br>Cloud9, Codeanywhere, Eclipse Che (Codenvy), Atom, CLion, Eclipse, Emacs, NetBeans, Qt Creator, Sublime Text, VIM, Visual Studio, and VSCode</li>
-<li><a href="https://docs.platformio.org/en/latest/platforms/espressif8266.html?utm_source=arduino-esp8266#examples" target="_blank" rel="noopener">Project Examples</a></li>
-</ul>
-<h3 id="Building-with-make"><a href="#Building-with-make" class="headerlink" title="Building with make"></a>Building with make</h3><p><a href="https://github.com/plerup/makeEspArduino" target="_blank" rel="noopener">makeEspArduino</a> is a generic makefile for any ESP8266 Arduino project.<br>Using make instead of the Arduino IDE makes it easier to do automated and production builds.</p>
-<h3 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h3><p>Documentation for latest development version: <a href="https://arduino-esp8266.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://arduino-esp8266.readthedocs.io/en/latest/</a></p>
-<h3 id="Issues-and-support"><a href="#Issues-and-support" class="headerlink" title="Issues and support"></a>Issues and support</h3><p><a href="https://www.esp8266.com/u/arduinoanswers" target="_blank" rel="noopener">ESP8266 Community Forum</a> is a well-established community for questions and answers about Arduino for ESP8266. Stackoverflow is also an alternative. If you need help, have a “How do I…” type question, have a problem with a 3rd party library not hosted in this repo, or just want to discuss how to approach a problem, please ask there.</p>
-<p>If you find the forum useful, please consider supporting it with a donation. <br /><br><a href="https://www.paypal.com/webscr?cmd=_s-xclick&hosted_button_id=4M56YCWV6PX66" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="Donate"></a></p>
-<p>If you encounter an issue which you think is a bug in the ESP8266 Arduino Core or the associated libraries, or if you want to propose an enhancement, you are welcome to submit it here on Github: <a href="https://github.com/esp8266/Arduino/issues" target="_blank" rel="noopener">https://github.com/esp8266/Arduino/issues</a>.</p>
-<p>Please provide as much context as possible, as well as the information requested in the issue template:</p>
-<ul>
-<li>ESP8266 Arduino core version which you are using (you can check it in Boards Manager)</li>
-<li>your sketch code; please wrap it into a code block, see <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#quoting-code" target="_blank" rel="noopener">Github markdown manual</a></li>
-<li>when encountering an issue that happens at run time, attach the serial output. Wrap it into a code block, just like the code.</li>
-<li>for issues that happen at compile time, enable verbose compiler output in the IDE preferences, and attach that output (also inside a code block)</li>
-<li>ESP8266 development board model</li>
-<li>IDE settings (board choice, flash size)</li>
-<li>etc</li>
-</ul>
-<h3 id="Contributing"><a href="#Contributing" class="headerlink" title="Contributing"></a>Contributing</h3><p>For minor fixes of code and documentation, please go ahead and submit a pull request.  A gentle introduction to the process can be found <a href="https://www.freecodecamp.org/news/a-simple-git-guide-and-cheat-sheet-for-open-source-contributors/" target="_blank" rel="noopener">here</a>.</p>
-<p>Check out the list of issues that are easy to fix �� <a href="https://github.com/esp8266/Arduino/issues?q=is%3Aopen+is%3Aissue+label%3A%22level%3A+easy%22" target="_blank" rel="noopener">easy issues pending</a>. Working on them is a great way to move the project forward.</p>
-<p>Larger changes (rewriting parts of existing code from scratch, adding new functions to the core, adding new libraries) should generally be discussed by opening an issue first. PRs with such changes require testing and approval.</p>
-<p>Feature branches with lots of small commits (especially titled “oops”, “fix typo”, “forgot to add file”, etc.) should be squashed before opening a pull request. At the same time, please refrain from putting multiple unrelated changes into a single pull request.</p>
-<h3 id="License-and-credits"><a href="#License-and-credits" class="headerlink" title="License and credits"></a>License and credits</h3><p>Arduino IDE is developed and maintained by the Arduino team. The IDE is licensed under GPL.</p>
-<p>ESP8266 core includes an xtensa gcc toolchain, which is also under GPL.</p>
-<p>Esptool.py was initially created by Fredrik Ahlberg (@themadinventor, @kongo), and is currently maintained by Angus Gratton (@projectgus) under GPL 2.0 license.</p>
-<p>Espressif SDK included in this build is under Espressif MIT License.</p>
-<p>ESP8266 core files are licensed under LGPL.</p>
-<p><a href="https://github.com/pellepl/spiffs" target="_blank" rel="noopener">SPI Flash File System (SPIFFS)</a> written by Peter Andersson is used in this project. It is distributed under the MIT license.</p>
-<p><a href="https://github.com/rhempel/umm_malloc" target="_blank" rel="noopener">umm_malloc</a> memory management library written by Ralph Hempel is used in this project. It is distributed under the MIT license.</p>
-<p><a href="https://github.com/plerup/espsoftwareserial" target="_blank" rel="noopener">SoftwareSerial</a> library and examples written by Peter Lerup. Distributed under LGPL 2.1.</p>
-<p><a href="http://axtls.sourceforge.net/" target="_blank" rel="noopener">axTLS</a> library written by Cameron Rich, built from <a href="https://github.com/igrr/axtls-8266" target="_blank" rel="noopener">https://github.com/igrr/axtls-8266</a>, is used in this project. It is distributed under <a href="https://github.com/igrr/axtls-8266/blob/master/LICENSE" target="_blank" rel="noopener">BSD license</a>.</p>
-<p><a href="https://bearssl.org" target="_blank" rel="noopener">BearSSL</a> library written by Thomas Pornin, built from <a href="https://github.com/earlephilhower/bearssl-esp8266" target="_blank" rel="noopener">https://github.com/earlephilhower/bearssl-esp8266</a>, is used in this project.  It is distributed under the <a href="https://bearssl.org/#legal-details" target="_blank" rel="noopener">MIT License</a>.</p>
-<p><a href="https://github.com/ARMmbed/littlefs" target="_blank" rel="noopener">LittleFS</a> library written by ARM Limited and released under the <a href="https://github.com/ARMmbed/littlefs/blob/master/LICENSE.md" target="_blank" rel="noopener">BSD 3-clause license</a>.</p>
-<p><a href="https://github.com/pfalcon/uzlib" target="_blank" rel="noopener">uzlib</a> library written and (c) 2014-2018 Paul Sokolovsky, licensed under the ZLib license (<a href="https://www.zlib.net/zlib_license.html" target="_blank" rel="noopener">https://www.zlib.net/zlib_license.html</a>). uzlib is based on: tinf library by Joergen Ibsen (Deflate decompression); Deflate Static Huffman tree routines by Simon Tatham; LZ77 compressor by Paul Sokolovsky; with library integrated and maintained by Paul Sokolovsky.</p>
-<h3 id="Other-useful-links"><a href="#Other-useful-links" class="headerlink" title="Other useful links"></a>Other useful links</h3><p><a href="https://github.com/earlephilhower/esp-quick-toolchain" target="_blank" rel="noopener">Toolchain repo</a></p>
-<p><a href="https://github.com/d-a-v/esp82xx-nonos-linklayer" target="_blank" rel="noopener">Lwip link layer repo</a></p>
-<p><a href="https://github.com/plerup/espsoftwareserial" target="_blank" rel="noopener">SoftwareSerial repo</a></p>
-<p><a href="https://github.com/mytrain/arduino-esp8266-serial-plugin" target="_blank" rel="noopener">Serial Monitor Arduino IDE plugin</a> Original discussion <a href="https://github.com/esp8266/Arduino/issues/1360" target="_blank" rel="noopener">here</a>, quick download <a href="http://mytrain.fr/cms//images/mytrain/private/ESP8266SM.v3.zip" target="_blank" rel="noopener">there</a>.</p>
-<p><a href="https://github.com/dplasa/FTPClientServer" target="_blank" rel="noopener">FTP Client/Server Library</a> </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/28/hello-world/">Hello World</a>
+      <a class="archive-article-title" href="/2020/07/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的�?一篇博客文�?</a>
     </h1>
   
 
-        
-        <a href="/2020/06/28/hello-world/" class="archive-article-date">
-  	<time datetime="2020-06-27T16:53:59.120Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <div class="article-info info-on-right">
+          
+          
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/28/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -391,9 +214,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
