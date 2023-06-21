@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>示例 - 标签 - My Hugo Blog</title>
+        <link>https://hsj01.github.io/tags/%E7%A4%BA%E4%BE%8B/</link>
+        <description>示例 - 标签 - My Hugo Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 21 Jun 2023 10:57:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/%E7%A4%BA%E4%BE%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>Debian安装后的简单设置</title>
+    <link>https://hsj01.github.io/posts/myblog01/</link>
+    <pubDate>Wed, 21 Jun 2023 10:57:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog01/</guid>
+    <description><![CDATA[<p>这篇文章展示了Debian安装后需要用到的几个简单命令.</p>]]></description>
+</item>
+</channel>
+</rss>
