@@ -14,20 +14,20 @@
     <description><![CDATA[<p>探索 Hugo - <strong>LoveIt</strong> 主题的全部内容和背后的核心概念.</p>]]></description>
 </item>
 <item>
-    <title>Debian安装后的简单设置</title>
-    <link>https://hsj01.github.io/posts/myblog01/</link>
-    <pubDate>Wed, 21 Jun 2023 10:57:40 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog01/</guid>
-    <description><![CDATA[<p>这篇文章展示了Debian安装后需要用到的几个简单命令.</p>]]></description>
-</item>
-<item>
     <title>硬盘的自动挂载</title>
     <link>https://hsj01.github.io/posts/myblog02/</link>
     <pubDate>Thu, 06 Jul 2023 22:57:40 &#43;0800</pubDate>
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog02/</guid>
     <description><![CDATA[<p>这篇文章展示了/etc/fstab简单配置.</p>]]></description>
+</item>
+<item>
+    <title>Debian安装后的简单设置</title>
+    <link>https://hsj01.github.io/posts/myblog01/</link>
+    <pubDate>Wed, 21 Jun 2023 10:57:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog01/</guid>
+    <description><![CDATA[<p>这篇文章展示了Debian安装后需要用到的几个简单命令.</p>]]></description>
 </item>
 <item>
     <title>Markdown 基本语法</title>
