@@ -3,7 +3,7 @@
         <title>My Hugo Blog</title>
         <link>https://hsj01.github.io/</link>
         <description>This is my blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 06 Jul 2023 22:57:40 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 20 Jul 2023 09:57:40 &#43;0800</lastBuildDate>
             <atom:link href="https://hsj01.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>主题文档 - 基本概念</title>
@@ -16,7 +16,7 @@
 <item>
     <title>马恩列斯毛理论书籍</title>
     <link>https://hsj01.github.io/posts/myblog03/</link>
-    <pubDate>Thu, 06 Jul 2023 22:57:40 &#43;0800</pubDate>
+    <pubDate>Thu, 20 Jul 2023 09:57:40 &#43;0800</pubDate>
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog03/</guid>
     <description><![CDATA[<p>这篇文章分享了一些马克思主义的书籍。</p>]]></description>
