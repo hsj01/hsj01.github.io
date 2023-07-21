@@ -3,7 +3,23 @@
         <title>示例 - 标签 - My Hugo Blog</title>
         <link>https://hsj01.github.io/tags/%E7%A4%BA%E4%BE%8B/</link>
         <description>示例 - 标签 - My Hugo Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 06 Jul 2023 22:57:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/%E7%A4%BA%E4%BE%8B/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 21 Jul 2023 09:57:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/%E7%A4%BA%E4%BE%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>欢迎来到我的博客</title>
+    <link>https://hsj01.github.io/posts/hello/</link>
+    <pubDate>Fri, 21 Jul 2023 09:40:32 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/hello/</guid>
+    <description><![CDATA[<p>这是我用Hugo博客框架和它的LoveIt主题搭建的博客并托管在GitHub Pages上</p>]]></description>
+</item>
+<item>
+    <title>从小白到装机大神</title>
+    <link>https://hsj01.github.io/posts/myblog04/</link>
+    <pubDate>Fri, 21 Jul 2023 09:57:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog04/</guid>
+    <description><![CDATA[<p>这篇文章分享了几个装机工具和系统下载地址。</p>]]></description>
+</item>
+<item>
     <title>硬盘的自动挂载</title>
     <link>https://hsj01.github.io/posts/myblog02/</link>
     <pubDate>Thu, 06 Jul 2023 22:57:40 &#43;0800</pubDate>

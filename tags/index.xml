@@ -3,36 +3,20 @@
         <title>Tags - 标签 - My Hugo Blog</title>
         <link>https://hsj01.github.io/tags/</link>
         <description>Tags - 标签 - My Hugo Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 20 Jul 2023 09:57:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>分享</title>
-    <link>https://hsj01.github.io/tags/%E5%88%86%E4%BA%AB/</link>
-    <pubDate>Thu, 20 Jul 2023 09:57:40 &#43;0800</pubDate>
-    <author>     hsj</author>
-    <guid>https://hsj01.github.io/tags/%E5%88%86%E4%BA%AB/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 21 Jul 2023 09:57:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/" rel="self" type="application/rss+xml" /><item>
     <title>示例</title>
     <link>https://hsj01.github.io/tags/%E7%A4%BA%E4%BE%8B/</link>
-    <pubDate>Thu, 06 Jul 2023 22:57:40 &#43;0800</pubDate>
+    <pubDate>Fri, 21 Jul 2023 09:57:40 &#43;0800</pubDate>
     <author>     hsj</author>
     <guid>https://hsj01.github.io/tags/%E7%A4%BA%E4%BE%8B/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>configuration</title>
-    <link>https://hsj01.github.io/tags/configuration/</link>
-    <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate>
+    <title>分享</title>
+    <link>https://hsj01.github.io/tags/%E5%88%86%E4%BA%AB/</link>
+    <pubDate>Thu, 20 Jul 2023 09:57:40 &#43;0800</pubDate>
     <author>     hsj</author>
-    <guid>https://hsj01.github.io/tags/configuration/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>installation</title>
-    <link>https://hsj01.github.io/tags/installation/</link>
-    <pubDate>Fri, 06 Mar 2020 21:40:32 &#43;0800</pubDate>
-    <author>     hsj</author>
-    <guid>https://hsj01.github.io/tags/installation/</guid>
+    <guid>https://hsj01.github.io/tags/%E5%88%86%E4%BA%AB/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
