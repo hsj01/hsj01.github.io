@@ -6,7 +6,7 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 30 Jul 2023 09:18:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/%E7%A4%BA%E4%BE%8B/" rel="self" type="application/rss+xml" /><item>
     <title>欢迎来到我的博客</title>
     <link>https://hsj01.github.io/posts/hello/</link>
-    <pubDate>Fri, 21 Jul 2023 09:40:32 &#43;0800</pubDate>
+    <pubDate>Tue, 20 Jun 2023 09:40:32 &#43;0800</pubDate>
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/hello/</guid>
     <description><![CDATA[<p>这是我用Hugo博客框架和它的LoveIt主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
@@ -58,6 +58,14 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog01/</guid>
     <description><![CDATA[<p>这篇文章展示了Debian安装后需要用到的几个简单命令.</p>]]></description>
+</item>
+<item>
+    <title>Markdown 基本语法</title>
+    <link>https://hsj01.github.io/posts/basic-markdown-syntax/</link>
+    <pubDate>Tue, 20 Jun 2023 21:57:40 &#43;0800</pubDate>
+    <author>Dillon</author>
+    <guid>https://hsj01.github.io/posts/basic-markdown-syntax/</guid>
+    <description><![CDATA[<p>这篇文章提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例.</p>]]></description>
 </item>
 </channel>
 </rss>
