@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>软件 - 标签 - My Hugo Blog</title>
+        <link>https://hsj01.github.io/tags/%E8%BD%AF%E4%BB%B6/</link>
+        <description>软件 - 标签 - My Hugo Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 Oct 2023 08:36:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/%E8%BD%AF%E4%BB%B6/" rel="self" type="application/rss+xml" /><item>
+    <title>WinRAR解压软件无广告版</title>
+    <link>https://hsj01.github.io/posts/myblog10/</link>
+    <pubDate>Sat, 21 Oct 2023 08:36:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog10/</guid>
+    <description><![CDATA[<p>WinRAR的40天商用版本配合密钥就没有广告了</p>]]></description>
+</item>
+</channel>
+</rss>
