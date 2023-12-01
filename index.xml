@@ -3,7 +3,7 @@
         <title>My Hugo Blog</title>
         <link>https://hsj01.github.io/</link>
         <description>This is my blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 Oct 2023 08:36:40 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 30 Nov 2023 09:18:40 &#43;0800</lastBuildDate>
             <atom:link href="https://hsj01.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>欢迎来到我的博客</title>
@@ -12,6 +12,14 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/hello/</guid>
     <description><![CDATA[<p>这是我用Hugo博客框架和它的LoveIt主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
+</item>
+<item>
+    <title>树莓派安装docker</title>
+    <link>https://hsj01.github.io/posts/myblog11/</link>
+    <pubDate>Thu, 30 Nov 2023 09:18:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog11/</guid>
+    <description><![CDATA[<p>简单启动树莓派和安装docker、docker-compose。</p>]]></description>
 </item>
 <item>
     <title>WinRAR解压软件无广告版</title>
@@ -76,14 +84,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog03/</guid>
     <description><![CDATA[<p>这篇文章分享了一些马克思主义的书籍。</p>]]></description>
-</item>
-<item>
-    <title>linux系统硬盘的自动挂载</title>
-    <link>https://hsj01.github.io/posts/myblog02/</link>
-    <pubDate>Thu, 06 Jul 2023 22:57:40 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog02/</guid>
-    <description><![CDATA[<p>这篇文章展示了/etc/fstab简单配置.</p>]]></description>
 </item>
 </channel>
 </rss>

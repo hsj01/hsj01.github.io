@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>树莓派安装docker - My Hugo Blog</title><meta name="Description" content="简单启动树莓派和安装docker、docker-compose。"><meta property="og:title" content="树莓派安装docker" />
+<meta property="og:description" content="简单启动树莓派和安装docker、docker-compose。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hsj01.github.io/posts/myblog11/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-30T09:18:40+08:00" />
+<meta property="article:modified_time" content="2023-11-30T09:18:40+08:00" /><meta property="og:site_name" content="My Blog" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派安装docker"/>
+<meta name="twitter:description" content="简单启动树莓派和安装docker、docker-compose。"/>
+<meta name="application-name" content="My blog">
+<meta name="apple-mobile-web-app-title" content="My blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hsj01.github.io/posts/myblog11/" /><link rel="prev" href="https://hsj01.github.io/posts/myblog10/" /><link rel="next" href="https://hsj01.github.io/posts/hello/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "树莓派安装docker",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hsj01.github.io\/posts\/myblog11\/"
+        },"genre": "posts","keywords": "示例","wordcount":  2119 ,
+        "url": "https:\/\/hsj01.github.io\/posts\/myblog11\/","datePublished": "2023-11-30T09:18:40+08:00","dateModified": "2023-11-30T09:18:40+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Hsj"
+            },"description": "简单启动树莓派和安装docker、docker-compose。"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My Hugo Blog">My blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My Hugo Blog">My blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">树莓派安装docker</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%A4%BA%E4%BE%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>示例</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-30">2023-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2119 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-烧录系统">1 烧录系统</a>
+      <ul>
+        <li><a href="#11-下载烧录工具">1.1 下载烧录工具</a></li>
+        <li><a href="#12-烧录系统">1.2 烧录系统</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-简单设置">2 简单设置</a>
+      <ul>
+        <li><a href="#21-ssh远程连接到树莓派">2.1 SSH远程连接到树莓派</a></li>
+        <li><a href="#22-换源">2.2 换源</a></li>
+        <li><a href="#23-更新系统">2.3 更新系统</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-安装docker">3 安装docker</a></li>
+    <li><a href="#4-vnc连接到树莓派">4 vnc连接到树莓派</a>
+      <ul>
+        <li><a href="#41-开启vnc">4.1 开启vnc</a></li>
+        <li><a href="#42-vnc连接到树莓派">4.2 vnc连接到树莓派</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-安装docker-compose">5 安装docker-compose</a>
+      <ul>
+        <li><a href="#51-下载docker-compose">5.1 下载docker-compose</a></li>
+        <li><a href="#52-安装docker-compose">5.2 安装docker-compose</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-创建portainer容器">6 创建portainer容器</a></li>
+    <li><a href="#7-结语">7 结语</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>简单启动树莓派和安装docker、docker-compose。</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>1、大家有留言可以到<a href="https://www.bilibili.com/video/BV1tV411K7En/" target="_blank" rel="noopener noreffer ">本期哔哩哔哩视频地址</a>给我留言。</p>
+<p>2、点击蓝色标题即可跳转到下载页面。</p>
+</div>
+        </div>
+    </div>
+<h2 id="1-烧录系统">1 烧录系统</h2>
+<h3 id="11-下载烧录工具">1.1 下载烧录工具</h3>
+<p>我我们到Raspberry Pi OS的<a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener noreffer ">官网</a>向下滑可以看到树莓派的官方烧录工具Raspberry Pi Imager，我们下载对应的版本，我这里下载Windows版，下载好后安装。</p>
+<h3 id="12-烧录系统">1.2 烧录系统</h3>
+<p>我们先将SD卡通过读卡器连接到电脑，然后打开烧录软件，第一项Raspberry Pi Device我们是啥设备就选啥设备，我是4b我就选Raspberry Pi 4，第二项选择要烧录的系统，我们就选第一个Raspberry Pi OS(64-bit)，第三项存储卡我们就选择自己插入的SD卡就行了，一般看容量大小也不会选错。然后我们点击NEXT，点击编辑设置。</p>
+<p>    1、勾选Set username and password,设置用户名和密码</p>
+<p>    2、勾选配置WiFi设置热点名和密码，WiFi国家选择cn</p>
+<p>    3、勾选设置语言和时区，时区选择Asia/Shanghai,键盘布局选择cn</p>
+<p>然后点击上方中部的SERVICES，选择开启SSH服务，选择使用密码登陆，点击下方保存
+<figure><a class="lightgallery" href="/posts/myblog11/musical.png" title="TikTok" data-thumbnail="/posts/myblog11/musical.png" data-sub-html="<h2>服务</h2><p>TikTok</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/myblog11/musical.png"
+            data-srcset="/posts/myblog11/musical.png, /posts/myblog11/musical.png 1.5x, /posts/myblog11/musical.png 2x"
+            data-sizes="auto"
+            alt="/posts/myblog11/musical.png" width="667" height="847" />
+    </a><figcaption class="image-caption">服务</figcaption>
+    </figure>
+接下来点击&rsquo;是&rsquo;，询问是否擦除磁盘选择&rsquo;是&rsquo;，等待刷入完成就可将SD卡插入树莓派开机了。
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>1、用户名建议设置成和电脑一样的英文名，SSH连接时可以简化命令</p>
+<p>2、编辑设置中的WiFi密码和用户密码建议每次重新输入一遍，烧录软件存储的密码会错乱，不知现在是否修复了。</p>
+</div>
+        </div>
+    </div></p>
+<h2 id="2-简单设置">2 简单设置</h2>
+<h3 id="21-ssh远程连接到树莓派">2.1 SSH远程连接到树莓派</h3>
+<p>按<code>win + R</code>在弹出的文本框输入cmd,按下回车，即会打开CMD终端
+我们在终端中使用SSH命令连接树莓派</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># ssh连接默认端口是22，如果本地机用户名和远程机用户名一致，可以省略用户名</span>
+</span></span><span class="line"><span class="cl">ssh username@host
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 用户名一致样例</span>
+</span></span><span class="line"><span class="cl">ssh 192.168.1.7
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 用户名不一致样例,hsj即为我设置的树莓派用户名</span>
+</span></span><span class="line"><span class="cl">ssh hsj@192.168.1.7
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#192.168.1.x的具体地址需要自己到路由器查看路由器分配给树莓派的地址</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 也可以指定连接端口，端口默认为22,如没进行过调整可以省略</span>
+</span></span><span class="line"><span class="cl">ssh -p port username@host
+</span></span></code></pre></div><p>第一次连接问我们是否连接，我们输入<code>yes</code>按下回车，然后让输入我们设置的密码，输入密码不显示，但已经在输了，输完按回车即可连接。
+<figure><a class="lightgallery" href="/posts/myblog11/02.png" title="TikTok Plugin" data-thumbnail="/posts/myblog11/02.png" data-sub-html="<h2>连接成功</h2><p>TikTok Plugin</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/myblog11/02.png"
+            data-srcset="/posts/myblog11/02.png, /posts/myblog11/02.png 1.5x, /posts/myblog11/02.png 2x"
+            data-sizes="auto"
+            alt="/posts/myblog11/02.png" width="962" height="469" />
+    </a><figcaption class="image-caption">连接成功</figcaption>
+    </figure></p>
+<h3 id="22-换源">2.2 换源</h3>
+<p><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">以下换源操作适用基于Debian12 Bookworm的Raspberry Pi OS(64-bit)系统。其他如Raspberry Pi OS(32-bit)系统或基于Debian11的系统或Ubuntu等其他系统请自行百度换源方法。</div>
+        </div>
+    </div>
+我个人习惯清华源，每次刷入装完Raspberry Pi OS后都会把软件源修改成清华源，命令如下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#打开Raspberrypi 软件仓库源文件</span>
+</span></span><span class="line"><span class="cl">sudo nano /etc/apt/sources.list.d/raspi.list
+</span></span></code></pre></div><p>将文件中的内容删除，上下左右键移动光标，<code>←Backspace</code>键删除，将如下全部内容粘贴到文件中。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ bookworm main
+</span></span></code></pre></div><p>按<code>Ctrl + X</code>离开，再按<code>Y</code>保存。</p>
+<p>同理还要更换Debian软件源</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#打开Debian 仓库源文件</span>
+</span></span><span class="line"><span class="cl">sudo nano /etc/apt/sources.list
+</span></span></code></pre></div><p>替换为如下内容</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware
+</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware
+</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware
+</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware
+</span></span><span class="line"><span class="cl"><span class="c1"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security bookworm-security main contrib non-free non-free-firmware</span>
+</span></span></code></pre></div><h3 id="23-更新系统">2.3 更新系统</h3>
+<p>接下来更新系统，每次更新依次使用下面两个命令。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#更新所有软件包的最新版本信息</span>
+</span></span><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#更新所有软件包到最新版本</span>
+</span></span><span class="line"><span class="cl">sudo apt upgrade
+</span></span></code></pre></div><h2 id="3-安装docker">3 安装docker</h2>
+<p>我们普通使用者当然是怎么简单怎么来了，这里就用官方的一键安装命令来安装docker，因为服务器在国外，我们耐心等待一会就好了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#官网一键安装命令</span>
+</span></span><span class="line"><span class="cl">sudo curl -fsSL https://get.docker.com <span class="p">|</span> bash
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#查看docker版本，试验是否安装成功</span>
+</span></span><span class="line"><span class="cl">sudo docker -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#设置docker开机自启</span>
+</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> docker
+</span></span></code></pre></div><h2 id="4-vnc连接到树莓派">4 vnc连接到树莓派</h2>
+<h3 id="41-开启vnc">4.1 开启vnc</h3>
+<p>我们先打开raspi-config</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#开启命令</span>
+</span></span><span class="line"><span class="cl">sudo raspi-config
+</span></span></code></pre></div><p>选择 3 Interface Options 回车</p>
+<p>选择 I2 VNC 回车</p>
+<p>红方块选择 是 回车</p>
+<p>我们已经成功启动vnc远程连接了</p>
+<h3 id="42-vnc连接到树莓派">4.2 vnc连接到树莓派</h3>
+<p>我们下载<a href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank" rel="noopener noreffer ">VNC Viewer</a>这个连接工具用来连接到树莓派，安装完成后打开，我们在file新建一个New connection,填入树莓派的ip地址，然后连接，警告我们忽略，然后会让我们输入账号密码，就可以连接成功了。</p>
+<h2 id="5-安装docker-compose">5 安装docker-compose</h2>
+<h3 id="51-下载docker-compose">5.1 下载docker-compose</h3>
+<p>我们可以在vnc中使用浏览器下载。也可以在本机下载，然后在vnc中控制用U盘拷贝到树莓派，也可以用<a href="https://winscp.net/eng/index.php" target="_blank" rel="noopener noreffer ">WinSCP</a>连接后发送到树莓派。因为docker-compose是发布在GitHub上的所以有时候访问不太流畅。</p>
+<p>大家可以到<a href="https://github.com/docker/compose/releases" target="_blank" rel="noopener noreffer ">GitHub</a>下载也可以到<a href="https://www.123pan.com/s/bxeLVv-HHdVH.html" target="_blank" rel="noopener noreffer ">我的网盘</a>下载，选择后缀Linux-aarch64版就行
+<figure><a class="lightgallery" href="/posts/myblog11/03.png" title="TikTok Plugin" data-thumbnail="/posts/myblog11/03.png" data-sub-html="<h2>选择版本如图</h2><p>TikTok Plugin</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/myblog11/03.png"
+            data-srcset="/posts/myblog11/03.png, /posts/myblog11/03.png 1.5x, /posts/myblog11/03.png 2x"
+            data-sizes="auto"
+            alt="/posts/myblog11/03.png" width="1167" height="707" />
+    </a><figcaption class="image-caption">选择版本如图</figcaption>
+    </figure></p>
+<h3 id="52-安装docker-compose">5.2 安装docker-compose</h3>
+<p>我们先进入到下载文件夹</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#进入到下载文件夹</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> Download
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#将docker-compose放置到位</span>
+</span></span><span class="line"><span class="cl">sudo mv docker-compose-linux-aarch64 /usr/bin/docker-compose
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#赋予docker-compose可执行权限</span>
+</span></span><span class="line"><span class="cl">sudo chmod +x /usr/bin/docker-compose
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#查看docker-compose版本，试验是否安装成功</span>
+</span></span><span class="line"><span class="cl">sudo docker-compose -v
+</span></span></code></pre></div><h2 id="6-创建portainer容器">6 创建portainer容器</h2>
+<p><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">此命令仅适用arm64的系统。</div>
+        </div>
+    </div>
+这个命令部署的是一个docker容器的可视化管理工具，带有一定的汉化。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker run -d --restart<span class="o">=</span>always --name<span class="o">=</span><span class="s2">&#34;portainer&#34;</span> -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce:linux-arm64
+</span></span></code></pre></div><p>部署完成我们在浏览器输入树莓派的ip:9000就可以访问了</p>
+<p>例 192.168.7:9000</p>
+<h2 id="7-结语">7 结语</h2>
+<p>我也是业余用户，在这里给大家介绍docker的安装，希望能帮助到大家。</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-11-30</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://hsj01.github.io/posts/myblog11/" data-title="树莓派安装docker" data-hashtags="示例"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://hsj01.github.io/posts/myblog11/" data-hashtag="示例"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://hsj01.github.io/posts/myblog11/" data-title="树莓派安装docker"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://hsj01.github.io/posts/myblog11/" data-title="树莓派安装docker"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://hsj01.github.io/posts/myblog11/" data-title="树莓派安装docker"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E7%A4%BA%E4%BE%8B/">示例</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/myblog10/" class="prev" rel="prev" title="WinRAR解压软件无广告版"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>WinRAR解压软件无广告版</a>
+            <a href="/posts/hello/" class="next" rel="next" title="欢迎来到我的博客">欢迎来到我的博客<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
