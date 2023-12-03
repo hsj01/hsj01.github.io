@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog11\/"
-        },"genre": "posts","keywords": "示例","wordcount":  2521 ,
+        },"genre": "posts","keywords": "示例","wordcount":  2537 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog11\/","datePublished": "2023-11-30T09:18:40+08:00","dateModified": "2023-11-30T09:18:40+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">树莓派安装docker</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%A4%BA%E4%BE%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>示例</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-30">2023-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2521 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-30">2023-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2537 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -229,7 +229,7 @@
 </span></span><span class="line"><span class="cl">sudo nano /etc/apt/sources.list.d/raspi.list
 </span></span></code></pre></div><p>将文件中的内容删除，上下左右键移动光标，<code>←Backspace</code>键删除，将如下全部内容粘贴到文件中。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">deb https://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ bookworm main
-</span></span></code></pre></div><p>按<code>Ctrl + X</code>离开，再按<code>Y</code>保存。</p>
+</span></span></code></pre></div><p>按<code>Ctrl + X</code>离开，再按<code>Y</code>保存，然后回车。</p>
 <p>同理还要更换Debian软件源</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#打开Debian 仓库源文件</span>
 </span></span><span class="line"><span class="cl">sudo nano /etc/apt/sources.list
@@ -286,7 +286,7 @@
 </span></span></code></pre></div><p>1、选择 5 Localisation Options</p>
 <p>2、选择 L1 Locale</p>
 <p>3、一直向下找到 [ ] zh_CN.UTF-8 UTF-8</p>
-<p>4、按空格选中，然后按<code>Tab</code>切换到ok回车,然后选择zh_CN.UTF-8，然后按<code>←</code>切换到ok回车,等一会就帮我们设置好了，然后我们选择<!-- raw HTML omitted -->回车就可以了，换语言设置重启生效，我们重启下。</p>
+<p>4、按空格选中，然后按<code>Tab</code>切换到ok回车,然后选择zh_CN.UTF-8，然后按<code>←</code>切换到ok回车,等一会就帮我们设置好了，然后我们选择Finish回车就可以了，换语言设置重启生效，我们重启下。</p>
 <p> </p>
 <h3 id="27-选作-vnc连接到树莓派">2.7 [选作] vnc连接到树莓派</h3>
 <p>我们下载<a href="https://www.realvnc.com/en/connect/download/viewer/" target="_blank" rel="noopener noreffer ">VNC Viewer</a>这个连接工具用来连接到树莓派，安装完成后打开，我们在file新建一个New connection,填入树莓派的ip地址，然后连接，警告我们忽略，然后会让我们输入账号密码，就可以连接成功了。</p>
@@ -310,7 +310,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span>
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;registry-mirrors&#34;</span>:<span class="o">[</span><span class="s2">&#34;https://registry.docker-cn.com&#34;</span><span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><p>按<code>Ctrl + X</code>离开，再按<code>Y</code>保存。</p>
+</span></span></code></pre></div><p>按<code>Ctrl + X</code>离开，再按<code>Y</code>保存，然后回车。</p>
 <p> 
 然后我们重启docker服务</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart docker
