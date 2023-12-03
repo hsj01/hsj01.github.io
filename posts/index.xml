@@ -3,13 +3,21 @@
         <title>所有文章 - My Hugo Blog</title>
         <link>https://hsj01.github.io/posts/</link>
         <description>所有文章 | My Hugo Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 30 Nov 2023 09:18:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 03 Dec 2023 09:57:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>欢迎来到我的博客</title>
     <link>https://hsj01.github.io/posts/hello/</link>
     <pubDate>Tue, 20 Jun 2023 09:40:32 &#43;0800</pubDate>
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/hello/</guid>
     <description><![CDATA[<p>这是我用Hugo博客框架和它的LoveIt主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
+</item>
+<item>
+    <title>docker部署Alist</title>
+    <link>https://hsj01.github.io/posts/myblog12/</link>
+    <pubDate>Sun, 03 Dec 2023 09:57:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog12/</guid>
+    <description><![CDATA[<p>使用docker-compose来部署Alist</p>]]></description>
 </item>
 <item>
     <title>树莓派安装docker</title>
@@ -74,14 +82,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog04/</guid>
     <description><![CDATA[<p>这篇文章分享了几个装机工具和系统下载地址。</p>]]></description>
-</item>
-<item>
-    <title>马恩列斯毛理论书籍</title>
-    <link>https://hsj01.github.io/posts/myblog03/</link>
-    <pubDate>Thu, 20 Jul 2023 09:57:40 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog03/</guid>
-    <description><![CDATA[<p>这篇文章分享了一些马克思主义的书籍。</p>]]></description>
 </item>
 </channel>
 </rss>
