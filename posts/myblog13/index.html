@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>树莓派改造kodi影音盒子 - My Hugo Blog</title><meta name="Description" content="在树莓派上安装kodi并设置开机自启，接入红外模块并配置遥控器。"><meta property="og:title" content="树莓派改造kodi影音盒子" />
+<meta property="og:description" content="在树莓派上安装kodi并设置开机自启，接入红外模块并配置遥控器。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hsj01.github.io/posts/myblog13/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-03T20:52:40+08:00" />
+<meta property="article:modified_time" content="2023-12-03T20:52:40+08:00" /><meta property="og:site_name" content="My Blog" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派改造kodi影音盒子"/>
+<meta name="twitter:description" content="在树莓派上安装kodi并设置开机自启，接入红外模块并配置遥控器。"/>
+<meta name="application-name" content="My blog">
+<meta name="apple-mobile-web-app-title" content="My blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hsj01.github.io/posts/myblog13/" /><link rel="prev" href="https://hsj01.github.io/posts/myblog12/" /><link rel="next" href="https://hsj01.github.io/posts/hello/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "树莓派改造kodi影音盒子",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hsj01.github.io\/posts\/myblog13\/"
+        },"genre": "posts","keywords": "示例","wordcount":  2881 ,
+        "url": "https:\/\/hsj01.github.io\/posts\/myblog13\/","datePublished": "2023-12-03T20:52:40+08:00","dateModified": "2023-12-03T20:52:40+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Hsj"
+            },"description": "在树莓派上安装kodi并设置开机自启，接入红外模块并配置遥控器。"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My Hugo Blog">My blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My Hugo Blog">My blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">树莓派改造kodi影音盒子</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%A4%BA%E4%BE%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>示例</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-03">2023-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2881 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-安装kodi">1 安装kodi</a>
+      <ul>
+        <li><a href="#11-安装kodi">1.1 安装kodi</a></li>
+        <li><a href="#12-设置kodi开机自启动">1.2 设置kodi开机自启动</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-配置红外模块">2 配置红外模块</a>
+      <ul>
+        <li><a href="#21-hs0038b红外模块的接线">2.1 HS0038B红外模块的接线</a></li>
+        <li><a href="#22-修改系统的配置文件">2.2 修改系统的配置文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-配置lirc">3 配置LIRC</a>
+      <ul>
+        <li><a href="#31-安装lirc">3.1 安装lirc</a></li>
+        <li><a href="#32-修改配置文件">3.2 修改配置文件</a></li>
+        <li><a href="#33-测试红外是否正常">3.3 测试红外是否正常</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-配置红外遥控器按键">4 配置红外遥控器按键</a>
+      <ul>
+        <li><a href="#41-配置kodi_remote_lircdconf文件">4.1 配置kodi_remote_lircd.conf文件</a></li>
+        <li><a href="#42-选作-生成一个配置文件">4.2 [选作] 生成一个配置文件</a></li>
+        <li><a href="#43-将遥控器中的按键添加到配置文件中">4.3 将遥控器中的按键添加到配置文件中</a></li>
+        <li><a href="#44-测试按键">4.4 测试按键</a></li>
+        <li><a href="#45-配置kodi遥控器按键映射文件">4.5 配置KODI遥控器按键映射文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-kodi">5 kodi</a></li>
+    <li><a href="#6-结语">6 结语</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>在树莓派上安装kodi并设置开机自启，接入红外模块并配置遥控器。</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>1、大家有留言可以到<a href="https://www.bilibili.com/video/BV1ou4y1G7Rq/" target="_blank" rel="noopener noreffer ">本期哔哩哔哩视频地址</a>给我留言。</p>
+<p>2、安装配置完成效果<a href="https://www.bilibili.com/video/BV13g4y1X7sK/" target="_blank" rel="noopener noreffer ">视频地址</a></p>
+<p>3、使用的是树莓派4b</p>
+<p>4、使用的系统为基于Debian12 Bookworm的Raspberry Pi OS(64-bit)。</p>
+<p>5、使用的红外接收模块为HS0038B</p>
+<p>6、以下涉及/home/hsj/文件夹的，均需将hsj改为自己的树莓派用户名</p>
+</div>
+        </div>
+    </div>
+<h2 id="1-安装kodi">1 安装kodi</h2>
+<h3 id="11-安装kodi">1.1 安装kodi</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#安装kodi</span>
+</span></span><span class="line"><span class="cl">sudo apt install kodi
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#安装kodi的iptv插件</span>
+</span></span><span class="line"><span class="cl">sudo apt install kodi-pvr-iptvsimple
+</span></span></code></pre></div><p> </p>
+<h3 id="12-设置kodi开机自启动">1.2 设置kodi开机自启动</h3>
+<p>这里使用.desktop文件的方式实现开机自启动kodi,特点是是在桌面启动后才会启动软件，缺点是每启动一次桌面都会启动一次软件，不过这个缺点对我们用来当kodi机顶盒来说没有影响。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#在主目录进入.config文件夹</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> .config
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#创建autostart文件夹</span>
+</span></span><span class="line"><span class="cl">mkdir autostart
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#创建自启动配置文件</span>
+</span></span><span class="line"><span class="cl">nano kodi.desktop
+</span></span></code></pre></div><p>在其中写入如下内容</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Desktop Entry<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Name</span><span class="o">=</span>controller
+</span></span><span class="line"><span class="cl"><span class="nv">Comment</span><span class="o">=</span>controller Program
+</span></span><span class="line"><span class="cl"><span class="nv">Encoding</span><span class="o">=</span>UTF-8
+</span></span><span class="line"><span class="cl"><span class="nv">Exec</span><span class="o">=</span>sh /home/hsj/Documents/kodi1.sh
+</span></span><span class="line"><span class="cl"><span class="nv">Terminal</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="nv">MultipleArgs</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>Application
+</span></span><span class="line"><span class="cl"><span class="nv">Categories</span><span class="o">=</span>Application<span class="p">;</span>Development<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">StartupNotify</span><span class="o">=</span><span class="nb">true</span>
+</span></span></code></pre></div><p>按<code>Ctrl + X</code>离开，再按<code>Y</code>保存，然后回车。</p>
+<p>我们继续配置kodi自启动的sh文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano /home/hsj/Documents/kodi1.sh
+</span></span></code></pre></div><p>在其中写入如下内容</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#! /bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">kodi
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="m">0</span>
+</span></span></code></pre></div><p>按<code>Ctrl + X</code>离开，再按<code>Y</code>保存，然后回车。</p>
+<p>这样kodi安装和开机自启就配置好了，如果我们不需要开机自启，只要将kodi.desktop文件改个名字就好了，比如改成kodi.desktop1，需要自启动我们在把名字里的1删掉。
+ </p>
+<h2 id="2-配置红外模块">2 配置红外模块</h2>
+<h3 id="21-hs0038b红外模块的接线">2.1 HS0038B红外模块的接线</h3>
+<p>HS0038B红外模块有突起的那面朝上，从左至右的针脚如上图所示，分别为：OUT输出，GND接地和VCC电源。
+<figure><a class="lightgallery" href="/posts/myblog13/03.png" title="TikTok" data-thumbnail="/posts/myblog13/03.png" data-sub-html="<h2>HS0038B实物</h2><p>TikTok</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/myblog13/03.png"
+            data-srcset="/posts/myblog13/03.png, /posts/myblog13/03.png 1.5x, /posts/myblog13/03.png 2x"
+            data-sizes="auto"
+            alt="/posts/myblog13/03.png" width="914" height="647" />
+    </a><figcaption class="image-caption">HS0038B实物</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="/posts/myblog13/02.png" title="TikTok" data-thumbnail="/posts/myblog13/02.png" data-sub-html="<h2>HS0038B参数图</h2><p>TikTok</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/myblog13/02.png"
+            data-srcset="/posts/myblog13/02.png, /posts/myblog13/02.png 1.5x, /posts/myblog13/02.png 2x"
+            data-sizes="auto"
+            alt="/posts/myblog13/02.png" width="475" height="518" />
+    </a><figcaption class="image-caption">HS0038B参数图</figcaption>
+    </figure>
+树莓派的引脚图如图所示
+<figure><a class="lightgallery" href="/posts/myblog13/01.png" title="TikTok" data-thumbnail="/posts/myblog13/01.png" data-sub-html="<h2>树莓派引脚图</h2><p>TikTok</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/myblog13/01.png"
+            data-srcset="/posts/myblog13/01.png, /posts/myblog13/01.png 1.5x, /posts/myblog13/01.png 2x"
+            data-sizes="auto"
+            alt="/posts/myblog13/01.png" width="974" height="695" />
+    </a><figcaption class="image-caption">树莓派引脚图</figcaption>
+    </figure>
+我们用母对母杜邦线，将红外模块的VCC引脚接到树莓派的<code>1 3.3V PWR</code>，将GND接到<code>9 GND</code>，将OUT接到<code>11 GPIO 17</code>，至此接线就完成了。
+ </p>
+<h3 id="22-修改系统的配置文件">2.2 修改系统的配置文件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#修改配置文件</span>
+</span></span><span class="line"><span class="cl">sudo nano /boot/config.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#在其中加入一行如下内容保存</span>
+</span></span><span class="line"><span class="cl"><span class="nv">dtoverlay</span><span class="o">=</span>gpio-ir,gpio_pin<span class="o">=</span><span class="m">17</span>
+</span></span></code></pre></div><p> </p>
+<h2 id="3-配置lirc">3 配置LIRC</h2>
+<h3 id="31-安装lirc">3.1 安装lirc</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install lirc
+</span></span></code></pre></div><p> </p>
+<h3 id="32-修改配置文件">3.2 修改配置文件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/lirc/lirc_options.conf
+</span></span></code></pre></div><p>将其中的两项参数改成如下内容并保存</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">driver</span>          <span class="o">=</span> default
+</span></span><span class="line"><span class="cl"><span class="nv">device</span>          <span class="o">=</span> /dev/lirc0
+</span></span></code></pre></div><p> </p>
+<h3 id="33-测试红外是否正常">3.3 测试红外是否正常</h3>
+<p>运行下面命令就可以开始测试</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mode2 -d /dev/lirc0
+</span></span></code></pre></div><p>执行该命令后，随便按下红外遥控器任意按键，出现如下字符即代表红外接收正常</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pulse <span class="m">629</span>
+</span></span><span class="line"><span class="cl">space <span class="m">518</span>
+</span></span><span class="line"><span class="cl">pulse <span class="m">627</span>
+</span></span><span class="line"><span class="cl">space <span class="m">523</span>
+</span></span><span class="line"><span class="cl">pulse <span class="m">628</span>
+</span></span></code></pre></div><p> </p>
+<h2 id="4-配置红外遥控器按键">4 配置红外遥控器按键</h2>
+<h3 id="41-配置kodi_remote_lircdconf文件">4.1 配置kodi_remote_lircd.conf文件</h3>
+<p>LIRC可以定义很多按键例如KEY_LEFT，KEY_RIGHT，KEY_SELECT等。而这些按键对应的遥控器信号就是通过/etc/lirc/lircd.conf.d目录下的配置文件进行关联映射。</p>
+<p>我们要保证这个目录下只有一个结尾为.conf的文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#我们先进入这个文件夹</span>
+</span></span><span class="line"><span class="cl">sudo <span class="nb">cd</span> /etc/lirc/lircd.conf.d
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#文件夹中有个默认的conf文件，我们要用来参考，我们给它改个名让它不生效就行了。</span>
+</span></span><span class="line"><span class="cl">sudo mv devinput.lircd.conf devinput.lircd.conf01
+</span></span></code></pre></div><h3 id="42-选作-生成一个配置文件">4.2 [选作] 生成一个配置文件</h3>
+<p>我们使用下面命令生成一个配置文件，该文件仅用作配置文件的模板使用。(如觉得繁琐可跳到4.3节)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">irrecord -f -d /dev/lirc0
+</span></span></code></pre></div><p><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>1、提示 Press RETURN to continue. 回车，之后等待，千万别按键</p>
+<p>2、提示 Enter name of remote (only ascii, no spaces) : 输入配置文件的名字 （比如：kodi_remote）</p>
+<p>3、提示 Press RETURN now to start recording. 回车开始录入</p>
+<p>4、我们只是为了获取配置文件格式，所以随意按几个不同的按键，一直按下去，直到出现提示让我们给按键起一个名字</p>
+<p>5、接下来输入键名，然后按住该键，这里建议用 KEY_LEFT、KEY_RIGHT 类似的名字，这样不会报错，他默认是对键名格式有要求的，这类名字在上面我们改了名字的conf01文件中有很多，我们可以通过查找将我们要输入的按键尽量向这些规定好的按键名上贴近，忽略要求则可以在 irrecord 命令后加 &ndash;disable-spacename</p>
+<p>6、录入两三个键就可以了，回车结束，我们只为了获得配置文件格式</p>
+<p>7、回车后可能在当前目录直接生成 kodi_remote.lirc.conf 文件，也可能会让按一个键再结束（注意！是按一个键，快按，不是按住不动！）</p>
+<p>8、复制模板到 /etc/lirc/lircd.conf.d文件夹</p>
+</div>
+        </div>
+    </div>
+ </p>
+<h3 id="43-将遥控器中的按键添加到配置文件中">4.3 将遥控器中的按键添加到配置文件中</h3>
+<p>我们使用下面的命令来读取遥控器发出的红外信号</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mode2 -m -d /dev/lirc0
+</span></span></code></pre></div><p>有时读取到信号可能不完整，我们多单按几次。每次的读取到的信号值不完全一样不影响。</p>
+<p>比如现在我们要录入遥控器的<code>上键 </code>，我们先将模板中的一个按键的name改为KEY_UP，我的建议是到conf01中搜索UP，找一个贴近的键名复制到name，然后我们按遥控器的上键。终端中出现如下一串数字。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">	<span class="m">620000</span>
+</span></span><span class="line"><span class="cl">     	 <span class="m">9176</span>    <span class="m">4498</span>     <span class="m">597</span>     <span class="m">600</span>     <span class="m">572</span>     <span class="m">593</span>
+</span></span><span class="line"><span class="cl">          <span class="m">585</span>     <span class="m">584</span>     <span class="m">573</span>     <span class="m">595</span>     <span class="m">575</span>     <span class="m">595</span>
+</span></span><span class="line"><span class="cl">          <span class="m">574</span>     <span class="m">596</span>     <span class="m">573</span>     <span class="m">626</span>     <span class="m">553</span>     <span class="m">604</span>
+</span></span><span class="line"><span class="cl">          <span class="m">561</span>    <span class="m">1675</span>     <span class="m">570</span>    <span class="m">1692</span>     <span class="m">570</span>    <span class="m">1683</span>
+</span></span><span class="line"><span class="cl">          <span class="m">558</span>    <span class="m">1678</span>     <span class="m">570</span>    <span class="m">1679</span>     <span class="m">574</span>    <span class="m">1689</span>
+</span></span><span class="line"><span class="cl">          <span class="m">565</span>    <span class="m">1684</span>     <span class="m">567</span>    <span class="m">1677</span>     <span class="m">571</span>     <span class="m">595</span>
+</span></span><span class="line"><span class="cl">          <span class="m">574</span>     <span class="m">594</span>     <span class="m">573</span>     <span class="m">594</span>     <span class="m">574</span>    <span class="m">1692</span>
+</span></span><span class="line"><span class="cl">          <span class="m">563</span>    <span class="m">1679</span>     <span class="m">571</span>     <span class="m">594</span>     <span class="m">574</span>     <span class="m">596</span>
+</span></span><span class="line"><span class="cl">          <span class="m">574</span>     <span class="m">595</span>     <span class="m">574</span>    <span class="m">1689</span>     <span class="m">566</span>    <span class="m">1749</span>
+</span></span><span class="line"><span class="cl">          <span class="m">511</span>    <span class="m">1682</span>     <span class="m">572</span>     <span class="m">590</span>     <span class="m">570</span>     <span class="m">648</span>
+</span></span><span class="line"><span class="cl">          <span class="m">520</span>    <span class="m">1680</span>     <span class="m">573</span>    <span class="m">1674</span>     <span class="m">567</span>    <span class="m">1683</span>
+</span></span><span class="line"><span class="cl">          <span class="m">580</span>  <span class="m">132000</span>
+</span></span></code></pre></div><p>我们将头尾两串长数字串舍，去从9176到580复制到模板中。这个对齐的要求，有人说不用对齐，有人说要严格对齐。我这里为了避免出错我就对齐好了，大家如果有时间也可以试试不对齐。我们按照这个模板的格式将需要的按键全部录入到模板中。</p>
+<p> </p>
+<h3 id="44-测试按键">4.4 测试按键</h3>
+<p>当需要的按键都配置好了，我们就可以进行测试。首先重启下lirc服务让它重新加载我们修改过的配置文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 重启lirc服务</span>
+</span></span><span class="line"><span class="cl">sudo service lircd restart
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 测试按键</span>
+</span></span><span class="line"><span class="cl">irw
+</span></span></code></pre></div><p>运行irw命令后，按下刚刚配置的遥控器的按键比如“上键”。如果出现类似下面的输出则代表配置成功，lirc成功识别遥控器的“上键”。按下其他配置的按键，检查是否都正确输出对应的按键名。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0000000000000001</span> <span class="m">00</span> KEY_UP kodi_remote
+</span></span></code></pre></div><p> </p>
+<h3 id="45-配置kodi遥控器按键映射文件">4.5 配置KODI遥控器按键映射文件</h3>
+<p>要想使用遥控器控制KODI，我们需要配置将LIRC的按键与KODI的按键的映射关系。根据官方文档，KODI通过
+Lircmap.xml这个文件进行关联映射。该文件的格式如下所示，点击XML横条打开查看。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;lircmap&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 这里的device为上面kodi_remote.lircd.conf文件中name后的值 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;remote</span> <span class="na">device=</span><span class="s">&#34;mceusb&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- no Display --&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;power&gt;</span>Power<span class="nt">&lt;/power&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;teletext&gt;</span>Teletext<span class="nt">&lt;/teletext&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;menu&gt;</span>DVD<span class="nt">&lt;/menu&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;back&gt;</span>Back<span class="nt">&lt;/back&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;info&gt;</span>More<span class="nt">&lt;/info&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;guide&gt;</span>Guide<span class="nt">&lt;/guide&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;red&gt;</span>Red<span class="nt">&lt;/red&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;green&gt;</span>Green<span class="nt">&lt;/green&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;yellow&gt;</span>Yellow<span class="nt">&lt;/yellow&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;blue&gt;</span>Blue<span class="nt">&lt;/blue&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;left&gt;</span>Left<span class="nt">&lt;/left&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;right&gt;</span>Right<span class="nt">&lt;/right&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;up&gt;</span>Up<span class="nt">&lt;/up&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;down&gt;</span>Down<span class="nt">&lt;/down&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;select&gt;</span>OK<span class="nt">&lt;/select&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;volumeplus&gt;</span>VolUp<span class="nt">&lt;/volumeplus&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;volumeminus&gt;</span>VolDown<span class="nt">&lt;/volumeminus&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;pageplus&gt;</span>ChanUp<span class="nt">&lt;/pageplus&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;pageminus&gt;</span>ChanDown<span class="nt">&lt;/pageminus&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;mute&gt;</span>Mute<span class="nt">&lt;/mute&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;play&gt;</span>Play<span class="nt">&lt;/play&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;pause&gt;</span>Pause<span class="nt">&lt;/pause&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;stop&gt;</span>Stop<span class="nt">&lt;/stop&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;forward&gt;</span>Forward<span class="nt">&lt;/forward&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;reverse&gt;</span>Rewind<span class="nt">&lt;/reverse&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;skipplus&gt;</span>Skip<span class="nt">&lt;/skipplus&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;skipminus&gt;</span>Replay<span class="nt">&lt;/skipminus&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;record&gt;</span>Record<span class="nt">&lt;/record&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;one&gt;</span>One<span class="nt">&lt;/one&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;two&gt;</span>Two<span class="nt">&lt;/two&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;three&gt;</span>Three<span class="nt">&lt;/three&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;four&gt;</span>Four<span class="nt">&lt;/four&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;five&gt;</span>Five<span class="nt">&lt;/five&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;six&gt;</span>Six<span class="nt">&lt;/six&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;seven&gt;</span>Seven<span class="nt">&lt;/seven&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;eight&gt;</span>Eight<span class="nt">&lt;/eight&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;nine&gt;</span>Nine<span class="nt">&lt;/nine&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;zero&gt;</span>Zero<span class="nt">&lt;/zero&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;clear&gt;</span>Clear<span class="nt">&lt;/clear&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;enter&gt;</span>Enter<span class="nt">&lt;/enter&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- with Display --&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;display&gt;</span>Aspect<span class="nt">&lt;/display&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;start&gt;</span>Home<span class="nt">&lt;/start&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;myvideo&gt;</span>Videos<span class="nt">&lt;/myvideo&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;mymusic&gt;</span>Music<span class="nt">&lt;/mymusic&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;mypictures&gt;</span>Pictures<span class="nt">&lt;/mypictures&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;mytv&gt;</span>TV<span class="nt">&lt;/mytv&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">&lt;!-- old versions of harmony --&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;star&gt;</span>Star<span class="nt">&lt;/star&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;hash&gt;</span>Hash<span class="nt">&lt;/hash&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/remote&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/lircmap&gt;</span>
+</span></span></code></pre></div><p>我们对这个文件进行修改，将remote device=&ldquo;kodi_remote&quot;引号中的内容改成自己的，将每行的按键内容中间对应的按键名改成自己设置的。就像如下示例</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;lircmap&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="c">&lt;!-- 这里的device为上面kodi_remote.lircd.conf文件中name后的值 --&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;remote</span> <span class="na">device=</span><span class="s">&#34;kodi_remote&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;power&gt;</span>KEY_POWER<span class="nt">&lt;/power&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;back&gt;</span>KEY_BACK<span class="nt">&lt;/back&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;select&gt;</span>KEY_OK<span class="nt">&lt;/select&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;up&gt;</span>KEY_UP<span class="nt">&lt;/up&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;down&gt;</span>KEY_DOWN<span class="nt">&lt;/down&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;left&gt;</span>KEY_LEFT<span class="nt">&lt;/left&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;right&gt;</span>KEY_RIGHT<span class="nt">&lt;/right&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;volumeplus&gt;</span>KEY_VOLUMEUP<span class="nt">&lt;/volumeplus&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;volumeminus&gt;</span>KEY_VOLUMEDOWN<span class="nt">&lt;/volumeminus&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/remote&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/lircmap&gt;</span>
+</span></span></code></pre></div><p>由于Lircmap.xml这个文件名不太好编辑，我们可一先将文件名设置为Lircmap.xml.txt，编辑完成在删除名字中的.txt。
+我们将文件复制到kodi的配置文件夹</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv Lircmap.xml /home/hsj/.kodi/userdata/
+</span></span></code></pre></div><p> </p>
+<h2 id="5-kodi">5 kodi</h2>
+<p>kodi的iptv插件可以导入直播源，也可以投屏。也有很多插件例如哔哩哔哩插件。树莓派实在吃灰可以改造成一个kodi机顶盒试试，同时也可以随时关闭kodi开机自启，做其他任务。树莓派的关机也可以通过遥控kodi实现，就是插电拔电还是我们手动进行，欢迎大神继续完善，至于kodi的设置，网上亦有很多教程这里就不重复赘述了。
+ </p>
+<h2 id="6-结语">6 结语</h2>
+<p>我也是业余用户，在这里给大家介绍树莓派kodi的安装，希望能帮助到大家。</p>
+<p>附：树莓派HDMI的开启和关闭，关闭了HDMI信号，树莓派也在正常运行只是不显示了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 关闭HDMI信号</span>
+</span></span><span class="line"><span class="cl">tvservice -o
+</span></span><span class="line"><span class="cl"><span class="c1"># 开启HDMI</span>
+</span></span><span class="line"><span class="cl">tvservice -p
+</span></span></code></pre></div><p>参考文献：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/661270655" target="_blank" rel="noopener noreffer ">树莓派开机自启动的3种方法</a></p>
+<p><a href="https://www.yuque.com/cxl123156/awi9kq/lyr0fi" target="_blank" rel="noopener noreffer ">树莓派改造电视盒子-红外遥控KODI</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-12-03</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://hsj01.github.io/posts/myblog13/" data-title="树莓派改造kodi影音盒子" data-hashtags="示例"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://hsj01.github.io/posts/myblog13/" data-hashtag="示例"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://hsj01.github.io/posts/myblog13/" data-title="树莓派改造kodi影音盒子"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://hsj01.github.io/posts/myblog13/" data-title="树莓派改造kodi影音盒子"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://hsj01.github.io/posts/myblog13/" data-title="树莓派改造kodi影音盒子"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E7%A4%BA%E4%BE%8B/">示例</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/myblog12/" class="prev" rel="prev" title="docker部署Alist"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>docker部署Alist</a>
+            <a href="/posts/hello/" class="next" rel="next" title="欢迎来到我的博客">欢迎来到我的博客<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
