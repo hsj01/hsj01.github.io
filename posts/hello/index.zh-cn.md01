@@ -1,0 +1,36 @@
+---
+weight: 1
+title: "欢迎来到我的博客"
+date: 2023-06-20T09:40:32+08:00
+draft: false
+author: "Hsj"
+authorLink: "https://space.bilibili.com/31954609"
+description: "这是我用Hugo博客框架和它的LoveIt主题搭建的博客并托管在GitHub Pages上"
+images: []
+resources:
+- name: "featured-image"
+  src: "featured-image.jpg"
+
+tags: ["示例"]
+categories: ["示例"]
+
+lightgallery: true
+
+toc:
+  auto: false
+---
+
+这是我用Hugo博客框架和它的LoveIt主题搭建的博客并托管在GitHub Pages上，我的[哔哩哔哩主页](https://space.bilibili.com/31954609)。
+<!--more-->
+&emsp;
+## 1 源起
+
+&ensp;&ensp;&ensp;&ensp;学会上网以后不知是什么时候开始，我有了能拥有一个自己的网站是多么酷啊的想法。直到有一天我在哔哩哔哩上看到了UP主程序羊的[视频](https://www.bilibili.com/video/BV1Yb411a7ty/)搭建一个[Hexo](https://hexo.io/zh-cn/)博客，我按照他的方法搭建了我人生中的第一个博客并且分别托管在了GitHub Pages和国内的Gitee Pages上，并没有给博客写什么内容就遗忘了，直到过了几年Gitee给我发短信让我实名认证不然就把我托管的网页停了，我才想起我还有个博客，不过那时我对博客的热情不再就没在管了。
+&emsp;
+## 2 之后
+&ensp;&ensp;&ensp;&ensp;又过了几年以后，我又心血来潮对博客起了兴趣，经过一番对比选择了[Hugo](https://gohugo.io/)搭建博客，这次还是看的UP主程序羊的[视频](https://www.bilibili.com/video/BV1q4411i7gL/)，不过他的视频因为是几年前的也有些过时了，现在GitHub同步仓库需要用令牌了其他基本还是一样的。本来我是打算直托管在国内的Gitee Pages上的，但实名认证让我拍手举身份证的照片，我一个人也不好拍，就只能再托管在GitHub上了。国内访问GitHub并不方便，时能上传时不能上传。不过毕竟不要钱，不然服务器加域名就是一笔开销，而且还得备案。
+&emsp;
+## 3 后续
+&emsp;
+......
+

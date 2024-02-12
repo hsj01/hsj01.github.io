@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog11\/"
-        },"genre": "posts","keywords": "示例","wordcount":  2537 ,
+        },"genre": "posts","keywords": "示例","wordcount":  2520 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog11\/","datePublished": "2023-11-30T09:18:40+08:00","dateModified": "2023-11-30T09:18:40+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">树莓派安装docker</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%A4%BA%E4%BE%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>示例</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-30">2023-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2537 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-30">2023-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2520 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -164,7 +164,7 @@
 <p>    2、勾选配置WiFi设置热点名和密码，WiFi国家选择cn</p>
 <p>    3、勾选设置语言和时区，时区选择Asia/Shanghai,键盘布局选择cn</p>
 <p>然后点击上方中部的SERVICES，选择开启SSH服务，选择使用密码登陆，点击下方保存
-<figure><a class="lightgallery" href="/posts/myblog11/musical.png" title="TikTok" data-thumbnail="/posts/myblog11/musical.png" data-sub-html="<h2>服务</h2><p>TikTok</p>">
+<figure><a class="lightgallery" href="/posts/myblog11/musical.png" title="服务" data-thumbnail="/posts/myblog11/musical.png" data-sub-html="<h2>服务</h2><p>服务</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -204,7 +204,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 也可以指定连接端口，端口默认为22,如没进行过调整可以省略</span>
 </span></span><span class="line"><span class="cl">ssh -p port username@host
 </span></span></code></pre></div><p>第一次连接问我们是否连接，我们输入<code>yes</code>按下回车，然后让输入我们设置的密码，输入密码不显示，但已经在输了，输完按回车即可连接。
-<figure><a class="lightgallery" href="/posts/myblog11/02.png" title="TikTok Plugin" data-thumbnail="/posts/myblog11/02.png" data-sub-html="<h2>连接成功</h2><p>TikTok Plugin</p>">
+<figure><a class="lightgallery" href="/posts/myblog11/02.png" title="连接成功" data-thumbnail="/posts/myblog11/02.png" data-sub-html="<h2>连接成功</h2><p>连接成功</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -319,7 +319,7 @@
 <h3 id="41-下载docker-compose">4.1 下载docker-compose</h3>
 <p>我们可以在vnc中使用浏览器下载。也可以在本机下载，然后在vnc中控制用U盘拷贝到树莓派，也可以用<a href="https://winscp.net/eng/index.php" target="_blank" rel="noopener noreffer ">WinSCP</a>连接后发送到树莓派。因为docker-compose是发布在GitHub上的所以有时候访问不太流畅。</p>
 <p>大家可以到<a href="https://github.com/docker/compose/releases" target="_blank" rel="noopener noreffer ">GitHub</a>下载也可以到<a href="https://www.123pan.com/s/bxeLVv-HHdVH.html" target="_blank" rel="noopener noreffer ">我的网盘</a>下载，选择后缀Linux-aarch64版就行
-<figure><a class="lightgallery" href="/posts/myblog11/03.png" title="TikTok Plugin" data-thumbnail="/posts/myblog11/03.png" data-sub-html="<h2>选择版本如图</h2><p>TikTok Plugin</p>">
+<figure><a class="lightgallery" href="/posts/myblog11/03.png" title="选择版本如图" data-thumbnail="/posts/myblog11/03.png" data-sub-html="<h2>选择版本如图</h2><p>选择版本如图</p>">
         <img
             class="lazyload"
             src="/svg/loading.min.svg"
@@ -345,16 +345,8 @@
 </span></span><span class="line"><span class="cl">sudo docker-compose -v
 </span></span></code></pre></div><p> </p>
 <h2 id="5-创建portainer容器">5 创建portainer容器</h2>
-<p><div class="details admonition note open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">此命令仅适用arm64的系统。</div>
-        </div>
-    </div>
-这个命令部署的是一个docker容器的可视化管理工具，带有一定的汉化。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker run -d --restart<span class="o">=</span>always --name<span class="o">=</span><span class="s2">&#34;portainer&#34;</span> -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce:linux-arm64
+<p>这个命令部署的是一个docker容器的可视化管理工具，带有一定的汉化。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker run -d --restart<span class="o">=</span>always --name<span class="o">=</span><span class="s2">&#34;portainer&#34;</span> -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce:latest
 </span></span></code></pre></div><p>部署完成我们在浏览器输入树莓派的ip:9000就可以访问了</p>
 <p>例 192.168.7:9000
  </p>
@@ -385,8 +377,8 @@
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.113.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
         </div>
     </footer></div>
 
