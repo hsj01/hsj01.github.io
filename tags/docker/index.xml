@@ -3,7 +3,39 @@
         <title>docker - 标签 - My Hugo Blog</title>
         <link>https://hsj01.github.io/tags/docker/</link>
         <description>docker - 标签 - My Hugo Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 12 Feb 2024 16:05:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/docker/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 12 Feb 2024 18:53:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/docker/" rel="self" type="application/rss+xml" /><item>
+    <title>开启ufw防火墙并进行配置</title>
+    <link>https://hsj01.github.io/posts/myblog30/</link>
+    <pubDate>Mon, 12 Feb 2024 18:53:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog30/</guid>
+    <description><![CDATA[<p>这篇文章介绍了开启ufw防火墙并进行简单的配置</p>]]></description>
+</item>
+<item>
+    <title>通过docker-compose部署Nginx Proxy Manager并进行简单配置</title>
+    <link>https://hsj01.github.io/posts/myblog29/</link>
+    <pubDate>Mon, 12 Feb 2024 18:29:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog29/</guid>
+    <description><![CDATA[<p>分享通过通过docker-compose部署Nginx Proxy Manager并进行简单配置的方法。</p>]]></description>
+</item>
+<item>
+    <title>通过docker-compose部署ddns-go</title>
+    <link>https://hsj01.github.io/posts/myblog28/</link>
+    <pubDate>Mon, 12 Feb 2024 18:20:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog28/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署ddns-go的方法</p>]]></description>
+</item>
+<item>
+    <title>通过docker-compose部署hugo静态博客(使用nginx)</title>
+    <link>https://hsj01.github.io/posts/myblog27/</link>
+    <pubDate>Mon, 12 Feb 2024 17:46:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog27/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署hugo的方法</p>]]></description>
+</item>
+<item>
     <title>通过docker-compose部署一个简单图床EasyImage2.0</title>
     <link>https://hsj01.github.io/posts/myblog25/</link>
     <pubDate>Mon, 12 Feb 2024 16:05:10 &#43;0800</pubDate>
@@ -50,38 +82,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog20/</guid>
     <description><![CDATA[<p>这篇文章介绍了设置小雅每日定时更新容器和数据的方法</p>]]></description>
-</item>
-<item>
-    <title>通过docker-compose部署cloudreve</title>
-    <link>https://hsj01.github.io/posts/myblog19/</link>
-    <pubDate>Mon, 12 Feb 2024 15:08:20 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog19/</guid>
-    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署cloudreve的方法</p>]]></description>
-</item>
-<item>
-    <title>通过docker-compose部署jellyfin</title>
-    <link>https://hsj01.github.io/posts/myblog18/</link>
-    <pubDate>Mon, 12 Feb 2024 14:38:40 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog18/</guid>
-    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署jellyfin的方法</p>]]></description>
-</item>
-<item>
-    <title>通过daoker-compose部署NAS版迅雷</title>
-    <link>https://hsj01.github.io/posts/myblog17/</link>
-    <pubDate>Mon, 12 Feb 2024 14:25:40 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog17/</guid>
-    <description><![CDATA[<p>这篇文章介绍了通过daoker-compose部署NAS版迅雷的方法</p>]]></description>
-</item>
-<item>
-    <title>通过docker-compose部署aria2</title>
-    <link>https://hsj01.github.io/posts/myblog16/</link>
-    <pubDate>Mon, 12 Feb 2024 14:12:40 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog16/</guid>
-    <description><![CDATA[<p>分享通过docker-compose部署aria2的方法。</p>]]></description>
 </item>
 </channel>
 </rss>

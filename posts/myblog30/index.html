@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>开启ufw防火墙并进行配置 - My Hugo Blog</title><meta name="Description" content="这篇文章介绍了开启ufw防火墙并进行简单的配置"><meta property="og:title" content="开启ufw防火墙并进行配置" />
+<meta property="og:description" content="这篇文章介绍了开启ufw防火墙并进行简单的配置" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hsj01.github.io/posts/myblog30/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-12T18:53:10+08:00" />
+<meta property="article:modified_time" content="2024-02-12T18:53:10+08:00" /><meta property="og:site_name" content="My Blog" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="开启ufw防火墙并进行配置"/>
+<meta name="twitter:description" content="这篇文章介绍了开启ufw防火墙并进行简单的配置"/>
+<meta name="application-name" content="My blog">
+<meta name="apple-mobile-web-app-title" content="My blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hsj01.github.io/posts/myblog30/" /><link rel="prev" href="https://hsj01.github.io/posts/myblog29/" /><link rel="next" href="https://hsj01.github.io/posts/myblog32/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "开启ufw防火墙并进行配置",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hsj01.github.io\/posts\/myblog30\/"
+        },"genre": "posts","keywords": "docker, linux","wordcount":  905 ,
+        "url": "https:\/\/hsj01.github.io\/posts\/myblog30\/","datePublished": "2024-02-12T18:53:10+08:00","dateModified": "2024-02-12T18:53:10+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Hsj"
+            },"description": "这篇文章介绍了开启ufw防火墙并进行简单的配置"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My Hugo Blog">My blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My Hugo Blog">My blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">开启ufw防火墙并进行配置</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-12">2024-02-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 905 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-安装ufw防护墙">1 安装ufw防护墙</a></li>
+    <li><a href="#2-配置防火墙">2 配置防火墙</a>
+      <ul>
+        <li><a href="#21-查看当前配置">2.1 查看当前配置</a></li>
+        <li><a href="#22-打开默认设置">2.2 打开默认设置</a></li>
+        <li><a href="#23-打开局域网访问">2.3 打开局域网访问</a></li>
+        <li><a href="#24-允许外网80和443端口">2.4 允许外网80和443端口</a></li>
+        <li><a href="#25-启动防火墙">2.5 启动防火墙</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-ufw防火墙常用命令">3 ufw防火墙常用命令</a></li>
+    <li><a href="#4-其他配置">4 其他配置</a>
+      <ul>
+        <li><a href="#41-放行与拒绝">4.1 放行与拒绝</a></li>
+        <li><a href="#42-删除端口规则">4.2 删除端口规则</a></li>
+        <li><a href="#43-带编号展示规则">4.3 带编号展示规则</a></li>
+        <li><a href="#44-删除编号为1的规则">4.4 删除编号为1的规则</a></li>
+        <li><a href="#45-放行指定tcp规则">4.5 放行指定tcp规则</a></li>
+        <li><a href="#46-放行指定的udp规则">4.6 放行指定的udp规则</a></li>
+        <li><a href="#47-放行应用默认端口">4.7 放行应用默认端口</a></li>
+        <li><a href="#48-开放一定范围端口">4.8 开放一定范围端口</a></li>
+        <li><a href="#49-允许ip访问">4.9 允许ip访问</a></li>
+        <li><a href="#410-允许从一个ip的53端口到另一个ip的53端口的udp协议">4.10 允许从一个IP的53端口到另一个IP的53端口的udp协议</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>这篇文章介绍了开启ufw防火墙并进行简单的配置</p>
+<p><div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><strong>注1、bridge桥接模式部署的docker容器ufw无法管理，host模式可以管理</strong></p>
+<p><strong>注2、虽然bridge桥接模式部署的docker容器ufw无法管理，但是，还是要在ufw防火墙放行对应的映射端口，不然反向代理会出错误</strong></p>
+<p>注3、<a href="https://www.bilibili.com/video/BV1Hm411Q76m/" target="_blank" rel="noopener noreffer ">本期视频教程</a></p>
+</div>
+        </div>
+    </div>
+ </p>
+<h2 id="1-安装ufw防护墙">1 安装ufw防护墙</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install ufw
+</span></span></code></pre></div><h2 id="2-配置防火墙">2 配置防火墙</h2>
+<h3 id="21-查看当前配置">2.1 查看当前配置</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw status verbose
+</span></span></code></pre></div><h3 id="22-打开默认设置">2.2 打开默认设置</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw default allow outgoing
+</span></span><span class="line"><span class="cl">sudo ufw default deny incoming
+</span></span></code></pre></div><h3 id="23-打开局域网访问">2.3 打开局域网访问</h3>
+<p>允许局域网址为<code>192.168.1.X</code>的设备访问</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow from 192.168.1.0/24
+</span></span></code></pre></div><h3 id="24-允许外网80和443端口">2.4 允许外网80和443端口</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow <span class="m">80</span>          <span class="c1">#允许外网访问80端口</span>
+</span></span><span class="line"><span class="cl">sudo ufw allow <span class="m">443</span>         <span class="c1">#允许外网访问80端口</span>
+</span></span></code></pre></div><h3 id="25-启动防火墙">2.5 启动防火墙</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw <span class="nb">enable</span>
+</span></span></code></pre></div><p> </p>
+<h2 id="3-ufw防火墙常用命令">3 ufw防火墙常用命令</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw version         <span class="c1">#查看版本信息</span>
+</span></span><span class="line"><span class="cl">sudo ufw logging on      <span class="c1">#启用日志</span>
+</span></span><span class="line"><span class="cl">sudo ufw logging off     <span class="c1">#禁用日志</span>
+</span></span><span class="line"><span class="cl">sudo ufw <span class="nb">enable</span>          <span class="c1">#启用防火墙</span>
+</span></span><span class="line"><span class="cl">sudo ufw disable         <span class="c1">#禁用防火墙</span>
+</span></span><span class="line"><span class="cl">sudo ufw reload          <span class="c1">#重载防火墙</span>
+</span></span><span class="line"><span class="cl">sudo ufw reset           <span class="c1">#重新设置防火墙 (注意：这将禁用UFW并删除之前定义的任何规则)</span>
+</span></span><span class="line"><span class="cl">sudo ufw status          <span class="c1">#查看防火墙状态</span>
+</span></span><span class="line"><span class="cl">sudo ufw status verbose     <span class="c1">#查看防火墙策略</span>
+</span></span></code></pre></div><p> </p>
+<h2 id="4-其他配置">4 其他配置</h2>
+<h3 id="41-放行与拒绝">4.1 放行与拒绝</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow <span class="m">80</span>     <span class="c1">#放行80端口</span>
+</span></span><span class="line"><span class="cl">sudo ufw deny <span class="m">80</span>      <span class="c1">#拒绝80端口</span>
+</span></span></code></pre></div><h3 id="42-删除端口规则">4.2 删除端口规则</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw delete allow <span class="m">80</span>   <span class="c1">#删除放行80端口</span>
+</span></span><span class="line"><span class="cl">sudo ufw delete deny <span class="m">80</span>    <span class="c1">#删除拒绝80端口</span>
+</span></span></code></pre></div><h3 id="43-带编号展示规则">4.3 带编号展示规则</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw status numbered
+</span></span></code></pre></div><h3 id="44-删除编号为1的规则">4.4 删除编号为1的规则</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw delete <span class="m">1</span>
+</span></span></code></pre></div><h3 id="45-放行指定tcp规则">4.5 放行指定tcp规则</h3>
+<p>不指定规则，默认tcp与udp都放行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow 80/tcp       <span class="c1">#放行80端口tcp</span>
+</span></span><span class="line"><span class="cl">sudo ufw allow 443/tcp      <span class="c1">#放行443端口tcp</span>
+</span></span></code></pre></div><h3 id="46-放行指定的udp规则">4.6 放行指定的udp规则</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow 6881/udp      <span class="c1">#放行6881端口udp</span>
+</span></span></code></pre></div><h3 id="47-放行应用默认端口">4.7 放行应用默认端口</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow ssh         <span class="c1">#放行ssh的默认端口22</span>
+</span></span><span class="line"><span class="cl">sudo ufw allow http        <span class="c1">#放行http默认端口80</span>
+</span></span></code></pre></div><h3 id="48-开放一定范围端口">4.8 开放一定范围端口</h3>
+<p>如下开放9000到9002的端口规则，<strong>指定端口范围时，必须指定规则应适用的协议tcp或udp</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow 9000:9002/tcp
+</span></span><span class="line"><span class="cl">sudo ufw allow 9000:9002/udp
+</span></span></code></pre></div><h3 id="49-允许ip访问">4.9 允许ip访问</h3>
+<p>只允许或者拒绝某IP访问</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow from 192.168.1.2   <span class="c1">#允许</span>
+</span></span><span class="line"><span class="cl">sudo ufw deny from 192.168.1.2    <span class="c1">#拒绝</span>
+</span></span></code></pre></div><p>允许或者拒绝指定IP范围的访问</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow from 192.168.1.0/24     <span class="c1">#允许</span>
+</span></span><span class="line"><span class="cl">sudo ufw deny from 192.168.1.0/24      <span class="c1">#拒绝</span>
+</span></span></code></pre></div><p>指定IP地址允许或者拒绝特定的端口</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow from 192.168.1.2 to any port <span class="m">80</span>   <span class="c1">#允许</span>
+</span></span><span class="line"><span class="cl">sudo ufw deny from 192.168.1.2 to any port <span class="m">80</span>    <span class="c1">#拒绝</span>
+</span></span></code></pre></div><p>指定IP地址允许或者拒绝特定的端口的规则</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#允许</span>
+</span></span><span class="line"><span class="cl">sudo ufw allow from 192.168.29.36 to any port <span class="m">80</span> proto tcp
+</span></span><span class="line"><span class="cl">sudo ufw allow from 192.168.29.36 to any port <span class="m">80</span> proto udp
+</span></span><span class="line"><span class="cl"><span class="c1">#拒绝</span>
+</span></span><span class="line"><span class="cl">sudo ufw deny from 192.168.29.36 to any port <span class="m">80</span> proto tcp
+</span></span><span class="line"><span class="cl">sudo ufw deny from 192.168.29.36 to any port <span class="m">80</span> proto udp
+</span></span></code></pre></div><h3 id="410-允许从一个ip的53端口到另一个ip的53端口的udp协议">4.10 允许从一个IP的53端口到另一个IP的53端口的udp协议</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ufw allow proto udp 192.168.0.1 port <span class="m">53</span> to 192.168.0.2 port <span class="m">53</span>
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-02-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://hsj01.github.io/posts/myblog30/" data-title="开启ufw防火墙并进行配置" data-hashtags="docker,linux"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://hsj01.github.io/posts/myblog30/" data-hashtag="docker"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://hsj01.github.io/posts/myblog30/" data-title="开启ufw防火墙并进行配置"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://hsj01.github.io/posts/myblog30/" data-title="开启ufw防火墙并进行配置"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://hsj01.github.io/posts/myblog30/" data-title="开启ufw防火墙并进行配置"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/docker/">docker</a>,&nbsp;<a href="/tags/linux/">linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/myblog29/" class="prev" rel="prev" title="通过docker-compose部署Nginx Proxy Manager并进行简单配置"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>通过docker-compose部署Nginx Proxy Manager并进行简单配置</a>
+            <a href="/posts/myblog32/" class="next" rel="next" title="安装debian的gnome桌面版后的简单设置">安装debian的gnome桌面版后的简单设置<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.113.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

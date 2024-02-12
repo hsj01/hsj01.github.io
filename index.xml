@@ -3,7 +3,7 @@
         <title>My Hugo Blog</title>
         <link>https://hsj01.github.io/</link>
         <description>This is my blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 12 Feb 2024 16:19:10 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 12 Feb 2024 19:35:10 &#43;0800</lastBuildDate>
             <atom:link href="https://hsj01.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>欢迎来到我的博客</title>
@@ -12,6 +12,46 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/hello/</guid>
     <description><![CDATA[<p>这是我用Hugo博客框架和它的<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer ">LoveIt</a>主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
+</item>
+<item>
+    <title>安装debian的gnome桌面版后的简单设置</title>
+    <link>https://hsj01.github.io/posts/myblog32/</link>
+    <pubDate>Mon, 12 Feb 2024 19:35:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog32/</guid>
+    <description><![CDATA[<p>这篇文章介绍了安装debian的gnome桌面版后的简单设置</p>]]></description>
+</item>
+<item>
+    <title>开启ufw防火墙并进行配置</title>
+    <link>https://hsj01.github.io/posts/myblog30/</link>
+    <pubDate>Mon, 12 Feb 2024 18:53:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog30/</guid>
+    <description><![CDATA[<p>这篇文章介绍了开启ufw防火墙并进行简单的配置</p>]]></description>
+</item>
+<item>
+    <title>通过docker-compose部署Nginx Proxy Manager并进行简单配置</title>
+    <link>https://hsj01.github.io/posts/myblog29/</link>
+    <pubDate>Mon, 12 Feb 2024 18:29:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog29/</guid>
+    <description><![CDATA[<p>分享通过通过docker-compose部署Nginx Proxy Manager并进行简单配置的方法。</p>]]></description>
+</item>
+<item>
+    <title>通过docker-compose部署ddns-go</title>
+    <link>https://hsj01.github.io/posts/myblog28/</link>
+    <pubDate>Mon, 12 Feb 2024 18:20:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog28/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署ddns-go的方法</p>]]></description>
+</item>
+<item>
+    <title>通过docker-compose部署hugo静态博客(使用nginx)</title>
+    <link>https://hsj01.github.io/posts/myblog27/</link>
+    <pubDate>Mon, 12 Feb 2024 17:46:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog27/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署hugo的方法</p>]]></description>
 </item>
 <item>
     <title>Liunx常用压缩命令</title>
@@ -44,46 +84,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog23/</guid>
     <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署qbittorrent的方法</p>]]></description>
-</item>
-<item>
-    <title>通过docker-compose部署百度云盘</title>
-    <link>https://hsj01.github.io/posts/myblog22/</link>
-    <pubDate>Mon, 12 Feb 2024 15:48:20 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog22/</guid>
-    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署百度云盘的方法</p>]]></description>
-</item>
-<item>
-    <title>通过docker-compose部署memos备忘录</title>
-    <link>https://hsj01.github.io/posts/myblog21/</link>
-    <pubDate>Mon, 12 Feb 2024 15:37:20 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog21/</guid>
-    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署memos备忘录的方法</p>]]></description>
-</item>
-<item>
-    <title>设置小雅每日定时更新容器和数据</title>
-    <link>https://hsj01.github.io/posts/myblog20/</link>
-    <pubDate>Mon, 12 Feb 2024 15:16:20 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog20/</guid>
-    <description><![CDATA[<p>这篇文章介绍了设置小雅每日定时更新容器和数据的方法</p>]]></description>
-</item>
-<item>
-    <title>通过docker-compose部署cloudreve</title>
-    <link>https://hsj01.github.io/posts/myblog19/</link>
-    <pubDate>Mon, 12 Feb 2024 15:08:20 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog19/</guid>
-    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署cloudreve的方法</p>]]></description>
-</item>
-<item>
-    <title>通过docker-compose部署jellyfin</title>
-    <link>https://hsj01.github.io/posts/myblog18/</link>
-    <pubDate>Mon, 12 Feb 2024 14:38:40 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog18/</guid>
-    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署jellyfin的方法</p>]]></description>
 </item>
 </channel>
 </rss>

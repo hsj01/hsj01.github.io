@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>通过docker-compose部署Nginx Proxy Manager并进行简单配置 - My Hugo Blog</title><meta name="Description" content="分享通过通过docker-compose部署Nginx Proxy Manager并进行简单配置的方法"><meta property="og:title" content="通过docker-compose部署Nginx Proxy Manager并进行简单配置" />
+<meta property="og:description" content="分享通过通过docker-compose部署Nginx Proxy Manager并进行简单配置的方法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hsj01.github.io/posts/myblog29/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-12T18:29:10+08:00" />
+<meta property="article:modified_time" content="2024-02-12T18:29:10+08:00" /><meta property="og:site_name" content="My Blog" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="通过docker-compose部署Nginx Proxy Manager并进行简单配置"/>
+<meta name="twitter:description" content="分享通过通过docker-compose部署Nginx Proxy Manager并进行简单配置的方法"/>
+<meta name="application-name" content="My blog">
+<meta name="apple-mobile-web-app-title" content="My blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hsj01.github.io/posts/myblog29/" /><link rel="prev" href="https://hsj01.github.io/posts/myblog28/" /><link rel="next" href="https://hsj01.github.io/posts/myblog30/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "通过docker-compose部署Nginx Proxy Manager并进行简单配置",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hsj01.github.io\/posts\/myblog29\/"
+        },"genre": "posts","keywords": "docker","wordcount":  1295 ,
+        "url": "https:\/\/hsj01.github.io\/posts\/myblog29\/","datePublished": "2024-02-12T18:29:10+08:00","dateModified": "2024-02-12T18:29:10+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Hsj"
+            },"description": "分享通过通过docker-compose部署Nginx Proxy Manager并进行简单配置的方法"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My Hugo Blog">My blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My Hugo Blog">My blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">通过docker-compose部署Nginx Proxy Manager并进行简单配置</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-12">2024-02-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1295 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-创建文件夹">1 创建文件夹</a></li>
+    <li><a href="#2-创建docker-composeyml文件">2 创建docker-compose.yml文件</a></li>
+    <li><a href="#3-启动容器">3 启动容器</a></li>
+    <li><a href="#4-简单配置">4 简单配置</a></li>
+    <li><a href="#5-更多配置">5 更多配置</a>
+      <ul>
+        <li><a href="#51-反向代理">5.1 反向代理</a></li>
+        <li><a href="#52-重定向">5.2 重定向</a></li>
+        <li><a href="#53-端口转发">5.3 端口转发</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>分享通过通过docker-compose部署Nginx Proxy Manager并进行简单配置的方法。</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>前情提要：<a href="https://hsj01.github.io/posts/myblog14/" target="_blank" rel="noopener noreffer ">安装docker和docker-compose请看本篇教程</a></p>
+<p>注1、<a href="https://nginxproxymanager.com/" target="_blank" rel="noopener noreffer ">Nginx Proxy Manager官网</a>，<a href="https://hub.docker.com/r/chishin/nginx-proxy-manager-zh" target="_blank" rel="noopener noreffer ">Nginx Proxy Manager中文Docker Image</a></p>
+</div>
+        </div>
+    </div>
+<h2 id="1-创建文件夹">1 创建文件夹</h2>
+<p>我们在自己习惯的地方，创建一个文件夹放置nginx-proxy-manager的映射文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir npm
+</span></span></code></pre></div><p>进入这个文件文件夹</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> npm
+</span></span></code></pre></div><p> </p>
+<h2 id="2-创建docker-composeyml文件">2 创建docker-compose.yml文件</h2>
+<p>我们创建一个docker-compose.yml文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano docker-compose.yml
+</span></span></code></pre></div><p>文件中放入如下内容</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.8&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">nginxpm</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;jc21/nginx-proxy-manager:latest&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#    image: &#39;chishin/nginx-proxy-manager-zh:latest&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">nginxpm</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#    network_mode: host</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;80:80&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;81:81&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;443:443&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;888:888&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./data:/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./letsencrypt:/etc/letsencrypt</span><span class="w">
+</span></span></span></code></pre></div><p> </p>
+<h2 id="3-启动容器">3 启动容器</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker-compose up -d
+</span></span></code></pre></div><p> </p>
+<h2 id="4-简单配置">4 简单配置</h2>
+<p>我们访问<code>ip:81</code>就可以进行进行简单的配置了，默认登陆邮箱<code>admin@example.com</code>，默认登陆密码<code>changeme</code>，登陆后会要求我们修改默认邮箱和密码。</p>
+<p>停止容器</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker-compose down
+</span></span></code></pre></div><p>删除镜像</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker rmi jc21/nginx-proxy-manager:latest         <span class="c1">#英文镜像删除命令</span>
+</span></span><span class="line"><span class="cl">sudo docker rmi chishin/nginx-proxy-manager-zh:latest   <span class="c1">#中文镜像删除命令</span>
+</span></span></code></pre></div><p>更新nginx-proxy-manager容器到<code>docker-compose.yml</code>的保存位置即npm文件夹内，先<code>sudo docker-compose down</code>停止容器，再删除镜像，然后启动容器<code>sudo docker-compose up -d</code>，nginx-proxy-manager容器即完成更新。</p>
+<p>删除的话，只要在停止容器后删除整个npm文件夹和镜像就可以了。</p>
+<p> </p>
+<h2 id="5-更多配置">5 更多配置</h2>
+<p><strong>以下配置涉及情况</strong>：只有一个设备同时部署了多个docker容器。多个服务，ddns-go和Nginx Proxy Manager全部部署在同一个设备。</p>
+<h3 id="51-反向代理">5.1 反向代理</h3>
+<p>进行反向代理前要买好域名和做好dns解析，ddns我使用<a href="https://hsj01.github.io/posts/myblog28/" target="_blank" rel="noopener noreffer ">docker部署的ddns-go</a>，其它<a href="https://www.bilibili.com/video/BV1rw411T7xJ/" target="_blank" rel="noopener noreffer ">&lsquo;购买域名&rsquo;和&rsquo;dns解析&rsquo;我也是看这个视频</a>学习的。<br>
+1、如果只有所有的服务都部署在一台设备上，尽量使用前面一个*的泛解析域名<code>*.你购买的域名</code>，如<code>*.example.com</code>，这样我们可以不必反复进行dns解析设置，只要在Nginx Proxy Manager设置反向代理就可以了。<br>
+2、部署在同一设备上的docker容器，ip地址可设置为<code>172.17.0.1</code>
+<figure><a class="lightgallery" href="/posts/myblog29/1.jpg" title="反向代理" data-thumbnail="/posts/myblog29/1.jpg" data-sub-html="<h2>反向代理</h2><p>反向代理</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/myblog29/1.jpg"
+            data-srcset="/posts/myblog29/1.jpg, /posts/myblog29/1.jpg 1.5x, /posts/myblog29/1.jpg 2x"
+            data-sizes="auto"
+            alt="/posts/myblog29/1.jpg" width="1692" height="872" />
+    </a><figcaption class="image-caption">反向代理</figcaption>
+    </figure>
+ </p>
+<h3 id="52-重定向">5.2 重定向</h3>
+<p>目标是将主域名重定向到指定的子域名，如将<code>example.com</code>重定向到<code>blog.example.com</code>实现访问主域名跳转到博客。</p>
+<p><strong>1、设置重定向前先要在dns提供商处将主域名解析到同一设备。</strong></p>
+<p>2、我们需要为主域名申请一个单独的ssl证书，如果使用泛解析域名相同证书，访问会提示证书错误，在浏览器点击忽略证书也可以，但不好，还得再点下忽略，失去重定向方便的意义了。</p>
+<p>3、方案<code>Scheme</code>设置为<code>auto</code>，规则可以选301
+<figure><a class="lightgallery" href="/posts/myblog29/2.jpg" title="重定向" data-thumbnail="/posts/myblog29/2.jpg" data-sub-html="<h2>重定向</h2><p>重定向</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/myblog29/2.jpg"
+            data-srcset="/posts/myblog29/2.jpg, /posts/myblog29/2.jpg 1.5x, /posts/myblog29/2.jpg 2x"
+            data-sizes="auto"
+            alt="/posts/myblog29/2.jpg" width="1588" height="736" />
+    </a><figcaption class="image-caption">重定向</figcaption>
+    </figure></p>
+<p> </p>
+<h3 id="53-端口转发">5.3 端口转发</h3>
+<p>端口转发是在默认端口被封的情况下实现访问</p>
+<p>1、首先在docker-compos.yml文件添加想要转发到的端口映射，如我上方添加的888端口，然后重启容器</p>
+<p>2、一般https访问只要用到443端口就可以了，我们只转发一个443端口，ip设置为<code>0.0.0.0</code>，传入端口设置为888，转发端口设置为443。</p>
+<p>3、然后我们便可再域名后添加端口进行访问，如<code>blog.example.com:888</code>
+<figure><a class="lightgallery" href="/posts/myblog29/3.jpg" title="端口转发" data-thumbnail="/posts/myblog29/3.jpg" data-sub-html="<h2>端口转发</h2><p>端口转发</p>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/posts/myblog29/3.jpg"
+            data-srcset="/posts/myblog29/3.jpg, /posts/myblog29/3.jpg 1.5x, /posts/myblog29/3.jpg 2x"
+            data-sizes="auto"
+            alt="/posts/myblog29/3.jpg" width="1608" height="652" />
+    </a><figcaption class="image-caption">端口转发</figcaption>
+    </figure></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-02-12</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://hsj01.github.io/posts/myblog29/" data-title="通过docker-compose部署Nginx Proxy Manager并进行简单配置" data-hashtags="docker"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://hsj01.github.io/posts/myblog29/" data-hashtag="docker"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://hsj01.github.io/posts/myblog29/" data-title="通过docker-compose部署Nginx Proxy Manager并进行简单配置"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://hsj01.github.io/posts/myblog29/" data-title="通过docker-compose部署Nginx Proxy Manager并进行简单配置"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://hsj01.github.io/posts/myblog29/" data-title="通过docker-compose部署Nginx Proxy Manager并进行简单配置"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/docker/">docker</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/myblog28/" class="prev" rel="prev" title="通过docker-compose部署ddns-go"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>通过docker-compose部署ddns-go</a>
+            <a href="/posts/myblog30/" class="next" rel="next" title="开启ufw防火墙并进行配置">开启ufw防火墙并进行配置<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.113.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
