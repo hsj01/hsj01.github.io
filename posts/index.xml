@@ -3,7 +3,7 @@
         <title>所有文章 - My Hugo Blog</title>
         <link>https://hsj01.github.io/posts/</link>
         <description>所有文章 | My Hugo Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 05 Jan 2024 18:28:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 12 Feb 2024 16:19:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>欢迎来到我的博客</title>
     <link>https://hsj01.github.io/posts/hello/</link>
     <pubDate>Tue, 20 Jun 2023 09:40:32 &#43;0800</pubDate>
@@ -12,76 +12,76 @@
     <description><![CDATA[<p>这是我用Hugo博客框架和它的<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer ">LoveIt</a>主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
 </item>
 <item>
-    <title>安装docker和docker-compose</title>
-    <link>https://hsj01.github.io/posts/myblog14/</link>
-    <pubDate>Fri, 05 Jan 2024 18:28:40 &#43;0800</pubDate>
+    <title>Liunx常用压缩命令</title>
+    <link>https://hsj01.github.io/posts/myblog26/</link>
+    <pubDate>Mon, 12 Feb 2024 16:19:10 &#43;0800</pubDate>
     <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog14/</guid>
-    <description><![CDATA[<p>这篇文章展示了安装docker和docker-compose需要用到的几个简单命令.</p>]]></description>
+    <guid>https://hsj01.github.io/posts/myblog26/</guid>
+    <description><![CDATA[<p>这篇文章介绍了几个简单的Liunx常用压缩命令</p>]]></description>
 </item>
 <item>
-    <title>树莓派改造kodi影音盒子</title>
-    <link>https://hsj01.github.io/posts/myblog13/</link>
-    <pubDate>Sun, 03 Dec 2023 20:52:40 &#43;0800</pubDate>
+    <title>通过docker-compose部署一个简单图床EasyImage2.0</title>
+    <link>https://hsj01.github.io/posts/myblog25/</link>
+    <pubDate>Mon, 12 Feb 2024 16:05:10 &#43;0800</pubDate>
     <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog13/</guid>
-    <description><![CDATA[<p>在树莓派上安装kodi并设置开机自启，接入红外模块并配置遥控器。</p>]]></description>
+    <guid>https://hsj01.github.io/posts/myblog25/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署一个简单图床EasyImage2.0的方法</p>]]></description>
 </item>
 <item>
-    <title>docker部署Alist</title>
-    <link>https://hsj01.github.io/posts/myblog12/</link>
-    <pubDate>Sun, 03 Dec 2023 09:57:40 &#43;0800</pubDate>
+    <title>通过docker-compose部署webssh</title>
+    <link>https://hsj01.github.io/posts/myblog24/</link>
+    <pubDate>Mon, 12 Feb 2024 15:59:20 &#43;0800</pubDate>
     <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog12/</guid>
-    <description><![CDATA[<p>使用docker-compose来部署Alist</p>]]></description>
+    <guid>https://hsj01.github.io/posts/myblog24/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署webssh的方法</p>]]></description>
 </item>
 <item>
-    <title>树莓派安装docker</title>
-    <link>https://hsj01.github.io/posts/myblog11/</link>
-    <pubDate>Thu, 30 Nov 2023 09:18:40 &#43;0800</pubDate>
+    <title>通过docker-compose部署qbittorrent</title>
+    <link>https://hsj01.github.io/posts/myblog23/</link>
+    <pubDate>Mon, 12 Feb 2024 15:50:20 &#43;0800</pubDate>
     <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog11/</guid>
-    <description><![CDATA[<p>简单启动树莓派和安装docker、docker-compose。</p>]]></description>
+    <guid>https://hsj01.github.io/posts/myblog23/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署qbittorrent的方法</p>]]></description>
 </item>
 <item>
-    <title>WinRAR解压软件无广告版</title>
-    <link>https://hsj01.github.io/posts/myblog10/</link>
-    <pubDate>Sat, 21 Oct 2023 08:36:40 &#43;0800</pubDate>
+    <title>通过docker-compose部署百度云盘</title>
+    <link>https://hsj01.github.io/posts/myblog22/</link>
+    <pubDate>Mon, 12 Feb 2024 15:48:20 &#43;0800</pubDate>
     <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog10/</guid>
-    <description><![CDATA[<p>WinRAR的40天商用版本配合密钥就没有广告了</p>]]></description>
+    <guid>https://hsj01.github.io/posts/myblog22/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署百度云盘的方法</p>]]></description>
 </item>
 <item>
-    <title>赛博朋克2077</title>
-    <link>https://hsj01.github.io/posts/myblog09/</link>
-    <pubDate>Thu, 28 Sep 2023 09:18:40 &#43;0800</pubDate>
+    <title>通过docker-compose部署memos备忘录</title>
+    <link>https://hsj01.github.io/posts/myblog21/</link>
+    <pubDate>Mon, 12 Feb 2024 15:37:20 &#43;0800</pubDate>
     <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog09/</guid>
-    <description><![CDATA[<p>赛博朋克2077+往日之影DLC</p>]]></description>
+    <guid>https://hsj01.github.io/posts/myblog21/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署memos备忘录的方法</p>]]></description>
 </item>
 <item>
-    <title>查理九世</title>
-    <link>https://hsj01.github.io/posts/myblog08/</link>
-    <pubDate>Sat, 16 Sep 2023 08:36:40 &#43;0800</pubDate>
+    <title>设置小雅每日定时更新容器和数据</title>
+    <link>https://hsj01.github.io/posts/myblog20/</link>
+    <pubDate>Mon, 12 Feb 2024 15:16:20 &#43;0800</pubDate>
     <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog08/</guid>
-    <description><![CDATA[<p>查理九世全三十本</p>]]></description>
+    <guid>https://hsj01.github.io/posts/myblog20/</guid>
+    <description><![CDATA[<p>这篇文章介绍了设置小雅每日定时更新容器和数据的方法</p>]]></description>
 </item>
 <item>
-    <title>安卓手机使用TikTok</title>
-    <link>https://hsj01.github.io/posts/myblog07/</link>
-    <pubDate>Sun, 30 Jul 2023 09:18:40 &#43;0800</pubDate>
+    <title>通过docker-compose部署cloudreve</title>
+    <link>https://hsj01.github.io/posts/myblog19/</link>
+    <pubDate>Mon, 12 Feb 2024 15:08:20 &#43;0800</pubDate>
     <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog07/</guid>
-    <description><![CDATA[<p>在安卓手机上浏览TikTok</p>]]></description>
+    <guid>https://hsj01.github.io/posts/myblog19/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署cloudreve的方法</p>]]></description>
 </item>
 <item>
-    <title>debian12安装steam</title>
-    <link>https://hsj01.github.io/posts/myblog06/</link>
-    <pubDate>Sat, 22 Jul 2023 09:58:40 &#43;0800</pubDate>
+    <title>通过docker-compose部署jellyfin</title>
+    <link>https://hsj01.github.io/posts/myblog18/</link>
+    <pubDate>Mon, 12 Feb 2024 14:38:40 &#43;0800</pubDate>
     <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog06/</guid>
-    <description><![CDATA[<p>debian12安装steam的几个简单步骤.</p>]]></description>
+    <guid>https://hsj01.github.io/posts/myblog18/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署jellyfin的方法</p>]]></description>
 </item>
 </channel>
 </rss>

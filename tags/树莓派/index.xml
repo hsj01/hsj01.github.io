@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>树莓派 - 标签 - My Hugo Blog</title>
+        <link>https://hsj01.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+        <description>树莓派 - 标签 - My Hugo Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 03 Dec 2023 20:52:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="self" type="application/rss+xml" /><item>
+    <title>树莓派改造kodi影音盒子</title>
+    <link>https://hsj01.github.io/posts/myblog13/</link>
+    <pubDate>Sun, 03 Dec 2023 20:52:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog13/</guid>
+    <description><![CDATA[<p>在树莓派上安装kodi并设置开机自启，接入红外模块并配置遥控器。</p>]]></description>
+</item>
+<item>
+    <title>树莓派安装docker</title>
+    <link>https://hsj01.github.io/posts/myblog11/</link>
+    <pubDate>Thu, 30 Nov 2023 09:18:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog11/</guid>
+    <description><![CDATA[<p>简单启动树莓派和安装docker、docker-compose。</p>]]></description>
+</item>
+</channel>
+</rss>

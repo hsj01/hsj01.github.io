@@ -1,0 +1,31 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>windows - 标签 - My Hugo Blog</title>
+        <link>https://hsj01.github.io/tags/windows/</link>
+        <description>windows - 标签 - My Hugo Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 Oct 2023 08:36:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/windows/" rel="self" type="application/rss+xml" /><item>
+    <title>WinRAR解压软件无广告版</title>
+    <link>https://hsj01.github.io/posts/myblog10/</link>
+    <pubDate>Sat, 21 Oct 2023 08:36:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog10/</guid>
+    <description><![CDATA[<p>WinRAR的40天商用版本配合密钥就没有广告了</p>]]></description>
+</item>
+<item>
+    <title>赛博朋克2077</title>
+    <link>https://hsj01.github.io/posts/myblog09/</link>
+    <pubDate>Thu, 28 Sep 2023 09:18:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog09/</guid>
+    <description><![CDATA[<p>赛博朋克2077+往日之影DLC</p>]]></description>
+</item>
+<item>
+    <title>从小白到装机大神</title>
+    <link>https://hsj01.github.io/posts/myblog04/</link>
+    <pubDate>Fri, 21 Jul 2023 09:57:40 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog04/</guid>
+    <description><![CDATA[<p>这篇文章分享了几个装机工具和系统下载地址。</p>]]></description>
+</item>
+</channel>
+</rss>
