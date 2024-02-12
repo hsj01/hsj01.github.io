@@ -11,7 +11,7 @@
     <pubDate>Tue, 20 Jun 2023 09:40:32 &#43;0800</pubDate>
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/hello/</guid>
-    <description><![CDATA[<p>这是我用Hugo博客框架和它的<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer ">LoveIt</a>主题搭建的博客，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
+    <description><![CDATA[<p>这是我用Hugo博客框架和它的<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer ">LoveIt</a>主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
 </item>
 <item>
     <title>安装docker和docker-compose</title>
@@ -19,7 +19,7 @@
     <pubDate>Fri, 05 Jan 2024 18:28:40 &#43;0800</pubDate>
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog14/</guid>
-    <description><![CDATA[<p>这篇文章展示了Debian安装后需要用到的几个简单命令.</p>]]></description>
+    <description><![CDATA[<p>这篇文章展示了安装docker和docker-compose需要用到的几个简单命令.</p>]]></description>
 </item>
 <item>
     <title>树莓派改造kodi影音盒子</title>
