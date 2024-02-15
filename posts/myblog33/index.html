@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog33\/"
-        },"genre": "posts","keywords": "docker","wordcount":  517 ,
+        },"genre": "posts","keywords": "docker","wordcount":  522 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog33\/","datePublished": "2024-02-14T20:23:10+08:00","dateModified": "2024-02-14T20:23:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">通过docker-compose部署nginx文件下载服务</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-14">2024-02-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 517 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-14">2024-02-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 522 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -135,9 +135,9 @@
 </span></span></code></pre></div><p>进入这个文件文件夹。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> downng
 </span></span></code></pre></div><h2 id="2-在文件夹内创建defaultconf文件">2 在文件夹内创建default.conf文件</h2>
-<p>我们创建一个docker-compose.yml文件</p>
+<p>我们创建一个default.conf文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano default.conf
-</span></span></code></pre></div><p>文件中放入如下内容，这个限制下载速度好像没有什么用，大家可以自己试试。</p>
+</span></span></code></pre></div><p>文件中放入如下内容，这个限制下载速度在电脑浏览器有用，在手机浏览器又没用，大家可以自己试试。</p>
 <pre tabindex="0"><code class="language-conf" data-lang="conf">server {
     listen       80;
     listen  [::]:80;

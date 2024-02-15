@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog14\/"
-        },"genre": "posts","keywords": "docker","wordcount":  648 ,
+        },"genre": "posts","keywords": "docker","wordcount":  735 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog14\/","datePublished": "2024-01-05T18:28:40+08:00","dateModified": "2024-01-05T18:28:40+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">安装docker和docker-compose</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-05">2024-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 648 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-05">2024-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 735 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -112,7 +112,12 @@
   <ul>
     <li><a href="#1--安装docker">1  安装docker</a></li>
     <li><a href="#2-安装docker-compose">2 安装docker-compose</a></li>
-    <li><a href="#3-配置docker">3 配置docker</a></li>
+    <li><a href="#3-配置docker">3 配置docker</a>
+      <ul>
+        <li><a href="#31-修改docker配置文件">3.1 修改docker配置文件</a></li>
+        <li><a href="#32-将用户添加到docker组">3.2 将用户添加到docker组</a></li>
+      </ul>
+    </li>
     <li><a href="#4-创建portainer容器">4 创建portainer容器</a></li>
     <li><a href="#5-结语">5 结语</a></li>
   </ul>
@@ -160,6 +165,7 @@
 </span></span><span class="line"><span class="cl">sudo docker-compose -v
 </span></span></code></pre></div><p> </p>
 <h2 id="3-配置docker">3 配置docker</h2>
+<h3 id="31-修改docker配置文件">3.1 修改docker配置文件</h3>
 <p>编辑daemon.json文件，添加IPv6支持，和限制日志大小</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/docker/daemon.json
 </span></span></code></pre></div><p>放入如下内容</p>
@@ -176,7 +182,11 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>然后重启 Docker 服务</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart docker
-</span></span></code></pre></div><p> </p>
+</span></span></code></pre></div><h3 id="32-将用户添加到docker组">3.2 将用户添加到docker组</h3>
+<p>我们将普通用户添加到docker组之后，今后使用docker命令就不需要前面加sudo了</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo usermod -aG docker 你的用户名
+</span></span></code></pre></div><p>重新登陆后生效
+ </p>
 <h2 id="4-创建portainer容器">4 创建portainer容器</h2>
 <p>我们可以通过部署一个可视化的容器管理面板来直观的管理容器，标签latest已经包含了arm64和x86处理器，两种处理器统一使用如下命令即可。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker run -d --restart<span class="o">=</span>always --name<span class="o">=</span><span class="s2">&#34;portainer&#34;</span> -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce:latest
