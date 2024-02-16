@@ -138,23 +138,23 @@
 <p>我们创建一个default.conf文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano default.conf
 </span></span></code></pre></div><p>文件中放入如下内容，这个限制下载速度在电脑浏览器有用，在手机浏览器又没用，大家可以自己试试。</p>
-<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
-    listen       80;
-    listen  [::]:80;
-    server_name  localhost;
-
-    location / {
-        root   /wenjian;
-        autoindex on;                   # 显示目录
-        autoindex_exact_size off;       # 显示文件大小
-        autoindex_localtime on;         # 显示文件时间
-        limit_rate 1m;                  # 限制下载速度为1MB
-        sendfile on;                    # 开启零复制文件传输功能
-        directio 5m;                    # 当文件大于5MB时以直接读取磁盘的方式读取文件
-        index  index.html index.htm;
-    }
-}
-</code></pre><h2 id="2-创建docker-composeyml文件">2 创建docker-compose.yml文件</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    listen       80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    listen  <span class="o">[</span>::<span class="o">]</span>:80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    server_name  localhost<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    location / <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        root   /wenjian<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        autoindex on<span class="p">;</span>                   <span class="c1"># 显示目录</span>
+</span></span><span class="line"><span class="cl">        autoindex_exact_size off<span class="p">;</span>       <span class="c1"># 显示文件大小</span>
+</span></span><span class="line"><span class="cl">        autoindex_localtime on<span class="p">;</span>         <span class="c1"># 显示文件时间</span>
+</span></span><span class="line"><span class="cl">        limit_rate 1m<span class="p">;</span>                  <span class="c1"># 限制下载速度为1MB</span>
+</span></span><span class="line"><span class="cl">        sendfile on<span class="p">;</span>                    <span class="c1"># 开启零复制文件传输功能</span>
+</span></span><span class="line"><span class="cl">        directio 5m<span class="p">;</span>                    <span class="c1"># 当文件大于5MB时以直接读取磁盘的方式读取文件</span>
+</span></span><span class="line"><span class="cl">        index  index.html index.htm<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><h2 id="2-创建docker-composeyml文件">2 创建docker-compose.yml文件</h2>
 <p>我们创建一个docker-compose.yml文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano docker-compose.yml
 </span></span></code></pre></div><p>文件中放入如下内容，<code>/home/hsj/Downloads</code>处修改为自己要分享的文件夹的绝对路径。</p>
