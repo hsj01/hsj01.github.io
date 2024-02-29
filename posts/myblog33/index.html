@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog33\/"
-        },"genre": "posts","keywords": "docker","wordcount":  522 ,
+        },"genre": "posts","keywords": "docker","wordcount":  531 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog33\/","datePublished": "2024-02-14T20:23:10+08:00","dateModified": "2024-02-14T20:23:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">通过docker-compose部署nginx文件下载服务</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-14">2024-02-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 522 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-14">2024-02-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 531 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -148,6 +148,7 @@
 </span></span><span class="line"><span class="cl">        autoindex on<span class="p">;</span>                   <span class="c1"># 显示目录</span>
 </span></span><span class="line"><span class="cl">        autoindex_exact_size off<span class="p">;</span>       <span class="c1"># 显示文件大小</span>
 </span></span><span class="line"><span class="cl">        autoindex_localtime on<span class="p">;</span>         <span class="c1"># 显示文件时间</span>
+</span></span><span class="line"><span class="cl">        charset utf-8<span class="p">;</span>                  <span class="c1"># 防止中文乱码</span>
 </span></span><span class="line"><span class="cl">        limit_rate 1m<span class="p">;</span>                  <span class="c1"># 限制下载速度为1MB</span>
 </span></span><span class="line"><span class="cl">        sendfile on<span class="p">;</span>                    <span class="c1"># 开启零复制文件传输功能</span>
 </span></span><span class="line"><span class="cl">        directio 5m<span class="p">;</span>                    <span class="c1"># 当文件大于5MB时以直接读取磁盘的方式读取文件</span>
