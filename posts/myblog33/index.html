@@ -112,9 +112,9 @@
   <ul>
     <li><a href="#1-创建文件夹">1 创建文件夹</a></li>
     <li><a href="#2-在文件夹内创建defaultconf文件">2 在文件夹内创建default.conf文件</a></li>
-    <li><a href="#2-创建docker-composeyml文件">2 创建docker-compose.yml文件</a></li>
-    <li><a href="#3-启动容器">3 启动容器</a></li>
-    <li><a href="#4-简单配置">4 简单配置</a></li>
+    <li><a href="#3-创建docker-composeyml文件">3 创建docker-compose.yml文件</a></li>
+    <li><a href="#4-启动容器">4 启动容器</a></li>
+    <li><a href="#5-简单配置">5 简单配置</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>这篇文章介绍了通过docker-compose部署ginx文件下载服务的方法</p>
@@ -155,7 +155,7 @@
 </span></span><span class="line"><span class="cl">        index  index.html index.htm<span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></div><h2 id="2-创建docker-composeyml文件">2 创建docker-compose.yml文件</h2>
+</span></span></code></pre></div><h2 id="3-创建docker-composeyml文件">3 创建docker-compose.yml文件</h2>
 <p>我们创建一个docker-compose.yml文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano docker-compose.yml
 </span></span></code></pre></div><p>文件中放入如下内容，<code>/home/hsj/Downloads</code>处修改为自己要分享的文件夹的绝对路径。</p>
@@ -173,9 +173,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./default.conf:/etc/nginx/conf.d/default.conf</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">/home/hsj/Downloads:/wenjian</span><span class="w">
-</span></span></span></code></pre></div><h2 id="3-启动容器">3 启动容器</h2>
+</span></span></span></code></pre></div><h2 id="4-启动容器">4 启动容器</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker-compose up -d
-</span></span></code></pre></div><h2 id="4-简单配置">4 简单配置</h2>
+</span></span></code></pre></div><h2 id="5-简单配置">5 简单配置</h2>
 <p>我们访问<code>ip:9090</code>就可以进行查看了。</p>
 <p>停止容器</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker-compose down
