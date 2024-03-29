@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog36\/"
-        },"genre": "posts","keywords": "linux","wordcount":  417 ,
+        },"genre": "posts","keywords": "linux","wordcount":  778 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog36\/","datePublished": "2024-03-29T16:08:10+08:00","dateModified": "2024-03-29T16:08:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,8 +101,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">通过公钥进行ssh连接</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-29">2024-03-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 417 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-29">2024-03-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 778 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -110,7 +110,12 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1-生成密钥">1 生成密钥</a></li>
+    <li><a href="#1-生成密钥">1 生成密钥</a>
+      <ul>
+        <li><a href="#11-法一在设备生成密钥不推荐">1.1 法一：在设备生成密钥[<strong>不推荐</strong>]</a></li>
+        <li><a href="#12-法二在本地生成密钥">1.2 法二：在本地生成密钥</a></li>
+      </ul>
+    </li>
     <li><a href="#2-关闭ssh的账号密码登陆">2 关闭ssh的账号密码登陆</a></li>
     <li><a href="#3-结语">3 结语</a></li>
   </ul>
@@ -121,10 +126,11 @@
             <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">注1、建议在要连接的设备上生成公钥。</div>
+            <div class="admonition-content">注1、建议使用1.2法二在本地生成密钥。</div>
         </div>
     </div>
 <h2 id="1-生成密钥">1 生成密钥</h2>
+<h3 id="11-法一在设备生成密钥不推荐">1.1 法一：在设备生成密钥[<strong>不推荐</strong>]</h3>
 <p>我们先正常的ssh连接到设备，输入如下命令，然后一直回车，生成密钥。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -m PEM -t rsa -b <span class="m">4096</span>
 </span></span></code></pre></div><p>然后我们进入自己家目录下的<code>.ssh</code>文件夹。</p>
@@ -136,6 +142,20 @@
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">700</span> ~/.ssh
 </span></span></code></pre></div><p>然后我们将私钥文件<code>id_rsa</code>下载到本地，用我们的ssh工具导入私钥文件，进行连接尝试。
  </p>
+<h3 id="12-法二在本地生成密钥">1.2 法二：在本地生成密钥</h3>
+<p>我们<code>Win+R</code>再打开的界面输入<code>cmd</code>回车，然后输入如下命令，一直回车生成密钥。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ssh-keygen -m PEM -t rsa -b <span class="m">4096</span>
+</span></span></code></pre></div><p>然后我们正常ssh连接到设备，然后创建并进入.ssh文件夹</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p .ssh <span class="o">&amp;&amp;</span> <span class="nb">cd</span> .ssh
+</span></span></code></pre></div><p>然后创建<code>authorized_keys</code>验证文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano authorized_keys
+</span></span></code></pre></div><p>在c盘下的<code>用户</code>文件夹，<code>自己用户名</code>的文件夹，<code>.ssh</code>文件夹，将里面的<code>id_rsa.pub</code>文件右键打开方式，使用记事本打开，将全部内容复制到<code>authorized_keys</code>内，并保存退出。</p>
+<p>然后我们分别授予验证文件和.ssh文件夹对应的读写权限</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">600</span> authorized_keys
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">700</span> ~/.ssh
+</span></span></code></pre></div><p>然后我们可以直接断开连接，然后ssh到设备查看是否需要密码，如已经不再需要密码直接连接，公钥即已经配置好了。</p>
+<p>我们也可以在任意支持ssh连接的软件导入<code>.ssh</code>文件夹内的私钥文件<code>id_rsa</code>即可实现直接连接。</p>
+<p> </p>
 <h2 id="2-关闭ssh的账号密码登陆">2 关闭ssh的账号密码登陆</h2>
 <p>我们尝试公钥连接成功后，我们关闭ssh的密码连接，我们打开ssh的配置文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/ssh/sshd_config
