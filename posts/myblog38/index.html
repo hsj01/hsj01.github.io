@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Ubuntu安装教程 - My Hugo Blog</title><meta name="Description" content="这篇文章介绍了安装Ubuntu和Windows双系统的方法"><meta property="og:title" content="Ubuntu安装教程" />
+<meta property="og:description" content="这篇文章介绍了安装Ubuntu和Windows双系统的方法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hsj01.github.io/posts/myblog38/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-17T09:08:10+08:00" />
+<meta property="article:modified_time" content="2024-04-17T09:08:10+08:00" /><meta property="og:site_name" content="My Blog" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ubuntu安装教程"/>
+<meta name="twitter:description" content="这篇文章介绍了安装Ubuntu和Windows双系统的方法"/>
+<meta name="application-name" content="My blog">
+<meta name="apple-mobile-web-app-title" content="My blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hsj01.github.io/posts/myblog38/" /><link rel="prev" href="https://hsj01.github.io/posts/myblog37/" /><link rel="next" href="https://hsj01.github.io/posts/hello/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Ubuntu安装教程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hsj01.github.io\/posts\/myblog38\/"
+        },"genre": "posts","keywords": "linux","wordcount":  701 ,
+        "url": "https:\/\/hsj01.github.io\/posts\/myblog38\/","datePublished": "2024-04-17T09:08:10+08:00","dateModified": "2024-04-17T09:08:10+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Hsj"
+            },"description": "这篇文章介绍了安装Ubuntu和Windows双系统的方法"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My Hugo Blog">My blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My Hugo Blog">My blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Ubuntu安装教程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-04-17">2024-04-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 701 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-制作启动u盘">1 制作启动U盘</a>
+      <ul>
+        <li><a href="#11-下载ventoy-u盘启动工具">1.1 下载Ventoy U盘启动工具</a></li>
+        <li><a href="#12-下载ubuntu镜像">1.2 下载Ubuntu镜像</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-安装完的简单设置">2 安装完的简单设置</a>
+      <ul>
+        <li><a href="#21-设置root密码">2.1 设置root密码</a></li>
+        <li><a href="#22-设置输入法并卸载ibus">2.2 设置输入法并卸载ibus</a></li>
+        <li><a href="#23-设置grub启动时间">2.3 设置grub启动时间</a></li>
+        <li><a href="#24-设置侧栏不显示卷">2.4 设置侧栏不显示卷</a></li>
+        <li><a href="#25-设置开机直接登陆">2.5 设置开机直接登陆</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-卸载snap">3 卸载snap</a>
+      <ul>
+        <li><a href="#31-展示已安装的snap包">3.1 展示已安装的snap包</a></li>
+        <li><a href="#32-按照以下的顺序卸载-snap-软件">3.2 按照以下的顺序卸载 Snap 软件</a></li>
+        <li><a href="#33-通过-apt-命令卸载-snap-服务">3.3 通过 apt 命令卸载 Snap 服务</a></li>
+        <li><a href="#34-创建一个配置文件-nosnappref-禁止自动安装-snap-服务">3.4 创建一个配置文件 nosnap.pref 禁止自动安装 Snap 服务</a></li>
+        <li><a href="#35-安装apt版gnome应用商店选作">3.5 安装apt版gnome应用商店[选作]</a></li>
+        <li><a href="#36-安装apt版火狐浏览器选作">3.6 安装apt版火狐浏览器[选作]</a></li>
+        <li><a href="#火狐浏览器的官方源在国外每次更新要等下载20分钟火狐所以我建议使用edge浏览器或google浏览器">火狐浏览器的官方源在国外每次更新要等下载20分钟火狐所以我建议使用edge浏览器或Google浏览器</a></li>
+        <li><a href="#37-恢复snap软件包">3.7 恢复snap软件包</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>这篇文章介绍了安装Ubuntu和Windows双系统的方法</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">注1、谢谢大家捧场。</div>
+        </div>
+    </div>
+<h2 id="1-制作启动u盘">1 制作启动U盘</h2>
+<h3 id="11-下载ventoy-u盘启动工具">1.1 下载Ventoy U盘启动工具</h3>
+<p>我们事先准备一个8G空间以上的U盘，第一次制作Ventoy启动U盘需要格式化整个U盘，以后就不需要了。我们从<a href="https://ventoy.net/cn/download.html" target="_blank" rel="noopener noreffer ">Ventoy下载地址</a>进行下载。</p>
+<h3 id="12-下载ubuntu镜像">1.2 下载Ubuntu镜像</h3>
+<p>我们从<a href="https://ubuntu.com/download/desktop" target="_blank" rel="noopener noreffer ">Ubuntu官网</a>下载Ubuntu镜像，并放入U盘ISO文件夹中。</p>
+<h2 id="2-安装完的简单设置">2 安装完的简单设置</h2>
+<h3 id="21-设置root密码">2.1 设置root密码</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo passwd root
+</span></span></code></pre></div><h3 id="22-设置输入法并卸载ibus">2.2 设置输入法并卸载ibus</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt purge ibus
+</span></span></code></pre></div><h3 id="23-设置grub启动时间">2.3 设置grub启动时间</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/default/grub
+</span></span></code></pre></div><h3 id="24-设置侧栏不显示卷">2.4 设置侧栏不显示卷</h3>
+<h3 id="25-设置开机直接登陆">2.5 设置开机直接登陆</h3>
+<h2 id="3-卸载snap">3 卸载snap</h2>
+<p>以下是我摘抄关于卸载snap的文章的缝合，<a href="https://zhuanlan.zhihu.com/p/511438456" target="_blank" rel="noopener noreffer ">原文链接1</a>，<a href="https://blog.csdn.net/qq_40229790/article/details/133653653" target="_blank" rel="noopener noreffer ">原文链接2</a>，感谢Linux中国和鳳舞酒天。</p>
+<h3 id="31-展示已安装的snap包">3.1 展示已安装的snap包</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">snap list
+</span></span></code></pre></div><h3 id="32-按照以下的顺序卸载-snap-软件">3.2 按照以下的顺序卸载 Snap 软件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo snap remove --purge firefox
+</span></span><span class="line"><span class="cl">sudo snap remove --purge snap-store
+</span></span><span class="line"><span class="cl">sudo snap remove --purge gnome-42-2204
+</span></span><span class="line"><span class="cl">sudo snap remove --purge firmware-updater
+</span></span><span class="line"><span class="cl">sudo snap remove --purge gtk-common-themes
+</span></span><span class="line"><span class="cl">sudo snap remove --purge snapd-desktop-integration
+</span></span><span class="line"><span class="cl">sudo snap remove --purge bare
+</span></span><span class="line"><span class="cl">sudo snap remove --purge core22
+</span></span><span class="line"><span class="cl">sudo snap remove --purge snapd
+</span></span></code></pre></div><h3 id="33-通过-apt-命令卸载-snap-服务">3.3 通过 apt 命令卸载 Snap 服务</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt remove --autoremove snapd
+</span></span></code></pre></div><p>删除snap工作目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo rm -rf /var/cache/snapd
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo rm -rf ~/snap
+</span></span></code></pre></div><h3 id="34-创建一个配置文件-nosnappref-禁止自动安装-snap-服务">3.4 创建一个配置文件 nosnap.pref 禁止自动安装 Snap 服务</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/apt/preferences.d/nosnap.pref
+</span></span></code></pre></div><p>文件中粘贴一下内容并保存</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Package: snapd
+</span></span><span class="line"><span class="cl">Pin: release <span class="nv">a</span><span class="o">=</span>*
+</span></span><span class="line"><span class="cl">Pin-Priority: -10
+</span></span></code></pre></div><p>然后运行如下命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span></code></pre></div><h3 id="35-安装apt版gnome应用商店选作">3.5 安装apt版gnome应用商店[选作]</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install --install-suggests gnome-software
+</span></span></code></pre></div><h3 id="36-安装apt版火狐浏览器选作">3.6 安装apt版火狐浏览器[选作]</h3>
+<p>通过以下命令添加官方 PPA 仓库</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo add-apt-repository ppa:mozillateam/ppa
+</span></span></code></pre></div><p>更新软件列表</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span></code></pre></div><p>安装火狐浏览器</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install -t <span class="s1">&#39;o=LP-PPA-mozillateam&#39;</span> firefox
+</span></span></code></pre></div><p>创建一个文件给予Firefox PPA 仓库超高优先权</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/apt/preferences.d/mozillateamppa
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Package: firefox*
+</span></span><span class="line"><span class="cl">Pin: release <span class="nv">o</span><span class="o">=</span>LP-PPA-mozillateam
+</span></span><span class="line"><span class="cl">Pin-Priority: <span class="m">501</span>
+</span></span></code></pre></div><p>放入以下内容并保存</p>
+<h3 id="火狐浏览器的官方源在国外每次更新要等下载20分钟火狐所以我建议使用edge浏览器或google浏览器">火狐浏览器的官方源在国外每次更新要等下载20分钟火狐所以我建议使用edge浏览器或Google浏览器</h3>
+<p><a href="https://www.microsoft.com/zh-cn/edge/download" target="_blank" rel="noopener noreffer ">Microsoft Edge 浏览器</a></p>
+<p><a href="https://www.google.cn/chrome/index.html" target="_blank" rel="noopener noreffer ">Chrome 浏览器</a></p>
+<h3 id="37-恢复snap软件包">3.7 恢复snap软件包</h3>
+<p>如果你改变想法，移除该设置文件，并通过以下命令再次启动安装程序。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo rm /etc/apt/preferences.d/nosnap.pref
+</span></span><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
+</span></span><span class="line"><span class="cl">sudo snap install snap-store
+</span></span><span class="line"><span class="cl">sudo apt install firefox
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-04-17</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://hsj01.github.io/posts/myblog38/" data-title="Ubuntu安装教程" data-hashtags="linux"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://hsj01.github.io/posts/myblog38/" data-hashtag="linux"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://hsj01.github.io/posts/myblog38/" data-title="Ubuntu安装教程"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://hsj01.github.io/posts/myblog38/" data-title="Ubuntu安装教程"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://hsj01.github.io/posts/myblog38/" data-title="Ubuntu安装教程"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/myblog37/" class="prev" rel="prev" title="屏蔽小米电视开机广告"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>屏蔽小米电视开机广告</a>
+            <a href="/posts/hello/" class="next" rel="next" title="欢迎来到我的博客">欢迎来到我的博客<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
