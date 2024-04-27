@@ -44,7 +44,7 @@
             <a href="/" title="My Hugo Blog">My blog</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="https://note.hsj01wzonline.top:9186" rel="noopener noreffer" target="_blank"> 通知栏 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
                             <i class="fas fa-search fa-fw" aria-hidden="true"></i>
@@ -86,7 +86,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         取消
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="https://note.hsj01wzonline.top:9186" title="" rel="noopener noreffer" target="_blank">通知栏</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
@@ -124,7 +124,7 @@
         <li><a href="#24-启动容器">2.4 启动容器</a></li>
         <li><a href="#25-停止容器">2.5 停止容器</a></li>
         <li><a href="#26-删除镜像">2.6 删除镜像</a></li>
-        <li><a href="#26-清除小雅创建的无用的docker卷">2.6 清除小雅创建的无用的docker卷</a></li>
+        <li><a href="#27-清除小雅创建的无用的docker卷">2.7 清除小雅创建的无用的docker卷</a></li>
       </ul>
     </li>
     <li><a href="#3-建议需要时重启小雅容器以更新内容">3 建议需要时重启小雅容器以更新内容</a>
@@ -204,7 +204,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker rmi xiaoyaliu/alist:latest
 </span></span></code></pre></div><p>更新小雅容器到<code>docker-compose.yml</code>的保存位置即xiaoya文件夹内，先<code>sudo docker-compose down</code>停止容器，再删除镜像，然后启动容器<code>sudo docker-compose up -d</code>，小雅容器即完成更新。</p>
 <p>删除的话，只要在停止容器后删除整个xiaoya文件夹和镜像就可以了。</p>
-<h3 id="26-清除小雅创建的无用的docker卷">2.6 清除小雅创建的无用的docker卷</h3>
+<h3 id="27-清除小雅创建的无用的docker卷">2.7 清除小雅创建的无用的docker卷</h3>
 <p>删除无用的docker卷，无意间发现小雅每次重启都会创建一个卷，每个十多MB，重启100次大概占用1Gb，这样日积月累下来也是会占用不少存储空间。不定时可以运行如下命令，然后按Y回车，清除无用的docker卷。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker volume prune
 </span></span></code></pre></div><h2 id="3-建议需要时重启小雅容器以更新内容">3 建议需要时重启小雅容器以更新内容</h2>
