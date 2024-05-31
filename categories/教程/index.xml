@@ -3,7 +3,15 @@
         <title>教程 - 分类 - My Hugo Blog</title>
         <link>https://hsj01.github.io/categories/%E6%95%99%E7%A8%8B/</link>
         <description>教程 - 分类 - My Hugo Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 17 Apr 2024 09:08:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/categories/%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 31 May 2024 15:24:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/categories/%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>通过docker-compose部署homepage</title>
+    <link>https://hsj01.github.io/posts/myblog39/</link>
+    <pubDate>Fri, 31 May 2024 15:24:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog39/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署homepage的方法</p>]]></description>
+</item>
+<item>
     <title>Ubuntu安装教程</title>
     <link>https://hsj01.github.io/posts/myblog38/</link>
     <pubDate>Wed, 17 Apr 2024 09:08:10 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog27/</guid>
     <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署hugo的方法</p>]]></description>
-</item>
-<item>
-    <title>Liunx常用压缩命令</title>
-    <link>https://hsj01.github.io/posts/myblog26/</link>
-    <pubDate>Mon, 12 Feb 2024 16:19:10 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog26/</guid>
-    <description><![CDATA[<p>这篇文章介绍了几个简单的Liunx常用压缩命令</p>]]></description>
 </item>
 </channel>
 </rss>

@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog15\/"
-        },"genre": "posts","keywords": "docker","wordcount":  1046 ,
+        },"genre": "posts","keywords": "docker","wordcount":  1048 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog15\/","datePublished": "2024-02-12T13:01:40+08:00","dateModified": "2024-02-12T13:01:40+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">通过docker-compose部署小雅alist</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-12">2024-02-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1046 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-02-12">2024-02-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1048 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -205,7 +205,7 @@
 </span></span></code></pre></div><p>更新小雅容器到<code>docker-compose.yml</code>的保存位置即xiaoya文件夹内，先<code>sudo docker-compose down</code>停止容器，再删除镜像，然后启动容器<code>sudo docker-compose up -d</code>，小雅容器即完成更新。</p>
 <p>删除的话，只要在停止容器后删除整个xiaoya文件夹和镜像就可以了。</p>
 <h3 id="27-清除小雅创建的无用的docker卷">2.7 清除小雅创建的无用的docker卷</h3>
-<p>删除无用的docker卷，无意间发现小雅每次重启都会创建一个卷，每个十多MB，重启100次大概占用1Gb，这样日积月累下来也是会占用不少存储空间。不定时可以运行如下命令，然后按Y回车，清除无用的docker卷。</p>
+<p>删除无用的docker卷，无意间发现小雅每次重启都会创建一个卷，每个15MB，重启100次大概占用1.5Gb，这样日积月累下来也是会占用不少存储空间。不定时可以运行如下命令，然后按Y回车，清除无用的docker卷。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker volume prune
 </span></span></code></pre></div><h2 id="3-建议需要时重启小雅容器以更新内容">3 建议需要时重启小雅容器以更新内容</h2>
 <h5 id="法一只更新影视数据不更新容器本体运行重启命令重启后即更新">法一：只更新影视数据，不更新容器本体，运行重启命令，重启后即更新。</h5>
