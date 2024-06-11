@@ -3,7 +3,15 @@
         <title>docker - 标签 - My Hugo Blog</title>
         <link>https://hsj01.github.io/tags/docker/</link>
         <description>docker - 标签 - My Hugo Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 31 May 2024 15:24:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/docker/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 11 Jun 2024 18:44:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/docker/" rel="self" type="application/rss+xml" /><item>
+    <title>给docker拉取镜像添加代理</title>
+    <link>https://hsj01.github.io/posts/myblog41/</link>
+    <pubDate>Tue, 11 Jun 2024 18:44:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog41/</guid>
+    <description><![CDATA[<p>这篇文章介绍了给docker拉去镜像添加代理的方法</p>]]></description>
+</item>
+<item>
     <title>通过docker-compose部署homepage</title>
     <link>https://hsj01.github.io/posts/myblog39/</link>
     <pubDate>Fri, 31 May 2024 15:24:10 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog23/</guid>
     <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署qbittorrent的方法</p>]]></description>
-</item>
-<item>
-    <title>通过docker-compose部署百度云盘</title>
-    <link>https://hsj01.github.io/posts/myblog22/</link>
-    <pubDate>Mon, 12 Feb 2024 15:48:20 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog22/</guid>
-    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署百度云盘的方法</p>]]></description>
 </item>
 </channel>
 </rss>
