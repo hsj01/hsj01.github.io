@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog14\/"
-        },"genre": "posts","keywords": "docker","wordcount":  936 ,
+        },"genre": "posts","keywords": "docker","wordcount":  949 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog14\/","datePublished": "2024-01-05T18:28:40+08:00","dateModified": "2024-01-05T18:28:40+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">安装docker和docker-compose</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-05">2024-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 936 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-05">2024-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 949 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -213,7 +213,7 @@
 <p>我们可以通过部署一个可视化的容器管理面板来直观的管理容器，标签latest已经包含了arm64和x86处理器，两种处理器统一使用如下命令即可。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker run -d --restart<span class="o">=</span>always --name<span class="o">=</span><span class="s2">&#34;portainer&#34;</span> -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce:latest
 </span></span></code></pre></div><p>需要使用ufw防火墙管理可将<code>-p 9000:9000</code>改为<code>--net=host</code>访问都是9000端口</p>
-<p>另附compose</p>
+<p>另附<code>docker-compose.yml</code>文件</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">version: <span class="s2">&#34;3.9&#34;</span>
 </span></span><span class="line"><span class="cl">services:
 </span></span><span class="line"><span class="cl">  portainer:
