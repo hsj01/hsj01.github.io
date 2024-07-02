@@ -68,12 +68,12 @@
     <description><![CDATA[<p>这篇文章介绍了idm下载器的安装与激活方法</p>]]></description>
 </item>
 <item>
-    <title>yuzu模拟器整合</title>
+    <title>yuzu模拟器整合包</title>
     <link>https://hsj01.github.io/posts/myblog34/</link>
     <pubDate>Mon, 19 Feb 2024 14:30:10 &#43;0800</pubDate>
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog34/</guid>
-    <description><![CDATA[<p>这篇文章介绍了整合yuzu模拟器、keys和固件的方法</p>]]></description>
+    <description><![CDATA[<p>这篇文章介绍了整合yuzu模拟器、keys和固件的方法，并提供了整合包。</p>]]></description>
 </item>
 <item>
     <title>通过docker-compose部署nginx文件下载服务</title>

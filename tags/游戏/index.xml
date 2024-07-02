@@ -4,12 +4,12 @@
         <link>https://hsj01.github.io/tags/%E6%B8%B8%E6%88%8F/</link>
         <description>游戏 - 标签 - My Hugo Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 19 Feb 2024 14:30:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/%E6%B8%B8%E6%88%8F/" rel="self" type="application/rss+xml" /><item>
-    <title>yuzu模拟器整合</title>
+    <title>yuzu模拟器整合包</title>
     <link>https://hsj01.github.io/posts/myblog34/</link>
     <pubDate>Mon, 19 Feb 2024 14:30:10 &#43;0800</pubDate>
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog34/</guid>
-    <description><![CDATA[<p>这篇文章介绍了整合yuzu模拟器、keys和固件的方法</p>]]></description>
+    <description><![CDATA[<p>这篇文章介绍了整合yuzu模拟器、keys和固件的方法，并提供了整合包。</p>]]></description>
 </item>
 <item>
     <title>赛博朋克2077</title>
