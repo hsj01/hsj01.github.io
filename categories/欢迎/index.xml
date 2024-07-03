@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>欢迎 - 分类 - My Hugo Blog</title>
+        <title>欢迎 - 分类 - 我的博客</title>
         <link>https://hsj01.github.io/categories/%E6%AC%A2%E8%BF%8E/</link>
-        <description>欢迎 - 分类 - My Hugo Blog</description>
+        <description>欢迎 - 分类 - 我的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 20 Jun 2023 09:40:32 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/categories/%E6%AC%A2%E8%BF%8E/" rel="self" type="application/rss+xml" /><item>
     <title>欢迎来到我的博客</title>
     <link>https://hsj01.github.io/posts/hello/</link>

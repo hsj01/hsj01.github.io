@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>树莓派 - 标签 - My Hugo Blog</title>
+        <title>树莓派 - 标签 - 我的博客</title>
         <link>https://hsj01.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
-        <description>树莓派 - 标签 - My Hugo Blog</description>
+        <description>树莓派 - 标签 - 我的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 03 Dec 2023 20:52:40 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="self" type="application/rss+xml" /><item>
     <title>树莓派改造kodi影音盒子</title>
     <link>https://hsj01.github.io/posts/myblog13/</link>

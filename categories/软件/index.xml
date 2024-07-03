@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>软件 - 分类 - My Hugo Blog</title>
+        <title>软件 - 分类 - 我的博客</title>
         <link>https://hsj01.github.io/categories/%E8%BD%AF%E4%BB%B6/</link>
-        <description>软件 - 分类 - My Hugo Blog</description>
+        <description>软件 - 分类 - 我的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 26 Feb 2024 16:41:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/categories/%E8%BD%AF%E4%BB%B6/" rel="self" type="application/rss+xml" /><item>
     <title>idm下载器安装与激活</title>
     <link>https://hsj01.github.io/posts/myblog35/</link>

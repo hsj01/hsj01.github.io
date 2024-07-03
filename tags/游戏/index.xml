@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>游戏 - 标签 - My Hugo Blog</title>
+        <title>游戏 - 标签 - 我的博客</title>
         <link>https://hsj01.github.io/tags/%E6%B8%B8%E6%88%8F/</link>
-        <description>游戏 - 标签 - My Hugo Blog</description>
+        <description>游戏 - 标签 - 我的博客</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 19 Feb 2024 14:30:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/%E6%B8%B8%E6%88%8F/" rel="self" type="application/rss+xml" /><item>
     <title>yuzu模拟器整合包</title>
     <link>https://hsj01.github.io/posts/myblog34/</link>
