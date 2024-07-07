@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog14\/"
-        },"genre": "posts","keywords": "docker","wordcount":  988 ,
+        },"genre": "posts","keywords": "docker","wordcount":  964 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog14\/","datePublished": "2024-01-05T18:28:40+08:00","dateModified": "2024-01-05T18:28:40+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">安装docker和docker-compose</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-05">2024-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 988 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-05">2024-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 964 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -198,7 +198,7 @@
 </span></span></code></pre></div><h2 id="4-给docker拉取镜像添加代理">4 给docker拉取镜像添加代理</h2>
 <p><strong>如何挂代理请自行研究，本小节指涉及把代理添加到docker拉取镜像的过程中，启动的docker容器是没有代理的。</strong></p>
 <h3 id="41-创建配置文件夹和文件">4.1 创建配置文件夹和文件</h3>
-<p>创建一个Docker配置文件（如果不存在），并在其中添加代理设置。配置文件通常位于/etc/docker/目录下。</p>
+<p>创建一个Docker配置文件（如果不存在），并在其中添加代理设置。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo mkdir /etc/systemd/system/docker.service.d/
 </span></span><span class="line"><span class="cl">sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf
 </span></span></code></pre></div><h3 id="42-在打开的文件中添加以下内容">4.2 在打开的文件中添加以下内容</h3>
