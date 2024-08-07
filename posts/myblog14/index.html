@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog14\/"
-        },"genre": "posts","keywords": "docker","wordcount":  1097 ,
+        },"genre": "posts","keywords": "docker","wordcount":  1134 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog14\/","datePublished": "2024-01-05T18:28:40+08:00","dateModified": "2024-01-05T18:28:40+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">安装docker和docker-compose</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-05">2024-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1097 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-05">2024-01-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1134 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -117,7 +117,7 @@
         <li><a href="#31-修改docker配置文件">3.1 修改docker配置文件</a></li>
       </ul>
     </li>
-    <li><a href="#4-使用代理拉去镜像选做">4 使用代理拉去镜像[选做]</a>
+    <li><a href="#4-使用代理拉取镜像选做">4 使用代理拉取镜像[选做]</a>
       <ul>
         <li><a href="#41-创建配置文件夹和文件">4.1 创建配置文件夹和文件</a></li>
         <li><a href="#42-在打开的文件中添加以下内容">4.2 在打开的文件中添加以下内容</a></li>
@@ -201,8 +201,9 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>然后重启 Docker 服务</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart docker
-</span></span></code></pre></div><h2 id="4-使用代理拉去镜像选做">4 使用代理拉去镜像[选做]</h2>
-<p>如果有软路由等有代理环境，或自己会配置代理，可以在daemon.json文件只加入添加IPv6支持，和限制日志大小两项。</p>
+</span></span></code></pre></div><p> </p>
+<h2 id="4-使用代理拉取镜像选做">4 使用代理拉取镜像[选做]</h2>
+<p>如果有软路由等有代理环境，或自己会配置代理，可以不使用镜像源，使用自己的代理直接从dockerhub拉取镜像，这样只要在daemon.json文件加入添加IPv6支持，和限制日志大小两项就行了。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/docker/daemon.json
 </span></span></code></pre></div><p>放入如下内容</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
