@@ -3,13 +3,21 @@
         <title>所有文章 - 我的博客</title>
         <link>https://hsj01.github.io/posts/</link>
         <description>所有文章 | 我的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 23 Jul 2024 09:14:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 18 Aug 2024 20:50:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>欢迎来到我的博客</title>
     <link>https://hsj01.github.io/posts/hello/</link>
     <pubDate>Tue, 20 Jun 2023 09:40:32 &#43;0800</pubDate>
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/hello/</guid>
     <description><![CDATA[<p>这是我用Hugo博客框架和它的<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer ">LoveIt</a>主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
+</item>
+<item>
+    <title>轻巧的反向代理神器Lucky使用教程</title>
+    <link>https://hsj01.github.io/posts/myblog43/</link>
+    <pubDate>Sun, 18 Aug 2024 20:50:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog43/</guid>
+    <description><![CDATA[<p>分享使用lucky一站式完成ddns、证书申请和反向代理的方法。</p>]]></description>
 </item>
 <item>
     <title>使用caddy配置文件分享服务</title>
@@ -74,14 +82,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog36/</guid>
     <description><![CDATA[<p>这篇文章介绍了使用ssh公钥连接设备的方法</p>]]></description>
-</item>
-<item>
-    <title>idm下载器安装与激活</title>
-    <link>https://hsj01.github.io/posts/myblog35/</link>
-    <pubDate>Mon, 26 Feb 2024 16:41:10 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog35/</guid>
-    <description><![CDATA[<p>这篇文章介绍了idm下载器的安装与激活方法</p>]]></description>
 </item>
 </channel>
 </rss>
