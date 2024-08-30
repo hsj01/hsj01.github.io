@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>使用frp进行内网穿透 - 我的博客</title><meta name="Description" content="这篇文章介绍了使用frp进行内网穿透的方法"><meta property="og:title" content="使用frp进行内网穿透" />
+<meta property="og:description" content="这篇文章介绍了使用frp进行内网穿透的方法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hsj01.github.io/posts/myblog45/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-08-30T18:25:10+08:00" />
+<meta property="article:modified_time" content="2024-08-30T18:25:10+08:00" /><meta property="og:site_name" content="My Blog" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="使用frp进行内网穿透"/>
+<meta name="twitter:description" content="这篇文章介绍了使用frp进行内网穿透的方法"/>
+<meta name="application-name" content="My blog">
+<meta name="apple-mobile-web-app-title" content="My blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hsj01.github.io/posts/myblog45/" /><link rel="prev" href="https://hsj01.github.io/posts/myblog43/" /><link rel="next" href="https://hsj01.github.io/posts/hello/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "使用frp进行内网穿透",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hsj01.github.io\/posts\/myblog45\/"
+        },"genre": "posts","wordcount":  1002 ,
+        "url": "https:\/\/hsj01.github.io\/posts\/myblog45\/","datePublished": "2024-08-30T18:25:10+08:00","dateModified": "2024-08-30T18:25:10+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Hsj"
+            },"description": "这篇文章介绍了使用frp进行内网穿透的方法"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="我的博客">My blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="我的博客">My blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用frp进行内网穿透</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-08-30">2024-08-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1002 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#0-frp介绍">0 frp介绍</a></li>
+    <li><a href="#1-下载frp">1 下载frp</a></li>
+    <li><a href="#安装frp">安装frp</a></li>
+    <li><a href="#2-在客户端进行部署">2 在客户端进行部署</a>
+      <ul>
+        <li><a href="#21-将frpc安装到客户端">2.1 将frpc安装到客户端</a></li>
+        <li><a href="#22-配置systemd">2.2 配置systemd</a></li>
+        <li><a href="#23-启动frpc">2.3 启动frpc</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-在服务器进行部署">3 在服务器进行部署</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>这篇文章介绍了使用frp进行内网穿透的方法</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">注1、frp<a href="https://gofrp.org/zh-cn/" target="_blank" rel="noopener noreffer ">官网</a>。</div>
+        </div>
+    </div>
+<p> </p>
+<h2 id="0-frp介绍">0 frp介绍</h2>
+<p>frp是非常知名的内网穿透工具。可以将我们内网的服务穿透到公网服务器上，很好的解决了服务器贵和没公网的问题。我们可以买一个最丐的服务器部署frp和反向代理，高性能的任务在家中运行由frp穿透到公网。frp是简单、高效的内网穿透工具，支持多种代理类型以及 P2P 通信，为不同场景下的需求提供丰富的解决方案。frp 采用 C/S 模式，将服务端部署在具有公网 IP 的机器上，客户端部署在内网或防火墙内的机器上，通过访问暴露在服务器上的端口，反向代理到处于内网的服务。 在此基础上，frp 支持 TCP, UDP, HTTP, HTTPS 等多种协议，提供了加密、压缩，身份认证，代理限速，负载均衡等众多能力。此外，还可以通过 xtcp 实现 P2P 通信。
+ </p>
+<h2 id="1-下载frp">1 下载frp</h2>
+<p>frp的下载地址为<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener noreffer ">GitHub</a>，我们直接下载最新版即可。或者到<a href="https://www.123pan.com/s/bxeLVv-PBmVH" target="_blank" rel="noopener noreffer ">我的网盘</a>下载0.60版，也是我用的版本。我们分别下载对应设备处理器的版本，下载后我们解压出来，可以看到frps、frpc和它们的配置文件。
+ </p>
+<h2 id="安装frp">安装frp</h2>
+<p>frp分为服务端frps，安装在服务器等有公网的设备上，和客户端frpc安装在无公网的内网设备上。本次我们采用STCP和XTCP穿透，需要在服务器部署frps和frpc，在内网部署frpc。所以我们首先在客户端进行部署。</p>
+<h2 id="2-在客户端进行部署">2 在客户端进行部署</h2>
+<h3 id="21-将frpc安装到客户端">2.1 将frpc安装到客户端</h3>
+<p>首先我们在内网设备上任意位置创建<code>frp</code>文件夹并进入将内网设备对应的版本的<code>frpc</code>和<code>frpc.toml</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir frp <span class="o">&amp;&amp;</span> <span class="nb">cd</span> frp
+</span></span></code></pre></div><p><strong>将内网设备对应的版本的<code>frpc</code>和<code>frpc.toml</code>传输到文件夹内。</strong></p>
+<p>编辑<code>frpc.toml</code>文件，加入如下内容</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">serverAddr</span> <span class="o">=</span> <span class="s2">&#34;xxx.xxx.xxx.xxx&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">serverPort</span> <span class="o">=</span> xxxxx
+</span></span><span class="line"><span class="cl">auth.token <span class="o">=</span> <span class="s2">&#34;密钥&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[[</span>proxies<span class="o">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span> <span class="o">=</span> <span class="s2">&#34;alist&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">type</span> <span class="o">=</span> <span class="s2">&#34;xtcp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">secretKey</span> <span class="o">=</span> <span class="s2">&#34;alist密钥&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">localIP</span> <span class="o">=</span> <span class="s2">&#34;172.17.0.1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">localPort</span> <span class="o">=</span> <span class="m">9030</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[[</span>proxies<span class="o">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span> <span class="o">=</span> <span class="s2">&#34;halo&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">type</span> <span class="o">=</span> <span class="s2">&#34;stcp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">secretKey</span> <span class="o">=</span> <span class="s2">&#34;halo密钥&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">localIP</span> <span class="o">=</span> <span class="s2">&#34;172.17.0.1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">localPort</span> <span class="o">=</span> <span class="m">8090</span>
+</span></span></code></pre></div><p>保存退出</p>
+<h3 id="22-配置systemd">2.2 配置systemd</h3>
+<p>编辑添加一个systemd配置文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/systemd/system/frpc.service
+</span></span></code></pre></div><p>放入如下内容</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 服务名称，可自定义</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span> <span class="o">=</span> frp server
+</span></span><span class="line"><span class="cl"><span class="nv">After</span> <span class="o">=</span> network.target syslog.target
+</span></span><span class="line"><span class="cl"><span class="nv">Wants</span> <span class="o">=</span> network.target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span> <span class="o">=</span> simple
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动frps的命令，需修改为您的frps的安装路径</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span> <span class="o">=</span> /放置路径/frp/frpc -c /放置路径/frp/frpc.toml
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span> <span class="o">=</span> multi-user.target
+</span></span></code></pre></div><p>保存退出</p>
+<h3 id="23-启动frpc">2.3 启动frpc</h3>
+<p>启动frpc</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl start frpc
+</span></span></code></pre></div><p>设置frpc开机自启动</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> frpc
+</span></span></code></pre></div><p>另附其他</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 启动frp</span>
+</span></span><span class="line"><span class="cl">sudo systemctl start frps
+</span></span><span class="line"><span class="cl"><span class="c1"># 停止frp</span>
+</span></span><span class="line"><span class="cl">sudo systemctl stop frps
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启frp</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart frps
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看frp状态</span>
+</span></span><span class="line"><span class="cl">sudo systemctl status frps
+</span></span><span class="line"><span class="cl"><span class="c1"># 关闭frp开机自启动</span>
+</span></span><span class="line"><span class="cl">sudo systemctl disable frpc
+</span></span></code></pre></div><h2 id="3-在服务器进行部署">3 在服务器进行部署</h2>
+<p>以下先咕咕咕了</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2024-08-30</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://hsj01.github.io/posts/myblog45/" data-title="使用frp进行内网穿透"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://hsj01.github.io/posts/myblog45/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://hsj01.github.io/posts/myblog45/" data-title="使用frp进行内网穿透"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://hsj01.github.io/posts/myblog45/" data-title="使用frp进行内网穿透"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://hsj01.github.io/posts/myblog45/" data-title="使用frp进行内网穿透"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/myblog43/" class="prev" rel="prev" title="轻巧的反向代理神器Lucky使用教程"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>轻巧的反向代理神器Lucky使用教程</a>
+            <a href="/posts/hello/" class="next" rel="next" title="欢迎来到我的博客">欢迎来到我的博客<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
