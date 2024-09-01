@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog45\/"
-        },"genre": "posts","wordcount":  1949 ,
+        },"genre": "posts","wordcount":  2038 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog45\/","datePublished": "2024-08-30T18:25:10+08:00","dateModified": "2024-08-30T18:25:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,8 +101,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用frp进行内网穿透</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-08-30">2024-08-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1949 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-08-30">2024-08-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2038 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -137,7 +137,9 @@
             <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">注1、frp<a href="https://gofrp.org/zh-cn/" target="_blank" rel="noopener noreffer ">官网</a>。</div>
+            <div class="admonition-content"><p>注1、本期<a href="https://www.bilibili.com/video/BV11uHFepE8u/" target="_blank" rel="noopener noreffer ">视频教程</a>。</p>
+<p>注1、frp<a href="https://gofrp.org/zh-cn/" target="_blank" rel="noopener noreffer ">官网</a>。</p>
+</div>
         </div>
     </div>
 <p> </p>
@@ -170,6 +172,15 @@
 </span></span><span class="line"><span class="cl"><span class="nv">secretKey</span> <span class="o">=</span> <span class="s2">&#34;alist1密钥&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">localIP</span> <span class="o">=</span> <span class="s2">&#34;172.17.0.1&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">localPort</span> <span class="o">=</span> <span class="m">9030</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 我理解的有些问题，带回退的p2p穿透需要在内网也加一个stcp，大家对应修改一下就行了</span>
+</span></span><span class="line"><span class="cl"><span class="o">[[</span>proxies<span class="o">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span> <span class="o">=</span> <span class="s2">&#34;alist2c&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">type</span> <span class="o">=</span> <span class="s2">&#34;stcp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">secretKey</span> <span class="o">=</span> <span class="s2">&#34;alist2c密钥&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">localIP</span> <span class="o">=</span> <span class="s2">&#34;172.17.0.1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">localPort</span> <span class="o">=</span> <span class="m">9050</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">[[</span>proxies<span class="o">]]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">name</span> <span class="o">=</span> <span class="s2">&#34;alist2&#34;</span>
@@ -264,8 +275,8 @@
 </span></span><span class="line"><span class="cl"><span class="o">[[</span>visitors<span class="o">]]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">name</span> <span class="o">=</span> <span class="s2">&#34;alist2ss&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nb">type</span> <span class="o">=</span> <span class="s2">&#34;stcp&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">serverName</span> <span class="o">=</span> <span class="s2">&#34;alist2&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">secretKey</span> <span class="o">=</span> <span class="s2">&#34;alist2令牌&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">serverName</span> <span class="o">=</span> <span class="s2">&#34;alist2c&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">secretKey</span> <span class="o">=</span> <span class="s2">&#34;alist2c令牌&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nv">bindPort</span> <span class="o">=</span> -1
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">[[</span>visitors<span class="o">]]</span>
