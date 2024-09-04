@@ -12,14 +12,6 @@
     <description><![CDATA[<p>这篇文章介绍了使用frp进行内网穿透的方法</p>]]></description>
 </item>
 <item>
-    <title>轻巧的反向代理神器Lucky使用教程</title>
-    <link>https://hsj01.github.io/posts/myblog43/</link>
-    <pubDate>Sun, 18 Aug 2024 20:50:10 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog43/</guid>
-    <description><![CDATA[<p>分享使用lucky一站式完成ddns、证书申请和反向代理的方法。</p>]]></description>
-</item>
-<item>
     <title>使用caddy配置文件分享服务</title>
     <link>https://hsj01.github.io/posts/myblog44/</link>
     <pubDate>Tue, 23 Jul 2024 09:14:10 &#43;0800</pubDate>
@@ -42,14 +34,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog41/</guid>
     <description><![CDATA[<p>这篇文章介绍了给docker拉取镜像添加代理的方法</p>]]></description>
-</item>
-<item>
-    <title>英国手机卡giffgaff申请教程</title>
-    <link>https://hsj01.github.io/posts/myblog40/</link>
-    <pubDate>Wed, 05 Jun 2024 22:03:10 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog40/</guid>
-    <description><![CDATA[<p>分享英国手机卡giffgaff申请免费邮寄到中国的方法。</p>]]></description>
 </item>
 <item>
     <title>通过docker-compose部署homepage</title>
@@ -82,6 +66,22 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog36/</guid>
     <description><![CDATA[<p>这篇文章介绍了使用ssh公钥连接设备的方法</p>]]></description>
+</item>
+<item>
+    <title>通过docker-compose部署nginx文件下载服务</title>
+    <link>https://hsj01.github.io/posts/myblog33/</link>
+    <pubDate>Wed, 14 Feb 2024 20:23:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog33/</guid>
+    <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署ginx文件下载服务的方法</p>]]></description>
+</item>
+<item>
+    <title>vm虚拟机安装debian的gnome桌面版后的简单设置</title>
+    <link>https://hsj01.github.io/posts/myblog32/</link>
+    <pubDate>Mon, 12 Feb 2024 19:35:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog32/</guid>
+    <description><![CDATA[<p>这篇文章介绍了安装debian的gnome桌面版后的简单设置</p>]]></description>
 </item>
 </channel>
 </rss>
