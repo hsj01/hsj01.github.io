@@ -43,5 +43,13 @@
     <guid>https://hsj01.github.io/posts/myblog02/</guid>
     <description><![CDATA[<p>这篇文章展示了/etc/fstab简单配置.</p>]]></description>
 </item>
+<item>
+    <title>关闭服务器ping响应</title>
+    <link>https://hsj01.github.io/posts/myblog46/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog46/</guid>
+    <description><![CDATA[<p>这篇文章介绍了关闭ping响应的方法</p>]]></description>
+</item>
 </channel>
 </rss>
