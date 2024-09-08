@@ -3,7 +3,15 @@
         <title>教程 - 分类 - 我的博客</title>
         <link>https://hsj01.github.io/categories/%E6%95%99%E7%A8%8B/</link>
         <description>教程 - 分类 - 我的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 30 Aug 2024 18:25:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/categories/%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Sep 2024 09:20:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/categories/%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>关闭debian的ping响应</title>
+    <link>https://hsj01.github.io/posts/myblog46/</link>
+    <pubDate>Sun, 08 Sep 2024 09:20:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog46/</guid>
+    <description><![CDATA[<p>这篇文章介绍了关闭服务器ping响应的方法</p>]]></description>
+</item>
+<item>
     <title>使用frp进行内网穿透</title>
     <link>https://hsj01.github.io/posts/myblog45/</link>
     <pubDate>Fri, 30 Aug 2024 18:25:10 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog33/</guid>
     <description><![CDATA[<p>这篇文章介绍了通过docker-compose部署ginx文件下载服务的方法</p>]]></description>
-</item>
-<item>
-    <title>vm虚拟机安装debian的gnome桌面版后的简单设置</title>
-    <link>https://hsj01.github.io/posts/myblog32/</link>
-    <pubDate>Mon, 12 Feb 2024 19:35:10 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog32/</guid>
-    <description><![CDATA[<p>这篇文章介绍了安装debian的gnome桌面版后的简单设置</p>]]></description>
 </item>
 </channel>
 </rss>
