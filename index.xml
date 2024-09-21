@@ -3,7 +3,7 @@
         <title>我的博客</title>
         <link>https://hsj01.github.io/</link>
         <description>This is my blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Sep 2024 09:20:10 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 Sep 2024 11:19:10 &#43;0800</lastBuildDate>
             <atom:link href="https://hsj01.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>欢迎来到我的博客</title>
@@ -12,6 +12,14 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/hello/</guid>
     <description><![CDATA[<p>这是我用Hugo博客框架和它的<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer ">LoveIt</a>主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
+</item>
+<item>
+    <title>手动申请证书和配置Nginx反向代理</title>
+    <link>https://hsj01.github.io/posts/myblog47/</link>
+    <pubDate>Sat, 21 Sep 2024 11:19:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog47/</guid>
+    <description><![CDATA[<p>这篇文章介绍了不依赖面板配置nginx证书和反向代理的方法</p>]]></description>
 </item>
 <item>
     <title>关闭debian的ping响应</title>
@@ -76,14 +84,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog37/</guid>
     <description><![CDATA[<p>这篇文章介绍了屏蔽小米电视开机广告的方法</p>]]></description>
-</item>
-<item>
-    <title>通过公钥进行ssh连接</title>
-    <link>https://hsj01.github.io/posts/myblog36/</link>
-    <pubDate>Fri, 29 Mar 2024 16:08:10 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog36/</guid>
-    <description><![CDATA[<p>这篇文章介绍了使用ssh公钥连接设备的方法</p>]]></description>
 </item>
 </channel>
 </rss>

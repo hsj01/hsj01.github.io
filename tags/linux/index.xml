@@ -3,7 +3,15 @@
         <title>linux - 标签 - 我的博客</title>
         <link>https://hsj01.github.io/tags/linux/</link>
         <description>linux - 标签 - 我的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Sep 2024 09:20:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/linux/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 Sep 2024 11:19:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>手动申请证书和配置Nginx反向代理</title>
+    <link>https://hsj01.github.io/posts/myblog47/</link>
+    <pubDate>Sat, 21 Sep 2024 11:19:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog47/</guid>
+    <description><![CDATA[<p>这篇文章介绍了不依赖面板配置nginx证书和反向代理的方法</p>]]></description>
+</item>
+<item>
     <title>关闭debian的ping响应</title>
     <link>https://hsj01.github.io/posts/myblog46/</link>
     <pubDate>Sun, 08 Sep 2024 09:20:10 &#43;0800</pubDate>
