@@ -3,7 +3,15 @@
         <title>教程 - 分类 - 我的博客</title>
         <link>https://hsj01.github.io/categories/%E6%95%99%E7%A8%8B/</link>
         <description>教程 - 分类 - 我的博客</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 21 Sep 2024 11:19:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/categories/%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 24 Sep 2024 17:20:10 &#43;0800</lastBuildDate><atom:link href="https://hsj01.github.io/categories/%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>各种vps服务器使用脚本</title>
+    <link>https://hsj01.github.io/posts/myblog48/</link>
+    <pubDate>Tue, 24 Sep 2024 17:20:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog48/</guid>
+    <description><![CDATA[<p>这篇文章介绍了各种vps检测和使用脚本</p>]]></description>
+</item>
+<item>
     <title>手动申请证书和配置Nginx反向代理</title>
     <link>https://hsj01.github.io/posts/myblog47/</link>
     <pubDate>Sat, 21 Sep 2024 11:19:10 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog37/</guid>
     <description><![CDATA[<p>这篇文章介绍了屏蔽小米电视开机广告的方法</p>]]></description>
-</item>
-<item>
-    <title>通过公钥进行ssh连接</title>
-    <link>https://hsj01.github.io/posts/myblog36/</link>
-    <pubDate>Fri, 29 Mar 2024 16:08:10 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog36/</guid>
-    <description><![CDATA[<p>这篇文章介绍了使用ssh公钥连接设备的方法</p>]]></description>
 </item>
 </channel>
 </rss>
