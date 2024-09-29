@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog47\/"
-        },"genre": "posts","keywords": "linux","wordcount":  859 ,
+        },"genre": "posts","keywords": "linux","wordcount":  878 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog47\/","datePublished": "2024-09-21T11:19:10+08:00","dateModified": "2024-09-21T11:19:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">手动申请证书和配置Nginx反向代理</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-09-21">2024-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 859 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-09-21">2024-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 878 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -142,9 +142,9 @@
 <p>申请证书前我们先安装nginx</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install nginx
 </span></span></code></pre></div><h3 id="11-安装acmeshhttpsgithubcomacmesh-officialacmesh">1.1 安装<a href="https://github.com/acmesh-official/acme.sh" target="_blank" rel="noopener noreffer ">ACME.sh</a></h3>
-<p>这里的邮箱<code>my@example.com</code>我觉的随意填也没事,我填了我cloudflare的注册邮箱</p>
+<p>这里的邮箱<code>my@example.com</code>我们随便编一个也行，不能用@example.com这样的,我填了我cloudflare的注册邮箱</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh -s <span class="nv">email</span><span class="o">=</span>my@example.com
-</span></span></code></pre></div><p>安装完需要断开重新连接一下ssh，acme.sh才会加载生效。</p>
+</span></span></code></pre></div><p><strong>安装完需要断开重新连接一下ssh，acme.sh才会加载生效。</strong></p>
 <h3 id="12-设置证书颁发机构位letsencrypt">1.2 设置证书颁发机构位letsencrypt</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">acme.sh --set-default-ca --server letsencrypt
 </span></span></code></pre></div><h3 id="13-添加cloudflare区域令牌">1.3 添加cloudflare区域令牌</h3>
