@@ -14,12 +14,12 @@
     <description><![CDATA[<p>这是我用Hugo博客框架和它的<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer ">LoveIt</a>主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
 </item>
 <item>
-    <title>各种vps服务器使用脚本</title>
+    <title>vps服务器推荐及各种使用脚本</title>
     <link>https://hsj01.github.io/posts/myblog48/</link>
     <pubDate>Tue, 24 Sep 2024 17:20:10 &#43;0800</pubDate>
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog48/</guid>
-    <description><![CDATA[<p>这篇文章介绍了各种vps检测和使用脚本</p>]]></description>
+    <description><![CDATA[<p>这篇文章介绍了几种vps和检测使用脚本</p>]]></description>
 </item>
 <item>
     <title>手动申请证书和配置Nginx反向代理</title>
