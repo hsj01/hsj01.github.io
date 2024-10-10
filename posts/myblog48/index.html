@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog48\/"
-        },"genre": "posts","keywords": "linux, vps","wordcount":  632 ,
+        },"genre": "posts","keywords": "linux, vps","wordcount":  714 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog48\/","datePublished": "2024-09-24T17:20:10+08:00","dateModified": "2024-10-02T09:48:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">vps服务器推荐及各种使用脚本</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-09-24">2024-09-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 632 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-09-24">2024-09-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 714 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -123,6 +123,7 @@
         <li><a href="#23-三网回程测试脚本httpsgithubcomzhanghanyunbacktrace">2.3 <a href="https://github.com/zhanghanyun/backtrace">三网回程测试脚本</a></a></li>
         <li><a href="#24-ssl证书申请脚本httpsgithubcomacmesh-officialacmesh">2.4 <a href="https://github.com/acmesh-official/acme.sh">ssl证书申请脚本</a></a></li>
         <li><a href="#25-合理上网脚本httpsgithubcommack-av2ray-agent">2.5 <a href="https://github.com/mack-a/v2ray-agent">合理上网脚本</a></a></li>
+        <li><a href="#26-shellcrashhttpsgithubcomjuewuyshellcrash">2.6 <a href="https://github.com/juewuy/ShellCrash">shellcrash</a></a></li>
       </ul>
     </li>
   </ul>
@@ -155,7 +156,8 @@
 <p>IPv4 1个 ｜ IPv6 1个</p>
 <p>¥9.99/月     <a href="hhttps://akile.io/shop/server?type=traffic&amp;areaId=3&amp;nodeId=128&amp;planId=777&amp;aff_code=f5c7d580-e7bc-4d3d-aae8-3ad494ecbc9e" target="_blank" rel="noopener noreffer ">下单链接</a></p>
 <p> </p>
-<p>Akile输入后30分钟内有效9折优惠码：6B屁眼子痒了</p>
+<p>Akile输入后30分钟内有效9折优惠码：6B屁眼子痒了<br>
+ </p>
 <h3 id="12-namesilo域名">1.2 NameSilo域名</h3>
 <p>推荐NameSilo域名购买：<a href="https://www.namesilo.com/?rid=e8ae457bf" target="_blank" rel="noopener noreffer ">下单链接</a></p>
 <p>仅可用一次一美元优惠码(小于1美元的域名能不能用我也没试过)：cqlantian</p>
@@ -181,6 +183,12 @@
 <h3 id="25-合理上网脚本httpsgithubcommack-av2ray-agent">2.5 <a href="https://github.com/mack-a/v2ray-agent" target="_blank" rel="noopener noreffer ">合理上网脚本</a></h3>
 <p>作者<a href="https://www.592083.xyz/archives/1680104902581" target="_blank" rel="noopener noreffer ">教程</a>，一般能直接打开，不行可能需要合理上网才能打开</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget -P /root -N --no-check-certificate <span class="s2">&#34;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&#34;</span> <span class="o">&amp;&amp;</span> chmod <span class="m">700</span> /root/install.sh <span class="o">&amp;&amp;</span> /root/install.sh
+</span></span></code></pre></div><p> </p>
+<h3 id="26-shellcrashhttpsgithubcomjuewuyshellcrash">2.6 <a href="https://github.com/juewuy/ShellCrash" target="_blank" rel="noopener noreffer ">shellcrash</a></h3>
+<p>github<a href="https://github.com/juewuy/ShellCrash/blob/dev/README_CN.md" target="_blank" rel="noopener noreffer ">文档</a>，用来在软路由上配置透明代理。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo -i  <span class="c1">#切换到root用户，如果需要密码，请输入密码</span>
+</span></span><span class="line"><span class="cl">bash     <span class="c1">#如已处于bash环境可跳过</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">url</span><span class="o">=</span><span class="s1">&#39;https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master&#39;</span> <span class="o">&amp;&amp;</span> wget -q --no-check-certificate -O /tmp/install.sh <span class="nv">$url</span>/install.sh  <span class="o">&amp;&amp;</span> bash /tmp/install.sh <span class="o">&amp;&amp;</span> <span class="nb">source</span> /etc/profile <span class="p">&amp;</span>&gt; /dev/null
 </span></span></code></pre></div><p> </p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
