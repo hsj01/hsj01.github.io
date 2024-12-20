@@ -127,19 +127,39 @@
     </div>
 <p> </p>
 <h2 id="1-安装面板端">1 安装面板端</h2>
+<blockquote>
 <p>1、打开哪吒探针的<a href="https://nezha.wiki/guide/dashboard.html" target="_blank" rel="noopener noreffer ">文档</a>。我们按照服务器位置选择对应的一键安装脚本。</p>
+</blockquote>
+<blockquote>
 <p>2、脚本一直下一步即可需要反代就开启agent的tls，不反代就n。给面板起个标题，端口就用默认，地址ip加端口8008我们后面在设置。</p>
+</blockquote>
 <p> </p>
 <h2 id="2-反向代理面板">2 反向代理面板</h2>
+<blockquote>
 <p>1、打开哪吒探针的反代<a href="https://nezha.wiki/guide/q3.html" target="_blank" rel="noopener noreffer ">文档</a>。nginx就按照说明配置就行，我没套cdn我按照说明把nginx配置对应行注释了。</p>
+</blockquote>
+<blockquote>
 <p>2、访问并打开设置，修改默认密码。然后设置Agent对接地址为反代的<code>网址:443</code>，没反代直接设置为<code>ip:8008</code>即可。设置开启agent的tls，没反代不开起。设置获取IP请求头为<code>nz-realip</code>，没反代勾选直连ip，反代不用勾选。</p>
+</blockquote>
+<blockquote>
 <p>3、自定义代码（样式和脚本）处可以设置更多自定义美化，详见<a href="https://nezhadash-docs.buycoffee.top/custom-code" target="_blank" rel="noopener noreffer ">文档</a>。</p>
+</blockquote>
 <h2 id="3-按装监控端">3 按装监控端</h2>
+<blockquote>
 <p>1、后台点击对应系统安装命令，即可一键安装，安装成功即显示。</p>
+</blockquote>
+<blockquote>
 <p>2、在每台服务器的编辑&gt;公开备注，可设置到期时间等，可在<a href="https://nezhadash-docs.buycoffee.top/custom-code" target="_blank" rel="noopener noreffer ">配置网站</a>自动生成配置文件，生成后粘贴到公开备注即可，刷新可见，不可见可，选择备注到公开状态。</p>
+</blockquote>
+<blockquote>
 <p>3、可设置对应服务器流量监控，面板后台&gt;通知&gt;规则报警&gt;加号。规则<a href="https://wiziscool.github.io/Nezha-Traffic-Alarm-Generator/" target="_blank" rel="noopener noreffer ">配置网站</a>，将生成的配置粘贴到规则，注意监控的服务器序号，勾选启用。在面板点击服务即可查看流量监控。</p>
+</blockquote>
+<blockquote>
 <p>4、可设置到对应地区运营商的延迟监控，面板后台&gt;服务&gt;加号。在贴中找到自己服务商的tcpping<a href="https://www.nodeseek.com/post-68572-1" target="_blank" rel="noopener noreffer ">地址</a>，复制到目标，确定即可，面板点进相应vps&gt;网络即可看到延迟。在服务中显示可根据需要是否勾选(我觉得可用率没啥看头，没勾，能看延迟行了)。</p>
+</blockquote>
+<blockquote>
 <p>5、其余还有很多美化，我也不会，就不一一赘述了，大家可以自行学习发掘。</p>
+</blockquote>
 <h2 id="4-结语">4 结语</h2>
 <p>这就是哪吒监控面板v1，我所知道的安装过程，感谢捧场。</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
