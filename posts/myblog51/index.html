@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog51\/"
-        },"genre": "posts","wordcount":  821 ,
+        },"genre": "posts","wordcount":  1005 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog51\/","datePublished": "2024-12-20T16:39:10+08:00","dateModified": "2024-12-20T16:39:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,8 +101,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">哪吒监控面板v1安装教程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-12-20">2024-12-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 821 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-12-20">2024-12-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1005 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -113,7 +113,8 @@
     <li><a href="#1-安装面板端">1 安装面板端</a></li>
     <li><a href="#2-反向代理面板">2 反向代理面板</a></li>
     <li><a href="#3-按装监控端">3 按装监控端</a></li>
-    <li><a href="#4-结语">4 结语</a></li>
+    <li><a href="#4-探针主控定时更新脚本">4 探针主控定时更新脚本</a></li>
+    <li><a href="#5-结语">5 结语</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>这篇文章介绍了哪吒探针的安装和简单的配置</p>
@@ -160,7 +161,28 @@
 <blockquote>
 <p>3.5、其余还有很多美化，我也不会，就不一一赘述了，大家可以自行学习发掘。</p>
 </blockquote>
-<h2 id="4-结语">4 结语</h2>
+<h2 id="4-探针主控定时更新脚本">4 探针主控定时更新脚本</h2>
+<p>在喜欢的位置创建脚本</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nano nezhaup.sh
+</span></span></code></pre></div><p>粘贴如下内容，并将cd目录设置为哪吒面板安装脚本的保存位置</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /root
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置上方目录到保存nezha.sh的文件夹</span>
+</span></span><span class="line"><span class="cl">./nezha.sh <span class="s">&lt;&lt;EOF
+</span></span></span><span class="line"><span class="cl"><span class="s">6
+</span></span></span><span class="line"><span class="cl"><span class="s">3
+</span></span></span><span class="line"><span class="cl"><span class="s">0
+</span></span></span><span class="line"><span class="cl"><span class="s">0
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></div><p>授予脚本可执行权限</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x nezhaup.sh
+</span></span></code></pre></div><p>添加定时任务，如出现选项选1</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></div><p>添加一行，自己替换path到自己喜欢放nezhaup.sh的目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">0</span> <span class="m">15</span> * * * /path/nezhaup.sh
+</span></span></code></pre></div><p>保存退出即可，每天15点更新，哪吒每次更新约消耗32.64mb流量。</p>
+<h2 id="5-结语">5 结语</h2>
 <p>这就是哪吒监控面板v1，我所知道的安装过程，感谢捧场。</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
