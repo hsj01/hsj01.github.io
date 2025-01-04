@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog48\/"
-        },"genre": "posts","keywords": "linux, vps","wordcount":  322 ,
+        },"genre": "posts","keywords": "linux, vps","wordcount":  373 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog48\/","datePublished": "2024-09-24T17:20:10+08:00","dateModified": "2024-10-12T11:39:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">vps各种检测使用脚本</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-09-24">2024-09-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 322 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-09-24">2024-09-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 373 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -113,12 +113,13 @@
     <li><a href="#1-检测使用脚本">1 检测使用脚本</a>
       <ul>
         <li><a href="#11-流媒体解锁检测脚本httpsgithubcomxyktregionrestrictioncheck">1.1 <a href="https://github.com/xykt/RegionRestrictionCheck">流媒体解锁检测脚本</a></a></li>
-        <li><a href="#12-ip质量检测脚本httpsgithubcomxyktipquality">1.2 <a href="https://github.com/xykt/IPQuality">IP质量检测脚本</a></a></li>
-        <li><a href="#13-三网回程测试脚本httpsgithubcomzhanghanyunbacktrace">1.3 <a href="https://github.com/zhanghanyun/backtrace">三网回程测试脚本</a></a></li>
-        <li><a href="#14-ssl证书申请脚本httpsgithubcomacmesh-officialacmesh">1.4 <a href="https://github.com/acmesh-official/acme.sh">ssl证书申请脚本</a></a></li>
-        <li><a href="#15-合理上网脚本httpsgithubcommack-av2ray-agent">1.5 <a href="https://github.com/mack-a/v2ray-agent">合理上网脚本</a></a></li>
-        <li><a href="#16-iptables端口转发脚本httpsgithubcomarlooriptablesutils">1.6 <a href="https://github.com/arloor/iptablesUtils">iptables端口转发脚本</a></a></li>
-        <li><a href="#17-shellcrashhttpsgithubcomjuewuyshellcrash">1.7 <a href="https://github.com/juewuy/ShellCrash">shellcrash</a></a></li>
+        <li><a href="#12-配置dns服务器">1.2 配置DNS服务器</a></li>
+        <li><a href="#13-ip质量检测脚本httpsgithubcomxyktipquality">1.3 <a href="https://github.com/xykt/IPQuality">IP质量检测脚本</a></a></li>
+        <li><a href="#14-三网回程测试脚本httpsgithubcomzhanghanyunbacktrace">1.4 <a href="https://github.com/zhanghanyun/backtrace">三网回程测试脚本</a></a></li>
+        <li><a href="#15-ssl证书申请脚本httpsgithubcomacmesh-officialacmesh">1.5 <a href="https://github.com/acmesh-official/acme.sh">ssl证书申请脚本</a></a></li>
+        <li><a href="#16-合理上网脚本httpsgithubcommack-av2ray-agent">1.6 <a href="https://github.com/mack-a/v2ray-agent">合理上网脚本</a></a></li>
+        <li><a href="#17-iptables端口转发脚本httpsgithubcomarlooriptablesutils">1.7 <a href="https://github.com/arloor/iptablesUtils">iptables端口转发脚本</a></a></li>
+        <li><a href="#18-shellcrashhttpsgithubcomjuewuyshellcrash">1.8 <a href="https://github.com/juewuy/ShellCrash">shellcrash</a></a></li>
       </ul>
     </li>
   </ul>
@@ -138,27 +139,31 @@
 <p>选择自己vps的地区即可</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash &lt;<span class="o">(</span>curl -sL Media.Check.Place<span class="o">)</span>
 </span></span></code></pre></div><p> </p>
-<h3 id="12-ip质量检测脚本httpsgithubcomxyktipquality">1.2 <a href="https://github.com/xykt/IPQuality" target="_blank" rel="noopener noreffer ">IP质量检测脚本</a></h3>
+<h3 id="12-配置dns服务器">1.2 配置DNS服务器</h3>
+<p>在Debian系统中，DNS配置需要修改<code>/etc/resolv.conf</code>文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/resolv.conf
+</span></span></code></pre></div><p> </p>
+<h3 id="13-ip质量检测脚本httpsgithubcomxyktipquality">1.3 <a href="https://github.com/xykt/IPQuality" target="_blank" rel="noopener noreffer ">IP质量检测脚本</a></h3>
 <p>输入回车等待检测完成即可</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash &lt;<span class="o">(</span>curl -Ls IP.Check.Place<span class="o">)</span>
 </span></span></code></pre></div><p> </p>
-<h3 id="13-三网回程测试脚本httpsgithubcomzhanghanyunbacktrace">1.3 <a href="https://github.com/zhanghanyun/backtrace" target="_blank" rel="noopener noreffer ">三网回程测试脚本</a></h3>
+<h3 id="14-三网回程测试脚本httpsgithubcomzhanghanyunbacktrace">1.4 <a href="https://github.com/zhanghanyun/backtrace" target="_blank" rel="noopener noreffer ">三网回程测试脚本</a></h3>
 <p>输入回车等待检测完成即可</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl https://raw.githubusercontent.com/zhanghanyun/backtrace/main/install.sh -sSf <span class="p">|</span> sh
 </span></span></code></pre></div><p> </p>
-<h3 id="14-ssl证书申请脚本httpsgithubcomacmesh-officialacmesh">1.4 <a href="https://github.com/acmesh-official/acme.sh" target="_blank" rel="noopener noreffer ">ssl证书申请脚本</a></h3>
+<h3 id="15-ssl证书申请脚本httpsgithubcomacmesh-officialacmesh">1.5 <a href="https://github.com/acmesh-official/acme.sh" target="_blank" rel="noopener noreffer ">ssl证书申请脚本</a></h3>
 <p>简单<a href="https://hsj01.github.io/posts/myblog47/" target="_blank" rel="noopener noreffer ">教程</a>，邮箱需要改一下，不能用默认的@example.com</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh -s <span class="nv">email</span><span class="o">=</span>my@example.com
 </span></span></code></pre></div><p> </p>
-<h3 id="15-合理上网脚本httpsgithubcommack-av2ray-agent">1.5 <a href="https://github.com/mack-a/v2ray-agent" target="_blank" rel="noopener noreffer ">合理上网脚本</a></h3>
+<h3 id="16-合理上网脚本httpsgithubcommack-av2ray-agent">1.6 <a href="https://github.com/mack-a/v2ray-agent" target="_blank" rel="noopener noreffer ">合理上网脚本</a></h3>
 <p>作者<a href="https://www.592083.xyz/archives/1680104902581" target="_blank" rel="noopener noreffer ">教程</a>，一般能直接打开，不行可能需要合理上网才能打开</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget -P /root -N --no-check-certificate <span class="s2">&#34;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&#34;</span> <span class="o">&amp;&amp;</span> chmod <span class="m">700</span> /root/install.sh <span class="o">&amp;&amp;</span> /root/install.sh
 </span></span></code></pre></div><p> </p>
-<h3 id="16-iptables端口转发脚本httpsgithubcomarlooriptablesutils">1.6 <a href="https://github.com/arloor/iptablesUtils" target="_blank" rel="noopener noreffer ">iptables端口转发脚本</a></h3>
+<h3 id="17-iptables端口转发脚本httpsgithubcomarlooriptablesutils">1.7 <a href="https://github.com/arloor/iptablesUtils" target="_blank" rel="noopener noreffer ">iptables端口转发脚本</a></h3>
 <p>用来在中转机上配置端口转发。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash &lt;<span class="o">(</span>curl -fsSL https://raw.githubusercontent.com/arloor/iptablesUtils/master/natcfg.sh<span class="o">)</span>
 </span></span></code></pre></div><p> </p>
-<h3 id="17-shellcrashhttpsgithubcomjuewuyshellcrash">1.7 <a href="https://github.com/juewuy/ShellCrash" target="_blank" rel="noopener noreffer ">shellcrash</a></h3>
+<h3 id="18-shellcrashhttpsgithubcomjuewuyshellcrash">1.8 <a href="https://github.com/juewuy/ShellCrash" target="_blank" rel="noopener noreffer ">shellcrash</a></h3>
 <p>github<a href="https://github.com/juewuy/ShellCrash/blob/dev/README_CN.md" target="_blank" rel="noopener noreffer ">文档</a>，用来在软路由上配置透明代理。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo -i  <span class="c1">#切换到root用户，如果需要密码，请输入密码</span>
 </span></span><span class="line"><span class="cl">bash     <span class="c1">#如已处于bash环境可跳过</span>
@@ -190,7 +195,7 @@
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
         </div>
     </footer></div>
 
