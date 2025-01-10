@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog47\/"
-        },"genre": "posts","keywords": "linux","wordcount":  1000 ,
+        },"genre": "posts","keywords": "linux","wordcount":  1022 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog47\/","datePublished": "2024-09-21T11:19:10+08:00","dateModified": "2024-09-21T11:19:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,8 +101,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">手动申请证书和配置Nginx反向代理</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-09-21">2024-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1000 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-09-21">2024-09-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 1022 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
@@ -191,6 +191,8 @@
 </span></span><span class="line"><span class="cl">server <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    listen <span class="m">443</span> ssl<span class="p">;</span>
 </span></span><span class="line"><span class="cl">    listen <span class="o">[</span>::<span class="o">]</span>:443 ssl<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#listen 443 quic reuseport;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#listen [::]:443 quic reuseport;</span>
 </span></span><span class="line"><span class="cl">    server_name example.com<span class="p">;</span>  <span class="c1"># 替换为你的域名</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    http2 on<span class="p">;</span>
@@ -217,6 +219,8 @@
 </span></span><span class="line"><span class="cl">               proxy_pass http://127.0.0.1:5244<span class="p">;</span>     <span class="c1">#反代不同服务修改这里</span>
 </span></span><span class="line"><span class="cl">               <span class="c1"># the max size of file to upload</span>
 </span></span><span class="line"><span class="cl">               client_max_body_size 20000m<span class="p">;</span>
+</span></span><span class="line"><span class="cl">               <span class="c1"># required for browsers to direct them to quic port</span>
+</span></span><span class="line"><span class="cl">               <span class="c1">#add_header Alt-Svc &#39;h3=&#34;:443&#34;; ma=86400&#39;;</span>
 </span></span><span class="line"><span class="cl">             <span class="o">}</span>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>同时我们关闭直接对公网ip和未配置域名的访问</p>

@@ -3,7 +3,7 @@
         <title>我的博客</title>
         <link>https://hsj01.github.io/</link>
         <description>This is my blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 20 Dec 2024 16:39:10 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 10 Jan 2025 13:54:10 &#43;0800</lastBuildDate>
             <atom:link href="https://hsj01.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>欢迎来到我的博客</title>
@@ -12,6 +12,14 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/hello/</guid>
     <description><![CDATA[<p>这是我用<a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">Hugo</a>博客框架和它的<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer ">LoveIt</a>主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
+</item>
+<item>
+    <title>claw开启ipv6</title>
+    <link>https://hsj01.github.io/posts/myblog52/</link>
+    <pubDate>Fri, 10 Jan 2025 13:54:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog52/</guid>
+    <description><![CDATA[<p>这篇文章介绍了claw服务器开启ipv6的配置</p>]]></description>
 </item>
 <item>
     <title>哪吒监控面板v1安装教程</title>
@@ -76,14 +84,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog44/</guid>
     <description><![CDATA[<p>这篇文章介绍了使用caddy配置文件分享服务的方法</p>]]></description>
-</item>
-<item>
-    <title>树莓派实用命令</title>
-    <link>https://hsj01.github.io/posts/myblog42/</link>
-    <pubDate>Thu, 11 Jul 2024 11:04:10 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog42/</guid>
-    <description><![CDATA[<p>这篇文章介绍了几个实用的树莓派命令</p>]]></description>
 </item>
 </channel>
 </rss>
