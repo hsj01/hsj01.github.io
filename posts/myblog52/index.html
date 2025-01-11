@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog52\/"
-        },"genre": "posts","wordcount":  184 ,
+        },"genre": "posts","wordcount":  204 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog52\/","datePublished": "2025-01-10T13:54:10+08:00","dateModified": "2025-01-10T13:54:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">claw开启ipv6</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-01-10">2025-01-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 184 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-01-10">2025-01-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 204 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -112,7 +112,8 @@
   <ul>
     <li><a href="#1-编辑配置文件">1 编辑配置文件</a></li>
     <li><a href="#2-重启网络">2 重启网络</a></li>
-    <li><a href="#3-结语">3 结语</a></li>
+    <li><a href="#3-设置时区">3 设置时区</a></li>
+    <li><a href="#4-结语">4 结语</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>这篇文章介绍了claw服务器开启ipv6的配置</p>
@@ -138,7 +139,13 @@
 <p>为了让配置生效需要重启网络服务</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart networking
 </span></span></code></pre></div><p> </p>
-<h2 id="3-结语">3 结语</h2>
+<h2 id="3-设置时区">3 设置时区</h2>
+<p>查看时区</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">timedatectl
+</span></span></code></pre></div><p>设置时区为上海</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">timedatectl set-timezone Asia/Shanghai
+</span></span></code></pre></div><p> </p>
+<h2 id="4-结语">4 结语</h2>
 <p>简单配置即可激活ipv6，claw的7刀年付日本，移动电信v4直连，联通v6直连，堪称平民神机。</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
