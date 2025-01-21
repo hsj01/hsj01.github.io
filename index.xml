@@ -3,7 +3,7 @@
         <title>我的博客</title>
         <link>https://hsj01.github.io/</link>
         <description>This is my blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 10 Jan 2025 13:54:10 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 21 Jan 2025 15:31:10 &#43;0800</lastBuildDate>
             <atom:link href="https://hsj01.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>欢迎来到我的博客</title>
@@ -12,6 +12,14 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/hello/</guid>
     <description><![CDATA[<p>这是我用<a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">Hugo</a>博客框架和它的<a href="https://hugoloveit.com/zh-cn/" target="_blank" rel="noopener noreffer ">LoveIt</a>主题搭建的博客并托管在GitHub Pages上，我的<a href="https://space.bilibili.com/31954609" target="_blank" rel="noopener noreffer ">哔哩哔哩主页</a>。</p>]]></description>
+</item>
+<item>
+    <title>安装nodejs和go环境并编译alist</title>
+    <link>https://hsj01.github.io/posts/myblog53/</link>
+    <pubDate>Tue, 21 Jan 2025 15:31:10 &#43;0800</pubDate>
+    <author>Hsj</author>
+    <guid>https://hsj01.github.io/posts/myblog53/</guid>
+    <description><![CDATA[<p>这篇文章介绍了编译alist</p>]]></description>
 </item>
 <item>
     <title>claw开启ipv6</title>
@@ -76,14 +84,6 @@
     <author>Hsj</author>
     <guid>https://hsj01.github.io/posts/myblog45/</guid>
     <description><![CDATA[<p>这篇文章介绍了使用frp进行内网穿透的方法</p>]]></description>
-</item>
-<item>
-    <title>使用caddy配置文件分享服务</title>
-    <link>https://hsj01.github.io/posts/myblog44/</link>
-    <pubDate>Tue, 23 Jul 2024 09:14:10 &#43;0800</pubDate>
-    <author>Hsj</author>
-    <guid>https://hsj01.github.io/posts/myblog44/</guid>
-    <description><![CDATA[<p>这篇文章介绍了使用caddy配置文件分享服务的方法</p>]]></description>
 </item>
 </channel>
 </rss>

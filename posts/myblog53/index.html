@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>安装nodejs和go环境并编译alist - 我的博客</title><meta name="Description" content="这篇文章介绍了编译alist"><meta property="og:title" content="安装nodejs和go环境并编译alist" />
+<meta property="og:description" content="这篇文章介绍了编译alist" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hsj01.github.io/posts/myblog53/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-01-21T15:31:10+08:00" />
+<meta property="article:modified_time" content="2025-01-21T15:31:10+08:00" /><meta property="og:site_name" content="My Blog" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="安装nodejs和go环境并编译alist"/>
+<meta name="twitter:description" content="这篇文章介绍了编译alist"/>
+<meta name="application-name" content="My blog">
+<meta name="apple-mobile-web-app-title" content="My blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hsj01.github.io/posts/myblog53/" /><link rel="prev" href="https://hsj01.github.io/posts/myblog52/" /><link rel="next" href="https://hsj01.github.io/posts/hello/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "安装nodejs和go环境并编译alist",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hsj01.github.io\/posts\/myblog53\/"
+        },"genre": "posts","wordcount":  681 ,
+        "url": "https:\/\/hsj01.github.io\/posts\/myblog53\/","datePublished": "2025-01-21T15:31:10+08:00","dateModified": "2025-01-21T15:31:10+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Hsj"
+            },"description": "这篇文章介绍了编译alist"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="我的博客">My blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="我的博客">My blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">安装nodejs和go环境并编译alist</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-01-21">2025-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 681 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-使用nodejs编译前端">1 使用nodejs编译前端</a>
+      <ul>
+        <li><a href="#11-安装nodejs">1.1 安装nodejs</a></li>
+        <li><a href="#12-编译前端">1.2 编译前端</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-安装go环境编译alist">2 安装go环境编译alist</a>
+      <ul>
+        <li><a href="#21-安装go">2.1 安装go</a></li>
+        <li><a href="#22-编译alist">2.2 编译alist</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-结语">3 结语</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>这篇文章介绍了编译alist</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>注1、我使用的系统为debian12</p>
+<p>注2、以下全程在root用户下进行<code>sudo -i</code></p>
+</div>
+        </div>
+    </div>
+<p> </p>
+<h2 id="1-使用nodejs编译前端">1 使用nodejs编译前端</h2>
+<h3 id="11-安装nodejs">1.1 安装nodejs</h3>
+<p>安装gcc</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install gcc
+</span></span></code></pre></div><p>安装git</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install git
+</span></span></code></pre></div><p>安装nodejs</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install nodejs
+</span></span></code></pre></div><p>安装npm</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install npm
+</span></span></code></pre></div><p>[选作]添加镜像源</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm config <span class="nb">set</span> registry https://registry.npmmirror.com/
+</span></span></code></pre></div><p>使用npm安装pnpm</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npm install -g pnpm
+</span></span></code></pre></div><h3 id="12-编译前端">1.2 编译前端</h3>
+<p>从GitHub克隆前端源码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --recurse-submodules https://github.com/AlistGo/alist-web.git
+</span></span></code></pre></div><p>从以下网站下载汉化包zh-CN并解压，放入克隆下的源码<code>src/lang/</code>路径，下载需要注册账号登陆</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://crowdin.com/project/alist/zh-CN
+</span></span></code></pre></div><p>执行多语言功能</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">node ./scripts/i18n.mjs
+</span></span></code></pre></div><p>在alist-web目录下执行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pnpm install <span class="o">&amp;&amp;</span> pnpm build
+</span></span></code></pre></div><p> </p>
+<h2 id="2-安装go环境编译alist">2 安装go环境编译alist</h2>
+<h3 id="21-安装go">2.1 安装go</h3>
+<p>从以下网站下载go包，编译alist需要<code>golang&gt;=1.20</code>的环境。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://go.dev/dl/
+</span></span></code></pre></div><p>把go文件解压到<code>/usr/local</code>目录</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo tar -C /usr/local -xzf go1.23.5.linux-amd64.tar.gz
+</span></span></code></pre></div><p>将Go添加到环境变量中</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/profile
+</span></span></code></pre></div><p>最后添加一行如下内容</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/local/go/bin
+</span></span></code></pre></div><p>重新加载profile 文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> /etc/profile
+</span></span></code></pre></div><p>开启构建方式</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">go env -w <span class="nv">GO111MODULE</span><span class="o">=</span>on
+</span></span></code></pre></div><p>设定一下go的源</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">go env -w <span class="nv">GOPROXY</span><span class="o">=</span>https://goproxy.io,direct
+</span></span></code></pre></div><p>给github拉取添加代理[如不确实理解不要做]</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>http://127.0.0.1:10808
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span>http://127.0.0.1:10808
+</span></span></code></pre></div><h3 id="22-编译alist">2.2 编译alist</h3>
+<p>从GitHub克隆alist仓库</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/AlistGo/alist.git
+</span></span></code></pre></div><p>将上述1.1处alist-web目录编译出的<code>dist</code>粘贴到<code>alist/public</code>文件夹内，然后在alist目录下一次性输入如下<a href="https://alist.nn.ci/zh/guide/install/source.html#%E6%9E%84%E5%BB%BA%E5%90%8E%E7%AB%AF" target="_blank" rel="noopener noreffer ">内容</a>回车进行编译</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">appName</span><span class="o">=</span><span class="s2">&#34;alist&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">builtAt</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>date +<span class="s1">&#39;%F %T %z&#39;</span><span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">goVersion</span><span class="o">=</span><span class="k">$(</span>go version <span class="p">|</span> sed <span class="s1">&#39;s/go version //&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gitAuthor</span><span class="o">=</span><span class="k">$(</span>git show -s --format<span class="o">=</span><span class="s1">&#39;format:%aN &lt;%ae&gt;&#39;</span> HEAD<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gitCommit</span><span class="o">=</span><span class="k">$(</span>git log --pretty<span class="o">=</span>format:<span class="s2">&#34;%h&#34;</span> -1<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">version</span><span class="o">=</span><span class="k">$(</span>git describe --long --tags --dirty --always<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">webVersion</span><span class="o">=</span><span class="k">$(</span>wget -qO- -t1 -T2 <span class="s2">&#34;https://api.github.com/repos/alist-org/alist-web/releases/latest&#34;</span> <span class="p">|</span> grep <span class="s2">&#34;tag_name&#34;</span> <span class="p">|</span> head -n <span class="m">1</span> <span class="p">|</span> awk -F <span class="s2">&#34;:&#34;</span> <span class="s1">&#39;{print $2}&#39;</span> <span class="p">|</span> sed <span class="s1">&#39;s/\&#34;//g;s/,//g;s/ //g&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ldflags</span><span class="o">=</span><span class="s2">&#34;\
+</span></span></span><span class="line"><span class="cl"><span class="s2">-w -s \
+</span></span></span><span class="line"><span class="cl"><span class="s2">-X &#39;github.com/alist-org/alist/v3/internal/conf.BuiltAt=</span><span class="nv">$builtAt</span><span class="s2">&#39; \
+</span></span></span><span class="line"><span class="cl"><span class="s2">-X &#39;github.com/alist-org/alist/v3/internal/conf.GoVersion=</span><span class="nv">$goVersion</span><span class="s2">&#39; \
+</span></span></span><span class="line"><span class="cl"><span class="s2">-X &#39;github.com/alist-org/alist/v3/internal/conf.GitAuthor=</span><span class="nv">$gitAuthor</span><span class="s2">&#39; \
+</span></span></span><span class="line"><span class="cl"><span class="s2">-X &#39;github.com/alist-org/alist/v3/internal/conf.GitCommit=</span><span class="nv">$gitCommit</span><span class="s2">&#39; \
+</span></span></span><span class="line"><span class="cl"><span class="s2">-X &#39;github.com/alist-org/alist/v3/internal/conf.Version=</span><span class="nv">$version</span><span class="s2">&#39; \
+</span></span></span><span class="line"><span class="cl"><span class="s2">-X &#39;github.com/alist-org/alist/v3/internal/conf.WebVersion=</span><span class="nv">$webVersion</span><span class="s2">&#39; \
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">go build -ldflags<span class="o">=</span><span class="s2">&#34;</span><span class="nv">$ldflags</span><span class="s2">&#34;</span> .
+</span></span></code></pre></div><p>如果出现报错无法下载，手动下载<a href="https://www.123684.com/s/bxeLVv-0y1VH" target="_blank" rel="noopener noreffer ">go模块</a>放到报错展示的go路径，再次编译。</p>
+<p> </p>
+<h2 id="3-结语">3 结语</h2>
+<p>这就是我在debian12上编译alist的过程。</p>
+<p>附：<a href="https://www.yuque.com/anwenya/alist/glqlhu#" target="_blank" rel="noopener noreffer ">Alist V3 编译以及踩坑解决方案</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-01-21</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://hsj01.github.io/posts/myblog53/" data-title="安装nodejs和go环境并编译alist"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://hsj01.github.io/posts/myblog53/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Hacker News" data-sharer="hackernews" data-url="https://hsj01.github.io/posts/myblog53/" data-title="安装nodejs和go环境并编译alist"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://hsj01.github.io/posts/myblog53/" data-title="安装nodejs和go环境并编译alist"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://hsj01.github.io/posts/myblog53/" data-title="安装nodejs和go环境并编译alist"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/myblog52/" class="prev" rel="prev" title="claw开启ipv6"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>claw开启ipv6</a>
+            <a href="/posts/hello/" class="next" rel="next" title="欢迎来到我的博客">欢迎来到我的博客<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">     hsj</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
