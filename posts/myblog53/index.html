@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog53\/"
-        },"genre": "posts","wordcount":  681 ,
+        },"genre": "posts","wordcount":  683 ,
         "url": "https:\/\/hsj01.github.io\/posts\/myblog53\/","datePublished": "2025-01-21T15:31:10+08:00","dateModified": "2025-01-21T15:31:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">安装nodejs和go环境并编译alist</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-01-21">2025-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 681 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2025-01-21">2025-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 683 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -156,7 +156,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --recurse-submodules https://github.com/AlistGo/alist-web.git
 </span></span></code></pre></div><p>从以下网站下载汉化包zh-CN并解压，放入克隆下的源码<code>src/lang/</code>路径，下载需要注册账号登陆</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://crowdin.com/project/alist/zh-CN
-</span></span></code></pre></div><p>执行多语言功能</p>
+</span></span></code></pre></div><p>在alist-web目录下执行</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">node ./scripts/i18n.mjs
 </span></span></code></pre></div><p>在alist-web目录下执行</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pnpm install <span class="o">&amp;&amp;</span> pnpm build
@@ -201,7 +201,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="s2">-X &#39;github.com/alist-org/alist/v3/internal/conf.WebVersion=</span><span class="nv">$webVersion</span><span class="s2">&#39; \
 </span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">go build -ldflags<span class="o">=</span><span class="s2">&#34;</span><span class="nv">$ldflags</span><span class="s2">&#34;</span> .
-</span></span></code></pre></div><p>如果出现报错无法下载，手动下载<a href="https://www.123684.com/s/bxeLVv-0y1VH" target="_blank" rel="noopener noreffer ">go模块</a>放到报错展示的go路径，再次编译。</p>
+</span></span></code></pre></div><p>如果出现报错无法下载，手动下载<a href="https://www.123684.com/s/bxeLVv-wV1VH" target="_blank" rel="noopener noreffer ">go模块</a>放到<code>~</code>路径，再次编译。</p>
 <p> </p>
 <h2 id="3-结语">3 结语</h2>
 <p>这就是我在debian12上编译alist的过程。</p>
