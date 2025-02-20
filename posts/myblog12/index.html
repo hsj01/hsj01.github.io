@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hsj01.github.io/posts/myblog12/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-12-03T09:57:40+08:00" />
-<meta property="article:modified_time" content="2023-12-03T09:57:40+08:00" /><meta property="og:site_name" content="My Blog" />
+<meta property="article:modified_time" content="2025-02-16T23:20:10+08:00" /><meta property="og:site_name" content="My Blog" />
 
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="docker部署Alist"/>
 <meta name="twitter:description" content="使用docker-compose来部署Alist"/>
@@ -27,8 +27,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/hsj01.github.io\/posts\/myblog12\/"
-        },"genre": "posts","keywords": "docker","wordcount":  566 ,
-        "url": "https:\/\/hsj01.github.io\/posts\/myblog12\/","datePublished": "2023-12-03T09:57:40+08:00","dateModified": "2023-12-03T09:57:40+08:00","publisher": {
+        },"genre": "posts","keywords": "docker","wordcount":  921 ,
+        "url": "https:\/\/hsj01.github.io\/posts\/myblog12\/","datePublished": "2023-12-03T09:57:40+08:00","dateModified": "2025-02-16T23:20:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -101,7 +101,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">docker部署Alist</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Hsj</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-03">2023-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 566 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-03">2023-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 921 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -112,12 +112,13 @@
   <ul>
     <li><a href="#1-创建数据文件夹">1 创建数据文件夹</a></li>
     <li><a href="#2-编辑docker-composeyml文件">2 编辑docker-compose.yml文件</a></li>
-    <li><a href="#4-部署容器">4 部署容器</a></li>
-    <li><a href="#5-查看初始密码">5 查看初始密码</a></li>
-    <li><a href="#6-对alist进行简单设置">6 对alist进行简单设置</a></li>
-    <li><a href="#5-挂载本地存储位置">5 挂载本地存储位置</a></li>
-    <li><a href="#8-更新alist">8 更新alist</a></li>
-    <li><a href="#3-结语">3 结语</a></li>
+    <li><a href="#3-部署容器">3 部署容器</a></li>
+    <li><a href="#4-查看初始密码">4 查看初始密码</a></li>
+    <li><a href="#5-对alist进行简单设置">5 对alist进行简单设置</a></li>
+    <li><a href="#6-挂载本地存储位置">6 挂载本地存储位置</a></li>
+    <li><a href="#7-更新alist">7 更新alist</a></li>
+    <li><a href="#8-结语">8 结语</a></li>
+    <li><a href="#9-本地安装alist非docker">9 本地安装alist[非docker]</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>使用docker-compose来部署Alist</p>
@@ -155,14 +156,14 @@
 </span></span><span class="line"><span class="cl">            - <span class="nv">PGID</span><span class="o">=</span><span class="m">0</span>
 </span></span><span class="line"><span class="cl">            - <span class="nv">UMASK</span><span class="o">=</span><span class="m">022</span>
 </span></span><span class="line"><span class="cl">        restart: unless-stopped
-</span></span></code></pre></div><h2 id="4-部署容器">4 部署容器</h2>
+</span></span></code></pre></div><h2 id="3-部署容器">3 部署容器</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker-compose up -d
-</span></span></code></pre></div><h2 id="5-查看初始密码">5 查看初始密码</h2>
+</span></span></code></pre></div><h2 id="4-查看初始密码">4 查看初始密码</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker logs alist
-</span></span></code></pre></div><h2 id="6-对alist进行简单设置">6 对alist进行简单设置</h2>
+</span></span></code></pre></div><h2 id="5-对alist进行简单设置">5 对alist进行简单设置</h2>
 <p>我们访问<code>ip:9030</code>就可以进行配置了，设置在alist官方文档有详细说明，这里便省略了。</p>
 <p>在<a href="https://alist.nn.ci/zh/" target="_blank" rel="noopener noreffer ">alist官方文档</a>即可学习使用</p>
-<h2 id="5-挂载本地存储位置">5 挂载本地存储位置</h2>
+<h2 id="6-挂载本地存储位置">6 挂载本地存储位置</h2>
 <p>进入到data文件夹，创建一个alist中本地存储的保存文件夹</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#进入data文件夹</span>
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> data
@@ -171,7 +172,7 @@
 </span></span><span class="line"><span class="cl">sudo mkdir <span class="nb">local</span>
 </span></span></code></pre></div><p>alist中添加本地存储对应填写的文件夹</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/opt/alist/data/local
-</span></span></code></pre></div><h2 id="8-更新alist">8 更新alist</h2>
+</span></span></code></pre></div><h2 id="7-更新alist">7 更新alist</h2>
 <p>进入docker_data/alist文件夹，然后运行如下命令</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#停止容器</span>
 </span></span><span class="line"><span class="cl">sudo docker-compose down
@@ -180,12 +181,30 @@
 </span></span><span class="line"><span class="cl">sudo docker rmi xhofe/alist:latest
 </span></span></code></pre></div><p>更新alist容器到<code>docker-compose.yml</code>的保存位置即alist文件夹内，先<code>sudo docker-compose down</code>停止容器，再删除镜像，然后启动容器<code>sudo docker-compose up -d</code>，alist容器即完成更新。</p>
 <p>删除的话，只要在停止容器后删除整个alist文件夹和镜像就可以了。</p>
-<h2 id="3-结语">3 结语</h2>
-<p>我也是Linux的业余用户，在这里给大家介绍了alist的部署，希望能帮助到大家。</p></div><div class="post-footer" id="post-footer">
+<h2 id="8-结语">8 结语</h2>
+<p>我也是Linux的业余用户，在这里给大家介绍了alist的部署，希望能帮助到大家。</p>
+<h2 id="9-本地安装alist非docker">9 本地安装alist[非docker]</h2>
+<p>运行一键安装脚本，选择systemd安装</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -fsSL <span class="s2">&#34;https://alist.nn.ci/v3.sh&#34;</span> -o v3.sh <span class="o">&amp;&amp;</span> bash v3.sh
+</span></span></code></pre></div><p>将alist二进制放到bin文件夹</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo mv /opt/alist/alist /usr/local/bin/alist
+</span></span></code></pre></div><p>修改systemd文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nano /etc/systemd/system/alist.service
+</span></span></code></pre></div><p>将<code>ExecStart=/opt/alist/alist server</code>修改为<code>ExecStart=/usr/local/bin/alist server</code>这样，就在任意文件夹运行alist命令，无需前面加<code>./</code>。</p>
+<p>且只需要创建多个<code>alist*.service</code>[*替换为任意不同字符],修改<code>WorkingDirectory=/opt/alist*</code>[*替换为任意不同字符]，其他全部保持相同，即可开启多个alist。</p>
+<p>编辑完<code>alist*.service</code>后，重载配置文件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl daemon-reload
+</span></span></code></pre></div><p>重新启动alist</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart alist
+</span></span></code></pre></div><p>设置开机自启动alist</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> alist
+</span></span></code></pre></div><p>关闭开机自启动alist</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl disable alist
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2023-12-03</span>
+                <span>更新于 2025-02-16</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
